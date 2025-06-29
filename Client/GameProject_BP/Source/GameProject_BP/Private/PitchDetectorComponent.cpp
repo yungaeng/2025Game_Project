@@ -251,43 +251,38 @@ float UPitchDetectorComponent::FindFundamentalFrequency(const TArray<FVector2D>&
 FString UPitchDetectorComponent::FrequencyToNoteName(float Frequency)
 {
     if (Frequency <= 0.0f)
-    {
-        return TEXT("N/A");
-    }
+        return TEXT("R");  // 무음/불확실
 
-    // A4 = 440Hz를 기준으로 음정 계산
+    // 허용 음: C4, D4, E4, F4, G4, A4, B4 
+    const int32 AllowedMidiNotes[7] = { 60, 62, 64, 65, 67, 69, 71 }; // C4 D4 E4 F4 G4 A4 B4
+    const TCHAR* AllowedNoteNames[7] = { TEXT("C4"), TEXT("D4"), TEXT("E4"), TEXT("F4"),
+                                        TEXT("G4"), TEXT("A4"), TEXT("B4") };
+
+    // MIDI 변환
     float SemitonesFromA4 = 12.0f * FMath::Log2(Frequency / A4_FREQUENCY);
-    int32 SemitonesRounded = FMath::RoundToInt(SemitonesFromA4);
+    int32 RoundedSemitones = FMath::RoundToInt(SemitonesFromA4);
+    int32 MidiNote = A4_MIDI_NOTE + RoundedSemitones;
 
-    // 0.25 (1/4) 음 이내인지 확인하여 센트 값을 계산
-    float Cents = 100.0f * (SemitonesFromA4 - SemitonesRounded);
-
-    // MIDI 노트 번호 계산
-    int32 MidiNote = A4_MIDI_NOTE + SemitonesRounded;
-
-    // 옥타브와 음 이름 계산
-    const TCHAR* NoteNames[] = { TEXT("C"), TEXT("C#"), TEXT("D"), TEXT("D#"), TEXT("E"), TEXT("F"),
-                                TEXT("F#"), TEXT("G"), TEXT("G#"), TEXT("A"), TEXT("A#"), TEXT("B") };
-
-    int32 NoteIndex = (MidiNote) % 12; // C를 0으로 만들기 위한 조정 (MIDI에서 C0 = 12)
-    int32 Octave = (MidiNote - NoteIndex) / 12 - 1; // 표준 오케스트라 표기법에서 C4는 미들 C
-
-    // 음정 이름 생성
-    FString NoteName;
-
-    if (FMath::Abs(Cents) < 25.0f) // 정확한 음에 가까운 경우
+    // 가장 가까운 허용 음 찾기
+    int32 ClosestIdx = 0;
+    int32 ClosestDist = FMath::Abs(MidiNote - AllowedMidiNotes[0]);
+    for (int i = 1; i < 7; ++i)
     {
-        NoteName = FString::Printf(TEXT("%s%d"), NoteNames[NoteIndex], Octave);
-    }
-    else // 음정이 정확하지 않을 때는 센트 값을 표시
-    {
-        const TCHAR* Direction = Cents > 0.0f ? TEXT("+") : TEXT("");
-        NoteName = FString::Printf(TEXT("%s%d (%s%.0f¢)"),
-            NoteNames[NoteIndex], Octave, Direction, Cents);
+        int32 Dist = FMath::Abs(MidiNote - AllowedMidiNotes[i]);
+        if (Dist < ClosestDist)
+        {
+            ClosestDist = Dist;
+            ClosestIdx = i;
+        }
     }
 
-    return NoteName;
+   
+    if (ClosestDist > 1) 
+        return TEXT("R");
+
+    return AllowedNoteNames[ClosestIdx];
 }
+
 
 float UPitchDetectorComponent::AmplitudeToDB(float Amplitude) const
 {
