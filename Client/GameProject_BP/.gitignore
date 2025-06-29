@@ -1,0 +1,17 @@
+# Visual Studio
+.vs/
+
+# Unreal Engine
+Intermediate/
+Saved/
+DerivedDataCache/
+
+--------------
+/*.log
+*.ini
+*.json
+/.vs
+/Build
+/Plugins
+*.sln
+*_BuiltData.uasset

@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "새 프로필",
+    "Projects": [
+      {
+        "Path": "IOCP-Unreal-TestClient\\IOCP-Unreal-TestClient.vcxproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "IOCP-Unreal-Server\\IOCP-Unreal-Server.vcxproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
