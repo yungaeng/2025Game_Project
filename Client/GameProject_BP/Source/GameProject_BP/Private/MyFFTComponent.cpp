@@ -36,7 +36,6 @@ bool UMyFFTComponent::PerformForwardFFT(const TArray<float>& InputData, TArray<F
 
     if (!IsPowerOfTwo(N))
     {
-        UE_LOG(LogTemp, Warning, TEXT("FFT requires input size to be a power of 2. Current size: %d"), N);
         return false;
     }
 
