@@ -2,6 +2,7 @@
 #include "ex_over.h"
 #include <mutex>
 #include <concurrent_unordered_map.h>
+#include <unordered_map>
 using namespace std;
 
 enum S_STATE { ST_FREE, ST_ALLOC, ST_INGAME };
@@ -11,10 +12,9 @@ class session {
 public:
 	mutex _s_lock;
 	S_STATE _state;
-	atomic_bool	_is_active;		// 주위에 플레이어가 있는가?
 	long long _id;
-	
 	SOCKET _socket;
+
 	float	_x, _y, _z;
 	char _type;					// 0 : adventurer
 								// 1 : imposter  
@@ -23,13 +23,13 @@ public:
 	int _room_id;
 	int _pid;
 	
-	char	_name[MAX_NAME_LENGTH];
+	char _name[MAX_NAME_LENGTH];
 	char _recv_buffer[BUF_SIZE]; // 각 세션별 수신 버퍼
 	int _prev_remain;
 public:
 	session() {
-		_id = -1;
 		_socket = 0;
+		_id = -1;
 		_x = _y = _z = 0;
 		_hp = 50;
 		_atk = 10;
@@ -38,6 +38,9 @@ public:
 		memset(_recv_buffer, 0, BUF_SIZE);
 		_prev_remain = 0;
 		_type = 0;
+
+		_pid = -1;
+		_room_id = -1;
 	}
 	~session() {}
 

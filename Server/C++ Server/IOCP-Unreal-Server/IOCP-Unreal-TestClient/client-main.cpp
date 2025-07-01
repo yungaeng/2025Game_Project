@@ -55,14 +55,12 @@ void process_packet(char* packet)
     switch (packet[1]) {
     case S2C_LOGIN_OK: {
         std::cout << "로그인 성공!" << std::endl;
+        is_connected = true;
         break;
     }
     case S2C_LOGIN_FAIL: {
-        std::cout << "로그인 실패! 서버가 요청을 거부했습니다." << std::endl;
-        // 로그인 실패 시, 연결을 끊는 것은 일반적인 동작입니다.
-        // 하지만 이 호출이 recv_thread에서 오면 문제가 될 수 있으므로,
-        // main에서 상태를 감지하여 disconnect_client를 호출하도록 유도하는 것이 좋습니다.
-        // 여기서는 is_connected 플래그만 설정합니다.
+        sc_packet_login_fail* p = reinterpret_cast<sc_packet_login_fail*>(packet);
+        std::cout << "로그인 실패! 서버가 요청을 거부했습니다. 에러 코드" << p->reason << std::endl;
         is_connected = false;
         break;
     }
@@ -72,6 +70,11 @@ void process_packet(char* packet)
             myid = p->id;
         }
         std::cout << "연결 성공! ID: " << myid << " (" << p->x << ", " << p->y << ")에 로그인됨." << std::endl;
+        break;
+    }
+    case S2C_ROOM: {
+        sc_packet_room* p = reinterpret_cast<sc_packet_room*>(packet);
+        std::cout << "방에 입장하였습니다. 방 번호 : " << p->roomid << "PID : " << p->pid << std::endl;
         break;
     }
     case S2C_MOVE: {
@@ -213,6 +216,24 @@ void send_login(const char* name)
         std::cout << "로그인 패킷 전송 완료. 이름: " << name << std::endl;
     }
 }
+void send_room(const char requst) {
+    if (!is_connected) {
+        std::cout << "룸 패킷을 보낼 수 없습니다: 서버에 연결되지 않았습니다." << std::endl;
+        return;
+    }
+    cs_packet_room room_packet;
+    room_packet.size = sizeof(room_packet);
+    room_packet.type = C2S_ROOM;
+    room_packet.requst = requst;
+    int sent_bytes = send(client_socket, reinterpret_cast<char*>(&room_packet), sizeof(room_packet), 0);
+    if (sent_bytes == SOCKET_ERROR) {
+        std::cerr << "로그인 패킷 전송 실패! 오류 코드: " << WSAGetLastError() << std::endl;
+        is_connected = false; // 전송 실패 시 연결 종료 신호
+    }
+    else {
+        std::cout << "룸 패킷 전송 완료. 타입: " << requst << std::endl;
+    }
+}
 bool connect_to_server(const char* ip_address_str) { // ip_address와 이름 충돌 방지
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) {
@@ -326,11 +347,12 @@ int main() {
 
     // 2. 수신 스레드 시작
     RecvThread = std::thread(recv_thread_func);
-
+    
     // 3. 로그인 패킷 전송
     send_login("test_user"); // 테스트용 사용자 이름
 
     // 4. 메인 루프: 사용자 입력 처리 또는 게임 로직 진행
+    
     std::cout << "\n명령어를 입력하세요 ('M': 이동, 'A': 공격, 'C': 채팅, 'T': 미션, 'Q': 종료):" << std::endl;
     char input_char;
     std::string chat_message;
@@ -345,6 +367,13 @@ int main() {
             char move_dir;
             std::cin >> move_dir;
             send_move(toupper(move_dir));
+            break;
+        }
+        case 'R': {
+            std::cout << "요청 타입 create/join/leave (C/J/L)";
+            char move_dir;
+            std::cin >> move_dir;
+            send_room(toupper(move_dir));
             break;
         }
         case 'A': {
@@ -386,6 +415,7 @@ int main() {
     }
 
     disconnect_client();
+
 
     WSACleanup();
     std::cout << "클라이언트 프로그램이 성공적으로 종료되었습니다." << std::endl;

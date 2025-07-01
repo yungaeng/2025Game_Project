@@ -5,7 +5,7 @@ constexpr short PORT = 3000;
 // 길이와 크기에 대한 정보
 constexpr int  MAX_USER = 500;
 constexpr int  VIEW_RANGE = 15;
-constexpr short MAX_CHAT_LENGTH = 255;
+constexpr short MAX_CHAT_LENGTH = 100;
 constexpr char MAX_NAME_LENGTH = 20;
 
 // 패킷 타입
