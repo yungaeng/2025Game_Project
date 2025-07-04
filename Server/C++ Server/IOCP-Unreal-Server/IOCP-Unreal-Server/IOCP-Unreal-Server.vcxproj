@@ -137,6 +137,9 @@
     <ClInclude Include="session.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CONN.cpp" />
+    <ClCompile Include="READ.cpp" />
+    <ClCompile Include="ST_PROC.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="session.cpp" />
   </ItemGroup>
