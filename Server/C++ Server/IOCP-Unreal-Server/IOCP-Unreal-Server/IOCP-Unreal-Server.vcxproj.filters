@@ -25,6 +25,9 @@
     <Filter Include="소스 파일\event">
       <UniqueIdentifier>{a00d821a-33da-4618-884f-f3f1ca04f744}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\DB">
+      <UniqueIdentifier>{b183ebd1-01a9-42cf-9e47-e8509570a3d9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="protocol.h">
@@ -45,6 +48,9 @@
     <ClInclude Include="room.h">
       <Filter>소스 파일\room</Filter>
     </ClInclude>
+    <ClInclude Include="db.h">
+      <Filter>소스 파일\DB</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,6 +58,9 @@
     </ClCompile>
     <ClCompile Include="session.cpp">
       <Filter>소스 파일\session</Filter>
+    </ClCompile>
+    <ClCompile Include="db.cpp">
+      <Filter>소스 파일\DB</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
