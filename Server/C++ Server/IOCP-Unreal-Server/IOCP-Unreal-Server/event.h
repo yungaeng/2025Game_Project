@@ -2,6 +2,7 @@
 #include <concurrent_priority_queue.h>
 
 enum EVENT_TYPE { EV_CONTROL_FIX, EV_ARMORY_FIX, EV_COURSE_MODIFI, EV_CHARGING, EV_RADIO, EV_LAB_TEM, EV_BEDROOM_TEM };
+
 struct ROOM_EVENT {
 	long long client_id;
 	EVENT_TYPE event_id;
@@ -25,12 +26,14 @@ void do_event() {
 					//lock_guard<mutex> ll(rooms[player->_room_id].rl);
 					rooms[player->_room_id]->control_fix_mission++;
 				}
+				break;
 			}
 			case EV_ARMORY_FIX: {
 				if (player && player->_state == ST_INGAME && rooms[player->_room_id]->state == R_INGAME) {
 					//lock_guard<mutex> ll(rooms[player->_room_id].rl);
 					rooms[player->_room_id]->armory_fix_mission++;
 				}
+				break;
 			}
 			case EV_COURSE_MODIFI: {
 				if (player && player->_state == ST_INGAME && rooms[player->_room_id]->state == R_INGAME) {
@@ -38,6 +41,7 @@ void do_event() {
 					if(!rooms[player->_room_id]->course_modifi)
 						rooms[player->_room_id]->course_modifi = true;
 				}
+				break;
 			}
 			case EV_CHARGING: {
 				for (auto& r : rooms) {

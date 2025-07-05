@@ -1,2 +1,0 @@
-﻿db.obj : error LNK2001: 확인할 수 없는 외부 기호 _mysql_get_client_info@0
-E:\github rgst\2025Game_Project\Server\C++ Server\IOCP-Unreal-Server\Release\DB.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.

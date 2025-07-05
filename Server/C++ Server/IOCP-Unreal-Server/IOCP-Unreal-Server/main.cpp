@@ -7,10 +7,11 @@
 #include <mutex>
 #include <atomic>
 #include <string>
-
+#include "db.h"
 HANDLE h_iocp;
 SOCKET g_s_socket, g_c_socket; // g_c_socket은 AcceptEx용 임시 소켓
-ex_over g_a_over; // AcceptEx 오버랩 구조체
+ex_over g_a_over;              // AcceptEx 오버랩 구조체
+DB g_db;                       // DB
 
 concurrency::concurrent_unordered_map<long long, std::shared_ptr<session>> clients;
 concurrency::concurrent_priority_queue<ROOM_EVENT> event_queue;
@@ -50,6 +51,9 @@ void process_packet(long long c_id, char* packet)
             lock_guard<mutex> ll{ clients[c_id]->_s_lock };
             strcpy_s(clients[c_id]->_name, p->name);
         }
+
+        g_a_over._comp_type = OP_DB_INPUT;
+        PostQueuedCompletionStatus(h_iocp, 0, 0, &g_a_over._over);
         clients[c_id]->send_login_ok_packet();
 
         // 우선 여기서 아이디 보내기
@@ -211,6 +215,17 @@ void worker_thread(HANDLE h_iocp) {
             delete exover; // 송신 완료된 오버랩 구조체 메모리 해제
             break;
         }
+        case OP_DB_INPUT: {
+            logindata lg;
+            lg.ID = key;
+            lg.NAME = clients[key]->_name;
+            g_db.InsertDB(lg);
+            break;
+        }
+        case OP_DB_OUTPUT: {
+            g_db.SelectDB();
+            break;
+        }
         }
     }
 }
@@ -322,6 +337,9 @@ int main()
     }
 
     std::thread event_thread{ do_event }; // 이벤트 처리 스레드
+
+    if (g_db.InitDB())
+        std::cout << "DB is Working..." << std::endl;
 
     std::cout << "Worker threads : " << num_threads << std::endl;
     std::cout << "Now server is running" << std::endl;
