@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\GameProject_BP.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GameProject_BP.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\GameProject_BPEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.editorconfig" />
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\GameProject_BP">
+      <UniqueIdentifier>{99784718-E269-39B8-9EB0-16E4118E0D4E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GameProject_BP\GameProject_BP.Build.cs">
+      <Filter>Source\GameProject_BP</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GameProject_BP\GameProject_BP.cpp">
+      <Filter>Source\GameProject_BP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GameProject_BP\GameProject_BP.h">
+      <Filter>Source\GameProject_BP</Filter>
+    </ClInclude>
+    <Filter Include="Source\GameProject_BP\Private">
+      <UniqueIdentifier>{23CE463F-74E8-31A8-9F6A-33AF66E1677E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GameProject_BP\Private\FFT1DComponent.cpp">
+      <Filter>Source\GameProject_BP\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GameProject_BP\Private\MyFFTComponent.cpp">
+      <Filter>Source\GameProject_BP\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GameProject_BP\Private\PitchDetectorComponent.cpp">
+      <Filter>Source\GameProject_BP\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\GameProject_BP\Public">
+      <UniqueIdentifier>{E0C4C47B-9305-3DBE-ADC1-2126B5E242E1}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\GameProject_BP\Public\FFT1DComponent.h">
+      <Filter>Source\GameProject_BP\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GameProject_BP\Public\MyFFTComponent.h">
+      <Filter>Source\GameProject_BP\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GameProject_BP\Public\PitchDetectorComponent.h">
+      <Filter>Source\GameProject_BP\Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
