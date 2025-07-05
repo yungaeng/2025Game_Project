@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "dgSpecHash": "2urcrD4v67o=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\user\\Desktop\\2025Game_Project\\Client\\GameProject_BP\\Intermediate\\Build\\BuildRulesProjects\\GameProject_BPModuleRules\\GameProject_BPModuleRules.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\Program Files\\Epic Games\\UE_5.3\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj'. Check that the project reference is valid and that the project file exists.",
+      "projectPath": "C:\\Users\\user\\Desktop\\2025Game_Project\\Client\\GameProject_BP\\Intermediate\\Build\\BuildRulesProjects\\GameProject_BPModuleRules\\GameProject_BPModuleRules.csproj",
+      "filePath": "C:\\Users\\user\\Desktop\\2025Game_Project\\Client\\GameProject_BP\\Intermediate\\Build\\BuildRulesProjects\\GameProject_BPModuleRules\\GameProject_BPModuleRules.csproj",
+      "libraryId": "C:\\Users\\Program Files\\Epic Games\\UE_5.3\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5Rules\\UE5Rules.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj'. Check that the project reference is valid and that the project file exists.",
+      "projectPath": "C:\\Users\\user\\Desktop\\2025Game_Project\\Client\\GameProject_BP\\Intermediate\\Build\\BuildRulesProjects\\GameProject_BPModuleRules\\GameProject_BPModuleRules.csproj",
+      "filePath": "C:\\Users\\user\\Desktop\\2025Game_Project\\Client\\GameProject_BP\\Intermediate\\Build\\BuildRulesProjects\\GameProject_BPModuleRules\\GameProject_BPModuleRules.csproj",
+      "libraryId": "C:\\Users\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source\\Programs\\UnrealBuildTool\\UnrealBuildTool.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\Program Files\\Epic Games\\UE_5.3\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj'. Check that the project reference is valid and that the project file exists.",
+      "projectPath": "C:\\Users\\user\\Desktop\\2025Game_Project\\Client\\GameProject_BP\\Intermediate\\Build\\BuildRulesProjects\\GameProject_BPModuleRules\\GameProject_BPModuleRules.csproj",
+      "filePath": "C:\\Users\\user\\Desktop\\2025Game_Project\\Client\\GameProject_BP\\Intermediate\\Build\\BuildRulesProjects\\GameProject_BPModuleRules\\GameProject_BPModuleRules.csproj",
+      "libraryId": "C:\\Users\\Program Files\\Epic Games\\UE_5.3\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    },
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj'. Check that the project reference is valid and that the project file exists.",
+      "projectPath": "C:\\Users\\user\\Desktop\\2025Game_Project\\Client\\GameProject_BP\\Intermediate\\Build\\BuildRulesProjects\\GameProject_BPModuleRules\\GameProject_BPModuleRules.csproj",
+      "filePath": "C:\\Users\\user\\Desktop\\2025Game_Project\\Client\\GameProject_BP\\Intermediate\\Build\\BuildRulesProjects\\GameProject_BPModuleRules\\GameProject_BPModuleRules.csproj",
+      "libraryId": "C:\\Users\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source\\Programs\\Shared\\EpicGames.Build\\EpicGames.Build.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
