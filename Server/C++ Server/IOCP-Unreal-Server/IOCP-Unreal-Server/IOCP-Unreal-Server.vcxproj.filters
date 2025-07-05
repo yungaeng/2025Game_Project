@@ -25,9 +25,6 @@
     <Filter Include="소스 파일\event">
       <UniqueIdentifier>{a00d821a-33da-4618-884f-f3f1ca04f744}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\DB">
-      <UniqueIdentifier>{114f83e1-f8d8-4748-84d2-d8efc74d99bd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="protocol.h">
@@ -55,15 +52,6 @@
     </ClCompile>
     <ClCompile Include="session.cpp">
       <Filter>소스 파일\session</Filter>
-    </ClCompile>
-    <ClCompile Include="CONN.cpp">
-      <Filter>소스 파일\DB</Filter>
-    </ClCompile>
-    <ClCompile Include="ST_PROC.cpp">
-      <Filter>소스 파일\DB</Filter>
-    </ClCompile>
-    <ClCompile Include="READ.cpp">
-      <Filter>소스 파일\DB</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
