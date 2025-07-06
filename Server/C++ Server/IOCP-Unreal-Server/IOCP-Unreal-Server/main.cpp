@@ -30,20 +30,6 @@ long long get_new_client_id() {
 }
 void process_packet(long long c_id, char* packet)
 {
-    //// 맵에서 shared_ptr를 안전하게 가져옴
-    //auto it = clients.find(c_id);
-    //if (it == clients.end()) {
-    //    std::cerr << "Error: Client ID " << c_id << " not found in clients map when processing packet." << std::endl;
-    //    return;
-    //}
-    //std::shared_ptr<session> current_session = it->second; // shared_ptr 복사
-
-    //// 세션이 이미 ST_FREE 상태라면 더 이상 처리하지 않음
-    //if (current_session->_state == ST_FREE) {
-    //    std::cerr << "Error: Client ID " << c_id << " is in ST_FREE state, skipping packet processing." << std::endl;
-    //    return;
-    //}
-
     switch (packet[1]) {
     case C2S_SIGNIN: {
         cs_packet_login* p = reinterpret_cast<cs_packet_login*>(packet);
@@ -69,7 +55,6 @@ void process_packet(long long c_id, char* packet)
             clients[c_id]->send_avata_info_packet();
         }
             
-
         // 현재 DB 보여주기
         g_db.SelectDB();
 
@@ -155,15 +140,8 @@ void process_packet(long long c_id, char* packet)
     }
     case C2S_CHAT: {
         cs_packet_chat* p = reinterpret_cast<cs_packet_chat*>(packet);
-        //std::cout << "Client [" << c_id << "] chatted: " << p->message << std::endl;
-
-        //// 같은 방에 있는 모든 클라이언트에게 채팅 브로드캐스트
-        //for (auto& pl_pair : clients) {
-        //    std::shared_ptr<session> other_session = pl_pair.second;
-        //    if (other_session->get_state() == ST_INGAME && other_session->_room_id == current_session->_room_id) {
-        //        other_session->send_chat_packet(c_id, p->message);
-        //    }
-        //}
+        std::cout << "Client [" << c_id << "] chatted: " << p->message << std::endl;
+        clients[c_id]->send_chat_packet(c_id, p->message);
         break;
     }
     default:
@@ -316,9 +294,8 @@ int main()
             std::cerr << "getaddrinfo failed: " << gai_strerrorA(rv) << std::endl;
         }
     }
-    else {
+    else
         std::cerr << "gethostname failed: " << WSAGetLastError() << std::endl;
-    }
 
     h_iocp = CreateIoCompletionPort(INVALID_HANDLE_VALUE, 0, 0, 0);
     if (h_iocp == NULL) {
@@ -381,20 +358,6 @@ int main()
 
 
     //--------------------------- 여기서부터 서버 종료---------------------------------
-    // 
-    // 서버 종료 대기 (예: 콘솔 입력 대기 또는 특정 종료 시그널)
-    // 현재는 이 스레드들이 main 스레드가 join하기 전까지 계속 실행됩니다.
-    // 적절한 서버 종료 로직이 필요합니다 (예: 키 입력 시 종료, Ctrl+C 핸들러 등).
-    std::string command;
-    while (std::getline(std::cin, command)) {
-        if (command == "exit" || command == "quit") {
-            std::cout << "Shutting down server..." << std::endl;
-            // TODO: 모든 클라이언트 연결 강제 종료 및 IOCP 포스트 퀴트 메시지
-            // PostQueuedCompletionStatus(h_iocp, 0, 0, nullptr); // 각 워커 스레드에 종료 신호
-            break;
-        }
-    }
-
     // 모든 스레드가 종료될 때까지 기다림
     event_thread.join();
     for (auto& th : worker_threads) {

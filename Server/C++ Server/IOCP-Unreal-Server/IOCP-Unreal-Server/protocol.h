@@ -65,7 +65,7 @@ struct cs_packet_attack {
 struct cs_packet_chat {
 	unsigned char  size;
 	char  type;
-	char  message[MAX_CHAT_LENGTH];		// NULL terminated ¹®ÀÚ¿­
+	char  message[MAX_CHAT_LENGTH];
 };
 struct cs_packet_teleport {
 	unsigned char  size;

@@ -3,6 +3,8 @@
 #include "session.h"
 
 enum ROOM_STATE { R_FREE, R_READY, R_INGAME };
+atomic<int> room_num = -1;
+
 struct ROOM {
 	ROOM_STATE state = R_FREE;
 	std::mutex rl;
@@ -23,18 +25,13 @@ bool same_room(long long from, long long to) {
 		return true;
 }
 int get_room_id() {
+	// 준비 중인 방번호 찾기
 	for (auto& r : rooms) {
-		//std::lock_guard <std::mutex> ll{ r.second.rl };
+		std::lock_guard <std::mutex> ll{ r.second->rl };
 		if (r.second->state == R_READY)
 			return r.second->id;
 	}
 
-	// 넓은 범위 확대 : 빈 방번호 찾기
-	for (auto& r : rooms) {
-		//std::lock_guard <std::mutex> ll{ r.second.rl };
-		if (r.second->state == R_FREE)
-			return r.second->id;
-	}
-
-	return -1;
+	// 준비 중인 방 없음, 새 방 생성
+	return room_num++;
 }
