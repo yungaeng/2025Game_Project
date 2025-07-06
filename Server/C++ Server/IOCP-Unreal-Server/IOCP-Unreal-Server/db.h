@@ -24,5 +24,6 @@ public:
 	bool InitDB();
 	bool InsertDB(logindata ld);
 	void SelectDB();
+	bool DeleteDB(int id);
 };
 

@@ -66,3 +66,29 @@ void DB::SelectDB()
 	}
 	mysql_free_result(Result);                      // 결과 비우기
 }
+
+// 아이디를 주면 DB에서 삭제하는 함수
+bool DB::DeleteDB(int id)
+{
+	// DELETE 쿼리 문자열 생성
+	std::string delete_query = "DELETE FROM user_data WHERE id = " + std::to_string(id);
+
+	// 쿼리 실행
+	if (mysql_query(ConnPtr, delete_query.c_str()))
+	{
+		std::cerr << "Query execution error: " << mysql_error(ConnPtr) << "\n";
+		return false;
+	}
+
+	// 영향을 받은 행의 수를 확인하여 삭제 성공 여부 판단
+	if (mysql_affected_rows(ConnPtr) > 0)
+	{
+		std::cout << "Record with ID " << id << " deleted successfully\n";
+		return true;
+	}
+	else
+	{
+		std::cout << "No record found with ID " << id << "\n";
+		return false;
+	}
+}

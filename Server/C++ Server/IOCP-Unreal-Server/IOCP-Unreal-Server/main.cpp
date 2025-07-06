@@ -51,13 +51,17 @@ void process_packet(long long c_id, char* packet)
             lock_guard<mutex> ll{ clients[c_id]->_s_lock };
             strcpy_s(clients[c_id]->_name, p->name);
         }
+        logindata ld;
+        ld.ID = c_id;
+        ld.NAME = clients[c_id]->_name;
+        if (g_db.InsertDB(ld)) {
+            clients[c_id]->send_login_ok_packet();
+            clients[c_id]->send_avata_info_packet();
+        }
+        else
+            clients[c_id]->send_login_fail_packet(0);
 
-        g_a_over._comp_type = OP_DB_INPUT;
-        PostQueuedCompletionStatus(h_iocp, 0, 0, &g_a_over._over);
-        clients[c_id]->send_login_ok_packet();
-
-        // 우선 여기서 아이디 보내기
-        clients[c_id]->send_avata_info_packet();
+        
         break;
     }
     case C2S_ROOM: {
@@ -140,6 +144,8 @@ void disconnect(long long c_id) {
         lock_guard<mutex> ll(clients[c_id]->_s_lock);
         clients[c_id]->_state = ST_FREE;
     }
+    // 임시 : 로그 아웃하면 db에서 삭제
+    g_db.DeleteDB(c_id);
 }
 void worker_thread(HANDLE h_iocp) {
     while (true) {
@@ -213,17 +219,6 @@ void worker_thread(HANDLE h_iocp) {
         }
         case OP_SEND: {
             delete exover; // 송신 완료된 오버랩 구조체 메모리 해제
-            break;
-        }
-        case OP_DB_INPUT: {
-            logindata lg;
-            lg.ID = key;
-            lg.NAME = clients[key]->_name;
-            g_db.InsertDB(lg);
-            break;
-        }
-        case OP_DB_OUTPUT: {
-            g_db.SelectDB();
             break;
         }
         }
@@ -327,6 +322,11 @@ int main()
     }
     std::cout << "Max user : " << MAX_USER << std::endl;
 
+    // DB 초기화
+    if (g_db.InitDB())
+        std::cout << "DB is Working..." << std::endl;
+
+
     // 워커 스레드 생성
     std::vector <std::thread> worker_threads;
     int num_threads = std::thread::hardware_concurrency();
@@ -337,9 +337,6 @@ int main()
     }
 
     std::thread event_thread{ do_event }; // 이벤트 처리 스레드
-
-    if (g_db.InitDB())
-        std::cout << "DB is Working..." << std::endl;
 
     std::cout << "Worker threads : " << num_threads << std::endl;
     std::cout << "Now server is running" << std::endl;
@@ -367,6 +364,7 @@ int main()
     closesocket(g_s_socket);
     CloseHandle(h_iocp);
     WSACleanup();
+
     std::cout << "Server has shut down gracefully." << std::endl;
     return 0;
 }
