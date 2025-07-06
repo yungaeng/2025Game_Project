@@ -44,15 +44,89 @@ class GAMEPROJECT_BP_API UPitchDetectorComponent : public UActorComponent, publi
 {
     GENERATED_BODY()
 
-    public:
+public:
+    
     UPitchDetectorComponent();
-
     virtual void BeginPlay() override;
-
     virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+
     // ISubmixBufferListener 인터페이스 구현
-    virtual void OnNewSubmixBuffer(const USoundSubmix* OwningSubmix, float* AudioData, int32 NumSamples, int32 NumChannels, const int32 SampleRate, double AudioClock);
+    virtual void OnNewSubmixBuffer(const USoundSubmix* OwningSubmix, float* AudioData, int32 NumSamples, int32 NumChannels, const int32 SampleRate, double AudioClock)
+    {
+        if (!FFTComponent || NumSamples == 0 || NumChannels == 0)
+        {
+            return;
+        }
+
+        // ProcessBuffer가 충분한 크기인지 확인
+        if (ProcessBuffer.Num() < NumSamples)
+        {
+            ProcessBuffer.SetNumZeroed(NumSamples);
+        }
+
+        // 멀티 채널 오디오를 모노로 다운믹스
+        for (int32 i = 0; i < NumSamples; ++i)
+        {
+            float Sum = 0.0f;
+            for (int32 Channel = 0; Channel < NumChannels; ++Channel)
+            {
+                Sum += AudioData[i * NumChannels + Channel];
+            }
+            ProcessBuffer[i] = Sum / NumChannels;
+        }
+
+        // 윈도우 함수를 적용한 버퍼 생성
+        TArray<float> WindowedBuffer;
+        WindowedBuffer.SetNum(FFTSize);
+
+        const int32 SamplesToProcess = FMath::Min(NumSamples, FFTSize);
+
+        for (int32 i = 0; i < SamplesToProcess; ++i)
+        {
+            WindowedBuffer[i] = ProcessBuffer[i] * WindowBuffer[i];
+        }
+
+        // 남은 부분은 0으로 채움
+        for (int32 i = SamplesToProcess; i < FFTSize; ++i)
+        {
+            WindowedBuffer[i] = 0.0f;
+        }
+
+        // FFT 수행
+        TArray<FVector2D> FFTOutput;
+        if (FFTComponent->PerformForwardFFT(WindowedBuffer, FFTOutput))
+        {
+            // 주요 주파수 찾기
+            float Confidence = 0.0f;
+            float Frequency = FindFundamentalFrequency(FFTOutput, SampleRate, Confidence);
+
+            // 진폭 계산 (간단한 RMS 계산)
+            float SumSquared = 0.0f;
+            for (int32 i = 0; i < SamplesToProcess; ++i)
+            {
+                SumSquared += WindowedBuffer[i] * WindowedBuffer[i];
+            }
+            float RMS = FMath::Sqrt(SumSquared / SamplesToProcess);
+            float VolumeDB = AmplitudeToDB(RMS);
+
+            // 결과가 의미있는 경우 (임계값 및 주파수 범위 확인)
+            if (Frequency >= MIN_FREQUENCY && Frequency <= MAX_FREQUENCY && Confidence > Threshold)
+            {
+                // 주파수를 음정 이름으로 변환
+                FString NoteName = FrequencyToNoteName(Frequency);
+
+                // 결과 업데이트
+                CurrentPitchInfo.Frequency = Frequency;
+                CurrentPitchInfo.NoteName = NoteName;
+                CurrentPitchInfo.Confidence = Confidence;
+                CurrentPitchInfo.Volume = VolumeDB;
+
+                // 이벤트 발생 
+                OnPitchDetected.Broadcast(CurrentPitchInfo);
+            }
+        }
+    }
 
 
     // 현재 감지된 음정 정보 반환
