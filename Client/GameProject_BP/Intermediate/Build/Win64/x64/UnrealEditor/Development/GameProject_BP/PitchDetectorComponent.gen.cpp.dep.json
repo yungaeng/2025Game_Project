@@ -1,12 +1,12 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\intermediate\\build\\win64\\unrealeditor\\inc\\gameproject_bp\\uht\\pitchdetectorcomponent.gen.cpp",
+        "Source": "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\intermediate\\build\\win64\\unrealeditor\\inc\\gameproject_bp\\uht\\pitchdetectorcomponent.gen.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\intermediate\\build\\win64\\x64\\gameproject_bpeditor\\development\\engine\\sharedpch.engine.cpp20.inclorderunreal5_0.h.pch",
+        "PCH": "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\intermediate\\build\\win64\\x64\\gameproject_bpeditor\\development\\engine\\sharedpch.engine.cpp20.inclorderunreal5_0.h.pch",
         "Includes": [
-            "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gameproject_bp\\definitions.gameproject_bp.h",
-            "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\source\\gameproject_bp\\public\\pitchdetectorcomponent.h",
+            "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gameproject_bp\\definitions.gameproject_bp.h",
+            "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\source\\gameproject_bp\\public\\pitchdetectorcomponent.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\public\\audiodevice.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\public\\audiovirtualloop.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\public\\activesound.h",
@@ -52,7 +52,7 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\signalprocessing\\public\\dsp\\audiofft.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\signalprocessing\\public\\dsp\\fftalgorithm.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\soundsubmix.generated.h",
-            "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\intermediate\\build\\win64\\unrealeditor\\inc\\gameproject_bp\\uht\\pitchdetectorcomponent.generated.h"
+            "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\intermediate\\build\\win64\\unrealeditor\\inc\\gameproject_bp\\uht\\pitchdetectorcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

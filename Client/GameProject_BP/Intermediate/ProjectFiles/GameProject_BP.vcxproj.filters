@@ -49,9 +49,6 @@
     <ClCompile Include="..\..\Source\GameProject_BP\Private\FFT1DComponent.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\GameProject_BP\Private\MyFFTComponent.cpp">
-      <Filter>Source\GameProject_BP\Private</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\GameProject_BP\Private\PitchDetectorComponent.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
@@ -59,9 +56,6 @@
       <UniqueIdentifier>{E0C4C47B-9305-3DBE-ADC1-2126B5E242E1}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\FFT1DComponent.h">
-      <Filter>Source\GameProject_BP\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\GameProject_BP\Public\MyFFTComponent.h">
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\PitchDetectorComponent.h">
