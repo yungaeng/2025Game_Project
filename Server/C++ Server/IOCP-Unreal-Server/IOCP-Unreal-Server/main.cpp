@@ -45,7 +45,7 @@ void process_packet(long long c_id, char* packet)
     //}
 
     switch (packet[1]) {
-    case C2S_LOGIN: {
+    case C2S_SIGNIN: {
         cs_packet_login* p = reinterpret_cast<cs_packet_login*>(packet);
         {
             lock_guard<mutex> ll{ clients[c_id]->_s_lock };
@@ -54,13 +54,46 @@ void process_packet(long long c_id, char* packet)
         logindata ld;
         ld.ID = c_id;
         ld.NAME = clients[c_id]->_name;
-        if (g_db.InsertDB(ld)) {
+
+       
+        if (g_db.FindDB(ld.NAME)) {
+            // 회원이 이미 있다면
+            // 1 : 다른 클라이언트에서 사용중
+            clients[c_id]->send_login_fail_packet(1);
+        }
+        else {
+            // 만들수 있는 계정이라면
+            // 새 회원 등록하고 로그인 시켜줌.
+            g_db.InsertDB(ld);
             clients[c_id]->send_login_ok_packet();
             clients[c_id]->send_avata_info_packet();
         }
-        else
-            clients[c_id]->send_login_fail_packet(0);
+            
 
+        // 현재 DB 보여주기
+        g_db.SelectDB();
+
+        break;
+    }
+    case C2S_LOGIN: {
+        cs_packet_login* p = reinterpret_cast<cs_packet_login*>(packet);
+        {
+            lock_guard<mutex> ll{ clients[c_id]->_s_lock };
+            strcpy_s(clients[c_id]->_name, p->name);
+        }
+        std::string NAME = clients[c_id]->_name;
+
+        if (g_db.FindDB(NAME)) {
+            clients[c_id]->send_login_ok_packet();
+            clients[c_id]->send_avata_info_packet();
+        }
+        else {
+            // 4 : 해당되는 계정이 없음
+            clients[c_id]->send_login_fail_packet(4);
+        }
+
+        // 현재 DB 보여주기
+        g_db.SelectDB();
         
         break;
     }
@@ -146,6 +179,7 @@ void disconnect(long long c_id) {
     }
     // 임시 : 로그 아웃하면 db에서 삭제
     g_db.DeleteDB(c_id);
+    g_db.SelectDB();
 }
 void worker_thread(HANDLE h_iocp) {
     while (true) {
@@ -340,7 +374,14 @@ int main()
 
     std::cout << "Worker threads : " << num_threads << std::endl;
     std::cout << "Now server is running" << std::endl;
+    g_db.SelectDB();
 
+    //--------------------------- 여기서부터 서버 실행---------------------------------
+
+
+
+    //--------------------------- 여기서부터 서버 종료---------------------------------
+    // 
     // 서버 종료 대기 (예: 콘솔 입력 대기 또는 특정 종료 시그널)
     // 현재는 이 스레드들이 main 스레드가 join하기 전까지 계속 실행됩니다.
     // 적절한 서버 종료 로직이 필요합니다 (예: 키 입력 시 종료, Ctrl+C 핸들러 등).

@@ -60,12 +60,51 @@ void DB::SelectDB()
 	}
 
 	Result = mysql_store_result(ConnPtr);           // 결과 확인하기
-	while ((Row = mysql_fetch_row(Result)) != NULL) // 결과 출력하기
+	
+	std::cout << "----현재 DB 상황----" << std::endl;
+	while ((Row = mysql_fetch_row(Result)) != NULL) 
 	{
-		std::cout << Row[0] << ' ' << Row[1] << '\n';
+		std::cout << Row[0] << ' ' << Row[1] << '\n'; // 결과 출력하기
 	}
+	std::cout << "-------------------" << std::endl;
 	mysql_free_result(Result);                      // 결과 비우기
 }
+
+bool DB::FindDB(std::string name)
+{
+	userdata.clear();
+
+	// 데이터베이스에 한글이 있다면 아래 3줄 추가
+	// MySQL에서 사용하는 문자셋을 VS가 사용하는 문자셋인 euc-kr로 변경해주는 기능
+	mysql_query(ConnPtr, "set session character_set_connection=euckr;");
+	mysql_query(ConnPtr, "set session character_set_results=euckr;");
+	mysql_query(ConnPtr, "set session character_set_client=euckr;");
+
+	char* Query = (char*)"SELECT * FROM user_data";    // 세미콜론을 제외한 쿼리문 작성
+	Stat = mysql_query(ConnPtr, Query);             // 쿼리 요청 및 성공여부 받아오기
+	if (Stat != 0)
+	{
+		fprintf(stderr, "MySQL query error : %s\n", mysql_error(&Conn));
+		return false;
+	}
+
+	Result = mysql_store_result(ConnPtr);           // 결과 확인하기
+	while ((Row = mysql_fetch_row(Result)) != NULL)
+	{
+		logindata lg;
+		lg.ID = int(Row[0]);
+		lg.NAME = Row[1];
+		userdata.emplace_back(lg);
+	}
+	mysql_free_result(Result);                      // 결과 비우기
+
+	for (auto& data : userdata)
+		if (data.NAME == name)
+			return true;
+
+	return false;
+}
+
 
 // 아이디를 주면 DB에서 삭제하는 함수
 bool DB::DeleteDB(int id)

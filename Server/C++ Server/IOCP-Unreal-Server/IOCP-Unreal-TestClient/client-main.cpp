@@ -60,8 +60,7 @@ void process_packet(char* packet)
     }
     case S2C_LOGIN_FAIL: {
         sc_packet_login_fail* p = reinterpret_cast<sc_packet_login_fail*>(packet);
-        std::cout << "로그인 실패! 서버가 요청을 거부했습니다. 에러 코드" << p->reason << std::endl;
-        is_connected = false;
+        std::cout << "로그인 실패! 서버가 요청을 거부했습니다. 에러 코드" << int(p->reason) << std::endl;
         break;
     }
     case S2C_AVATAR_INFO: {
@@ -197,6 +196,25 @@ void recv_thread_func() // 이름 변경: recv_thread -> recv_thread_func (전역 변수
     std::cout << "수신 스레드 종료." << std::endl;
 }
 
+void send_signin(const char* name)
+{
+    if (!is_connected) {
+        std::cout << "회원가입 패킷을 보낼 수 없습니다: 서버에 연결되지 않았습니다." << std::endl;
+        return;
+    }
+    cs_packet_signin signin_packet;
+    signin_packet.size = sizeof(signin_packet);
+    signin_packet.type = C2S_SIGNIN;
+    strcpy_s(signin_packet.name, sizeof(signin_packet.name), name); // MAX_NAME_LEN 정의 필요
+    int sent_bytes = send(client_socket, reinterpret_cast<char*>(&signin_packet), sizeof(signin_packet), 0);
+    if (sent_bytes == SOCKET_ERROR) {
+        std::cerr << "회원가입 패킷 전송 실패! 오류 코드: " << WSAGetLastError() << std::endl;
+        is_connected = false; // 전송 실패 시 연결 종료 신호
+    }
+    else {
+        std::cout << "회원가입 패킷 전송 완료. 이름: " << name << std::endl;
+    }
+}
 void send_login(const char* name)
 {
     if (!is_connected) {
@@ -347,17 +365,43 @@ int main() {
 
     // 2. 수신 스레드 시작
     RecvThread = std::thread(recv_thread_func);
-    
-    // 3. 로그인 패킷 전송
-    send_login("test_user"); // 테스트용 사용자 이름
+
+
+    while (-1 == myid) {
+        // 3. 로그인 패킷 전송
+        // 회원 가입과 로그인 중 선택.
+        std::cout << "1. 회원가입" << std::endl;
+        std::cout << "2. 로그인" << std::endl;
+        std::string input;
+        std::getline(std::cin, input);
+
+        switch (std::stoi(input))
+        {
+        case 1: {
+            std::cout << "이름을 입력하세요 : ";
+            std::string name;
+            std::getline(std::cin, name);
+            send_signin(name.c_str());
+            break;
+        }
+        case 2: {
+            std::cout << "이름을 입력하세요 : ";
+            std::string name;
+            std::getline(std::cin, name);
+            send_login(name.c_str());
+            break;
+        }
+        default:
+            break;
+        }
+    }
 
     // 4. 메인 루프: 사용자 입력 처리 또는 게임 로직 진행
-    
-    std::cout << "\n명령어를 입력하세요 ('M': 이동, 'A': 공격, 'C': 채팅, 'T': 미션, 'Q': 종료):" << std::endl;
-    char input_char;
-    std::string chat_message;
-
     while (is_connected) { // is_connected가 false가 되면 루프 종료
+        std::cout << "\n명령어를 입력하세요 ('M': 이동, 'R': 방 요쳥, 'A': 공격, 'C': 채팅, 'T': 미션, 'Q': 종료):" << std::endl;
+        char input_char;
+        std::string chat_message;
+
         std::cout << "> ";
         std::cin >> input_char;
 
@@ -416,8 +460,8 @@ int main() {
 
     disconnect_client();
 
-
     WSACleanup();
     std::cout << "클라이언트 프로그램이 성공적으로 종료되었습니다." << std::endl;
     return 0;
+
 }
