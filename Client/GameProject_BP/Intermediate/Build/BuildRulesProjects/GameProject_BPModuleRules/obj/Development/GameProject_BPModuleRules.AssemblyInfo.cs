@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GameProject_BPModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dbaebaa375e4825a0d7b6836b929139e66306ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d1ede30650bc37d887dc7e30ea525b24dd9ceb7")]
 [assembly: System.Reflection.AssemblyProductAttribute("GameProject_BPModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GameProject_BPModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

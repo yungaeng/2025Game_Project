@@ -1,3 +1,4 @@
+// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -12,39 +13,32 @@ class GAMEPROJECT_BP_API UFFT1DComponent : public UActorComponent
     GENERATED_BODY()
 
     public:
-   
+    /**
+     * 간단한 복소수 클래스
+     * Chaos 라이브러리의 FComplex를 사용하지 않고 직접 구현한 가벼운 복소수 클래스
+     */
     struct FSimpleComplex
     {
-        float Real;  //실수 부분
+        float Real;
+        float Imag;
 
-        float Imag; //허수 부분
-
-
-        //생성자
+        // 생성자
         FSimpleComplex() : Real(0.0f), Imag(0.0f) {}
         FSimpleComplex(float InReal, float InImag) : Real(InReal), Imag(InImag) {}
 
-
-        // 복소수 계산 연산자 오버로딩
-
-       //1. 복소수 덧셈
-       //(a+bi)+(c+di)=(a+c)+(b+d)i
+        // 복소수 덧셈
         FSimpleComplex operator+(const FSimpleComplex& Other) const
         {
             return FSimpleComplex(Real + Other.Real, Imag + Other.Imag);
         }
 
-
-       
-        //2. 복소수 뺄셈
-        // (a+bi)-(c+di)=(a-c)+(b-d)i 
+        // 복소수 뺄셈
         FSimpleComplex operator-(const FSimpleComplex& Other) const
         {
             return FSimpleComplex(Real - Other.Real, Imag - Other.Imag);
         }
 
-        //3. 복소수 곱셈
-        //(a + bi)*(c + di) = (ac-bd)+(ad + bc)i
+        // 복소수 곱셈 (a+bi)(c+di) = (ac-bd) + (ad+bc)i
         FSimpleComplex operator*(const FSimpleComplex& Other) const
         {
             return FSimpleComplex(
@@ -52,24 +46,20 @@ class GAMEPROJECT_BP_API UFFT1DComponent : public UActorComponent
                 Real * Other.Imag + Imag * Other.Real
             );
         }
-       
 
-        //4. 복소수 스칼라 나눗셈
-        //a+bi)/k=(a/k)+(b/k)i
+        // 스칼라 나눗셈
         FSimpleComplex operator/(float Scalar) const
         {
             return FSimpleComplex(Real / Scalar, Imag / Scalar);
         }
 
-        //5. 켤레 복소수
-        // Conj(a+bi)=a-bi
+        // 켤레 복소수 반환
         FSimpleComplex Conjugate() const
         {
             return FSimpleComplex(Real, -Imag);
         }
 
-        //6. 크기 절댓값으로
-
+        // 복소수의 크기(magnitude) 계산
         float Magnitude() const
         {
             return FMath::Sqrt(Real * Real + Imag * Imag);
@@ -77,31 +67,70 @@ class GAMEPROJECT_BP_API UFFT1DComponent : public UActorComponent
     };
 
 public:
+    // Sets default values for this component's properties
     UFFT1DComponent();
 
+    // Called when the game starts
     virtual void BeginPlay() override;
 
+    // Called every frame
     virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-    //신호(실수) -> 주파수(복소수)
+    /**
+     * Performs a Forward FFT on the input data
+     * @param InputData - The input data (must have a length that is a power of 2)
+     * @param OutputData - The output data (complex values)
+     * @return True if successful, false otherwise
+     */
     UFUNCTION(BlueprintCallable, Category = "Signal Processing")
     bool PerformForwardFFT(const TArray<float>& InputData, TArray<FVector2D>& OutputData);
 
-    //주파수-> 신호
+    /**
+     * Performs an Inverse FFT on the input data
+     * @param InputData - The input data (complex values)
+     * @param OutputData - The output data (real values)
+     * @return True if successful, false otherwise
+     */
     UFUNCTION(BlueprintCallable, Category = "Signal Processing")
     bool PerformInverseFFT(const TArray<FVector2D>& InputData, TArray<float>& OutputData);
 
-    // 2의 제곱인지 확인
+    /**
+     * Checks if a number is a power of 2
+     * @param x - The number to check
+     * @return True if x is a power of 2, false otherwise
+     */
     UFUNCTION(BlueprintPure, Category = "Signal Processing")
     static bool IsPowerOfTwo(int32 x);
 
-    // 크거나 같은 제곱 반환
+    /**
+     * Gets the next power of 2 that is greater than or equal to x
+     * @param x - The number to start from
+     * @return The next power of 2
+     */
     UFUNCTION(BlueprintPure, Category = "Signal Processing")
     static int32 NextPowerOfTwo(int32 x);
 
 private:
-
+    /**
+     * Recursive implementation of the Cooley-Tukey FFT algorithm
+     * @param X - Complex data array
+     * @param N - Size of the array (must be a power of 2)
+     * @param InverseFFT - Whether to perform an inverse FFT
+     */
     void FFT_CooleyTukey(TArray<FSimpleComplex>& X, int32 N, bool InverseFFT);
+
+    /**
+     * Bit-reversal permutation (in-place)
+     * @param X - Complex data array
+     * @param N - Size of the array (must be a power of 2)
+     */
     void BitReversalPermutation(TArray<FSimpleComplex>& X, int32 N);
+
+    /**
+     * Converts a bit-reversed index to a normal index
+     * @param Index - The bit-reversed index
+     * @param N - The size of the array
+     * @return The normal index
+     */
     int32 BitReverse(int32 Index, int32 N);
 };

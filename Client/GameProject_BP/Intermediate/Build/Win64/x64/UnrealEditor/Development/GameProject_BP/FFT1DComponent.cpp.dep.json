@@ -1,13 +1,13 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\source\\gameproject_bp\\private\\fft1dcomponent.cpp",
+        "Source": "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\source\\gameproject_bp\\private\\fft1dcomponent.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\intermediate\\build\\win64\\x64\\gameproject_bpeditor\\development\\engine\\sharedpch.engine.cpp20.inclorderunreal5_0.h.pch",
+        "PCH": "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\intermediate\\build\\win64\\x64\\gameproject_bpeditor\\development\\engine\\sharedpch.engine.cpp20.inclorderunreal5_0.h.pch",
         "Includes": [
-            "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gameproject_bp\\definitions.gameproject_bp.h",
-            "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\source\\gameproject_bp\\public\\fft1dcomponent.h",
-            "c:\\users\\user\\desktop\\2025game_project\\client\\gameproject_bp\\intermediate\\build\\win64\\unrealeditor\\inc\\gameproject_bp\\uht\\fft1dcomponent.generated.h"
+            "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\gameproject_bp\\definitions.gameproject_bp.h",
+            "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\source\\gameproject_bp\\public\\fft1dcomponent.h",
+            "c:\\users\\user\\desktop\\cc_copy\\gameproject_bp\\intermediate\\build\\win64\\unrealeditor\\inc\\gameproject_bp\\uht\\fft1dcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
