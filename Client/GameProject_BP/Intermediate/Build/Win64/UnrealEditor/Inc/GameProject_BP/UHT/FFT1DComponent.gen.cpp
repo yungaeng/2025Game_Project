@@ -90,11 +90,11 @@ void EmptyLinkFunctionForGeneratedCodeFFT1DComponent() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UFFT1DComponent_IsPowerOfTwo_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Signal Processing" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n     * Checks if a number is a power of 2\n     * @param x - The number to check\n     * @return True if x is a power of 2, false otherwise\n     */" },
+		{ "Comment", "// 2\xec\x9d\x98 \xec\xa0\x9c\xea\xb3\xb1\xec\x9d\xb8\xec\xa7\x80 \xed\x99\x95\xec\x9d\xb8\n" },
 #endif
 		{ "ModuleRelativePath", "Public/FFT1DComponent.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Checks if a number is a power of 2\n@param x - The number to check\n@return True if x is a power of 2, false otherwise" },
+		{ "ToolTip", "2\xec\x9d\x98 \xec\xa0\x9c\xea\xb3\xb1\xec\x9d\xb8\xec\xa7\x80 \xed\x99\x95\xec\x9d\xb8" },
 #endif
 	};
 #endif
@@ -135,11 +135,11 @@ void EmptyLinkFunctionForGeneratedCodeFFT1DComponent() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UFFT1DComponent_NextPowerOfTwo_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Signal Processing" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n     * Gets the next power of 2 that is greater than or equal to x\n     * @param x - The number to start from\n     * @return The next power of 2\n     */" },
+		{ "Comment", "// \xed\x81\xac\xea\xb1\xb0\xeb\x82\x98 \xea\xb0\x99\xec\x9d\x80 \xec\xa0\x9c\xea\xb3\xb1 \xeb\xb0\x98\xed\x99\x98\n" },
 #endif
 		{ "ModuleRelativePath", "Public/FFT1DComponent.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Gets the next power of 2 that is greater than or equal to x\n@param x - The number to start from\n@return The next power of 2" },
+		{ "ToolTip", "\xed\x81\xac\xea\xb1\xb0\xeb\x82\x98 \xea\xb0\x99\xec\x9d\x80 \xec\xa0\x9c\xea\xb3\xb1 \xeb\xb0\x98\xed\x99\x98" },
 #endif
 	};
 #endif
@@ -203,11 +203,11 @@ void EmptyLinkFunctionForGeneratedCodeFFT1DComponent() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UFFT1DComponent_PerformForwardFFT_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Signal Processing" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n     * Performs a Forward FFT on the input data\n     * @param InputData - The input data (must have a length that is a power of 2)\n     * @param OutputData - The output data (complex values)\n     * @return True if successful, false otherwise\n     */" },
+		{ "Comment", "//\xec\x8b\xa0\xed\x98\xb8(\xec\x8b\xa4\xec\x88\x98) -> \xec\xa3\xbc\xed\x8c\x8c\xec\x88\x98(\xeb\xb3\xb5\xec\x86\x8c\xec\x88\x98)\n" },
 #endif
 		{ "ModuleRelativePath", "Public/FFT1DComponent.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Performs a Forward FFT on the input data\n@param InputData - The input data (must have a length that is a power of 2)\n@param OutputData - The output data (complex values)\n@return True if successful, false otherwise" },
+		{ "ToolTip", "\xec\x8b\xa0\xed\x98\xb8(\xec\x8b\xa4\xec\x88\x98) -> \xec\xa3\xbc\xed\x8c\x8c\xec\x88\x98(\xeb\xb3\xb5\xec\x86\x8c\xec\x88\x98)" },
 #endif
 	};
 #endif
@@ -271,11 +271,11 @@ void EmptyLinkFunctionForGeneratedCodeFFT1DComponent() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UFFT1DComponent_PerformInverseFFT_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Signal Processing" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n     * Performs an Inverse FFT on the input data\n     * @param InputData - The input data (complex values)\n     * @param OutputData - The output data (real values)\n     * @return True if successful, false otherwise\n     */" },
+		{ "Comment", "//\xec\xa3\xbc\xed\x8c\x8c\xec\x88\x98-> \xec\x8b\xa0\xed\x98\xb8\n" },
 #endif
 		{ "ModuleRelativePath", "Public/FFT1DComponent.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Performs an Inverse FFT on the input data\n@param InputData - The input data (complex values)\n@param OutputData - The output data (real values)\n@return True if successful, false otherwise" },
+		{ "ToolTip", "\xec\xa3\xbc\xed\x8c\x8c\xec\x88\x98-> \xec\x8b\xa0\xed\x98\xb8" },
 #endif
 	};
 #endif
@@ -312,10 +312,10 @@ void EmptyLinkFunctionForGeneratedCodeFFT1DComponent() {}
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UFFT1DComponent_Statics::DependentSingletons) < 16);
 	const FClassFunctionLinkInfo Z_Construct_UClass_UFFT1DComponent_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UFFT1DComponent_IsPowerOfTwo, "IsPowerOfTwo" }, // 1159068754
-		{ &Z_Construct_UFunction_UFFT1DComponent_NextPowerOfTwo, "NextPowerOfTwo" }, // 2548702226
-		{ &Z_Construct_UFunction_UFFT1DComponent_PerformForwardFFT, "PerformForwardFFT" }, // 323447092
-		{ &Z_Construct_UFunction_UFFT1DComponent_PerformInverseFFT, "PerformInverseFFT" }, // 3941869461
+		{ &Z_Construct_UFunction_UFFT1DComponent_IsPowerOfTwo, "IsPowerOfTwo" }, // 1491318504
+		{ &Z_Construct_UFunction_UFFT1DComponent_NextPowerOfTwo, "NextPowerOfTwo" }, // 1863768750
+		{ &Z_Construct_UFunction_UFFT1DComponent_PerformForwardFFT, "PerformForwardFFT" }, // 742913457
+		{ &Z_Construct_UFunction_UFFT1DComponent_PerformInverseFFT, "PerformInverseFFT" }, // 55649375
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UFFT1DComponent_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -358,15 +358,15 @@ void EmptyLinkFunctionForGeneratedCodeFFT1DComponent() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UFFT1DComponent);
 	UFFT1DComponent::~UFFT1DComponent() {}
-	struct Z_CompiledInDeferFile_FID_Users_user_Desktop_cc_copy_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_cc_copy_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UFFT1DComponent, UFFT1DComponent::StaticClass, TEXT("UFFT1DComponent"), &Z_Registration_Info_UClass_UFFT1DComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFFT1DComponent), 4192462683U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UFFT1DComponent, UFFT1DComponent::StaticClass, TEXT("UFFT1DComponent"), &Z_Registration_Info_UClass_UFFT1DComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFFT1DComponent), 527162851U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_cc_copy_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_105893799(TEXT("/Script/GameProject_BP"),
-		Z_CompiledInDeferFile_FID_Users_user_Desktop_cc_copy_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_user_Desktop_cc_copy_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_620285520(TEXT("/Script/GameProject_BP"),
+		Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_FFT1DComponent_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

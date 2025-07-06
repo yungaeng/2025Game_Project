@@ -58,7 +58,7 @@ void UPitchDetectorComponent::TickComponent(float DeltaTime, ELevelTick TickType
 {
     Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-    // 필요에 따라 추가 업데이트 로직 구현 가능
+   
 }
 
 
