@@ -28,6 +28,6 @@ public:
 	bool InsertDB(logindata ld);
 	void SelectDB();
 	bool FindDB(std::string name);
-	bool DeleteDB(int id);
+	bool DeleteDB(long long id);
 };
 

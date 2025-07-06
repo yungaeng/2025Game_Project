@@ -107,7 +107,7 @@ bool DB::FindDB(std::string name)
 
 
 // 아이디를 주면 DB에서 삭제하는 함수
-bool DB::DeleteDB(int id)
+bool DB::DeleteDB(long long id)
 {
 	// DELETE 쿼리 문자열 생성
 	std::string delete_query = "DELETE FROM user_data WHERE id = " + std::to_string(id);
