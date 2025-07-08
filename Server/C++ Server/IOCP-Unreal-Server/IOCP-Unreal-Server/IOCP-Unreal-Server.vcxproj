@@ -140,11 +140,13 @@
     <ClInclude Include="net_header.h" />
     <ClInclude Include="protocol.h" />
     <ClInclude Include="room.h" />
+    <ClInclude Include="server.h" />
     <ClInclude Include="session.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="db.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="server.cpp" />
     <ClCompile Include="session.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

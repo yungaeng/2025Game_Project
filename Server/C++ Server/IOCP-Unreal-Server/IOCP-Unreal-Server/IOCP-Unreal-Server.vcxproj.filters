@@ -13,20 +13,23 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="소스 파일\ex_over">
-      <UniqueIdentifier>{2223bc6c-0e73-4942-8ba6-aaaadce53b2a}</UniqueIdentifier>
+    <Filter Include="소스 파일\server">
+      <UniqueIdentifier>{efc3947f-a36f-45cf-ba5c-0025d3f32edf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\session">
-      <UniqueIdentifier>{6b38b62e-6948-4052-aa35-afb6b1041cd4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="소스 파일\room">
-      <UniqueIdentifier>{132cba1e-3017-4607-b648-f2434f5f2ca2}</UniqueIdentifier>
+    <Filter Include="소스 파일\DB">
+      <UniqueIdentifier>{b183ebd1-01a9-42cf-9e47-e8509570a3d9}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\event">
       <UniqueIdentifier>{a00d821a-33da-4618-884f-f3f1ca04f744}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\DB">
-      <UniqueIdentifier>{b183ebd1-01a9-42cf-9e47-e8509570a3d9}</UniqueIdentifier>
+    <Filter Include="소스 파일\ex_over">
+      <UniqueIdentifier>{2223bc6c-0e73-4942-8ba6-aaaadce53b2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\room">
+      <UniqueIdentifier>{132cba1e-3017-4607-b648-f2434f5f2ca2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\session">
+      <UniqueIdentifier>{6b38b62e-6948-4052-aa35-afb6b1041cd4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +54,9 @@
     <ClInclude Include="db.h">
       <Filter>소스 파일\DB</Filter>
     </ClInclude>
+    <ClInclude Include="server.h">
+      <Filter>소스 파일\server</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -61,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="db.cpp">
       <Filter>소스 파일\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="server.cpp">
+      <Filter>소스 파일\server</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
