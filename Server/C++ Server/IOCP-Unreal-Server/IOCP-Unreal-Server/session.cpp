@@ -32,8 +32,6 @@ void session::send_room_packet(long long c_id)
 	sc_packet_room p;
 	p.type = S2C_ROOM;
 	p.size = sizeof(p);
-	p.pid = clients[c_id]->_pid;
-	p.roomid = clients[c_id]->_room_id;
 	do_send(&p);
 }
 

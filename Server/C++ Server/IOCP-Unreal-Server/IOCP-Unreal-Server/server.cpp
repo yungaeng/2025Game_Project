@@ -49,9 +49,9 @@ bool server::ConnectToServer(const char* server_ip)
     int num_threads = std::thread::hardware_concurrency();
     if (num_threads == 0) num_threads = 2; // 최소 2개 스레드 (CPU 코어 수를 얻지 못할 경우)
 
-    for (int i = 0; i < num_threads; ++i) {
+    /*for (int i = 0; i < num_threads; ++i) {
         worker_threads.emplace_back(WorkerThreadFunc, h_iocp);
-    }
+    }*/
 
     event_thread = std::thread{do_event}; // 이벤트 처리 스레드
 

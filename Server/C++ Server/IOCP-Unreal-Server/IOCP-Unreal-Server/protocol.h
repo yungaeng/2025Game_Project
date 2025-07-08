@@ -7,6 +7,7 @@ constexpr int  MAX_USER = 500;
 constexpr int  VIEW_RANGE = 15;
 constexpr short MAX_CHAT_LENGTH = 100;
 constexpr char MAX_NAME_LENGTH = 20;
+constexpr int MAX_ROOM_PLAYER = 5;
 
 // 패킷 타입
 constexpr char C2S_SIGNIN = 1;			// 회원가입
@@ -95,8 +96,6 @@ struct sc_packet_room
 {
 	unsigned char size;
 	char type;
-	int roomid;
-	int pid;
 };
 struct sc_packet_avatar_info {
 	unsigned char size;
