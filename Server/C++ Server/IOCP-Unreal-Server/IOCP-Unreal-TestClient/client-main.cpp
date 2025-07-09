@@ -128,7 +128,7 @@ void process_packet(char* packet) {
     }
     case S2C_ROOM: {
         sc_packet_room* p = reinterpret_cast<sc_packet_room*>(packet);
-        std::cout << "방에 입장하였습니다. 방 번호 : " << p->roomid << "PID : " << p->pid << std::endl;
+        std::cout << "방에 입장하였습니다." << std::endl;
         break;
     }
     case S2C_MOVE: {

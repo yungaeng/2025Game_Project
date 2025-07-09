@@ -14,6 +14,7 @@ ex_over g_a_over;              // AcceptEx 오버랩 구조체
 DB g_db;                       // DB
 
 concurrency::concurrent_unordered_map<long long, std::shared_ptr<session>> clients;
+std::mutex map_lock;
 concurrency::concurrent_priority_queue<ROOM_EVENT> event_queue;
 concurrency::concurrent_unordered_map<int, std::shared_ptr<ROOM>> rooms;
 
@@ -87,13 +88,15 @@ void process_packet(long long c_id, char* packet)
         switch (p->requst)
         {
         case 'C': {
-            int room_id = get_room_id();
+            int room_id = create_room_num();
             rooms[room_id] = std::make_shared<ROOM>();
             {
                 lock_guard<mutex> ll{ rooms[room_id]->rl };
+                rooms[room_id]->id = room_id;
                 rooms[room_id]->state = R_READY;
                 rooms[room_id]->player++;
                 {
+                    // 각각 세션에 정보를 저장만 시키고 개인 클라에게 굳이 룸정보를 전달하지 않음
                     lock_guard<mutex> ll{ clients[c_id]->_s_lock };
                     clients[c_id]->_pid = rooms[room_id]->player;
                     clients[c_id]->_room_id = room_id;
@@ -104,6 +107,7 @@ void process_packet(long long c_id, char* packet)
         } 
         case 'J': {
             int room_id = get_room_id();
+            if(-1 != room_id)
             {
                 lock_guard<mutex> ll{ rooms[room_id]->rl };
                 rooms[room_id]->player++;
@@ -113,10 +117,35 @@ void process_packet(long long c_id, char* packet)
                     clients[c_id]->_room_id = room_id;
                 }
             }
+            // 방을 찾지 못하였으면 기본값(-1)이 할당됨
             clients[c_id]->send_room_packet(c_id);
             break;
         }
         case 'L':
+        {
+            int room_id = clients[c_id]->_room_id;
+            // 방을 배정받은 클라만 나감처리 가능
+            if (room_id != -1)
+            {
+                lock_guard<mutex> ll{ rooms[room_id]->rl };
+                rooms[room_id]->player--;
+                {
+                    lock_guard<mutex> ll{ clients[c_id]->_s_lock };
+                    clients[c_id]->_pid = -1;
+                    clients[c_id]->_room_id = -1;
+                }
+
+                // 방을 나가면 기본값(-1)이 할당됨, 여기선 굳이 해당 클라이언트에게 패킷을 보내지 않음
+                // clients[c_id]->send_room_packet(c_id);
+
+                // 방에 남아있는 플레이어들에게는 나갔다는 패킷전달이 필요함
+                for (auto& cl : clients) {
+                    if (cl.second->_room_id == room_id)
+                        cl.second->send_leave_packet(c_id);
+                }
+            }
+            break;
+        }
         default:
             break;
         }
@@ -126,12 +155,12 @@ void process_packet(long long c_id, char* packet)
         break;
     }
     case C2S_MISSION: {
-        //cs_packet_mission* p = reinterpret_cast<cs_packet_mission*>(packet);
-        //std::cout << "Client [" << c_id << "] requested mission: " << static_cast<int>(p->mission) << std::endl;
-        //ROOM_EVENT ev;
-        //ev.client_id = c_id;
-        //ev.event_id = (EVENT_TYPE)p->mission;
-        //event_queue.push(ev); // 이벤트 큐에 푸시
+        cs_packet_mission* p = reinterpret_cast<cs_packet_mission*>(packet);
+        std::cout << "Client [" << c_id << "] requested mission: " << static_cast<int>(p->mission) << std::endl;
+        ROOM_EVENT ev;
+        ev.client_id = c_id;
+        ev.event_id = (EVENT_TYPE)p->mission;
+        event_queue.push(ev); // 이벤트 큐에 푸시
         break;
     }
     case C2S_ATTACK: {
@@ -150,11 +179,13 @@ void process_packet(long long c_id, char* packet)
     }
 }
 void disconnect(long long c_id) {
+    // TODO : 만약 방에 참가중이라면, 퇴장처리도 해야함
     closesocket(clients[c_id]->_socket);
     {
         lock_guard<mutex> ll(clients[c_id]->_s_lock);
         clients[c_id]->_state = ST_FREE;
     }
+
     // 임시 : 로그 아웃하면 db에서 삭제
     g_db.DeleteDB(c_id);
     g_db.SelectDB();
