@@ -25,11 +25,12 @@ constexpr char S2C_LOGIN_FAIL = 11;
 constexpr char S2C_ROOM = 12;
 constexpr char S2C_AVATAR_INFO = 13;
 constexpr char S2C_ENTER = 14;
-constexpr char S2C_MOVE = 15;
-constexpr char S2C_CHAT = 16;
-constexpr char S2C_STAT_CHANGE = 17;
-constexpr char S2C_LEAVE = 18;
-constexpr char S2C_GAMEOVER = 19;
+constexpr char S2C_GAMESTART = 15;
+constexpr char S2C_MOVE = 16;
+constexpr char S2C_CHAT = 17;
+constexpr char S2C_STAT_CHANGE = 18;
+constexpr char S2C_LEAVE = 19;
+constexpr char S2C_GAMEOVER = 20;
 
 #pragma pack (push, 1)
 
@@ -112,6 +113,10 @@ struct sc_packet_enter {
 	char o_type;						// 0 : adventurer
 										// 1 : imposter  
 	float x, y, z;
+};
+struct sc_packet_gamestart {
+	unsigned char size;
+	char type;
 };
 struct sc_packet_move {
 	unsigned char size;

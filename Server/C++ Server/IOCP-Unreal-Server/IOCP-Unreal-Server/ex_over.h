@@ -2,7 +2,7 @@
 #include "net_header.h"
 #include "protocol.h"
 
-enum COMP_TYPE { OP_ACCEPT, OP_RECV, OP_SEND };
+enum COMP_TYPE { OP_ACCEPT, OP_RECV, OP_SEND, OP_DISCONNECT, OP_GAMESTART };
 
 class ex_over{
 public:

@@ -23,21 +23,21 @@ void do_event() {
 			case EV_CONTROL_FIX: {
 				// 플레이어가 접속 중이고 게임중인지 확인
 				if (player && player->_state == ST_INGAME && rooms[player->_room_id]->state == R_INGAME) {
-					//lock_guard<mutex> ll(rooms[player->_room_id].rl);
+					lock_guard<mutex> ll(rooms[player->_room_id]->rl);
 					rooms[player->_room_id]->control_fix_mission++;
 				}
 				break;
 			}
 			case EV_ARMORY_FIX: {
 				if (player && player->_state == ST_INGAME && rooms[player->_room_id]->state == R_INGAME) {
-					//lock_guard<mutex> ll(rooms[player->_room_id].rl);
+					lock_guard<mutex> ll(rooms[player->_room_id]->rl);
 					rooms[player->_room_id]->armory_fix_mission++;
 				}
 				break;
 			}
 			case EV_COURSE_MODIFI: {
 				if (player && player->_state == ST_INGAME && rooms[player->_room_id]->state == R_INGAME) {
-					//lock_guard<mutex> ll(rooms[player->_room_id].rl);
+					lock_guard<mutex> ll(rooms[player->_room_id]->rl);
 					if(!rooms[player->_room_id]->course_modifi)
 						rooms[player->_room_id]->course_modifi = true;
 				}
@@ -45,7 +45,7 @@ void do_event() {
 			}
 			case EV_CHARGING: {
 				for (auto& r : rooms) {
-					//std::lock_guard <std::mutex> ll{ r.second.rl };
+					lock_guard<mutex> ll(rooms[player->_room_id]->rl);
 					if (!rooms[player->_room_id]->charging_mission[player_id])
 						rooms[player->_room_id]->charging_mission[player_id] = true;
 				}
@@ -53,7 +53,7 @@ void do_event() {
 			}
 			case EV_RADIO: {
 				for (auto& r : rooms) {
-					//std::lock_guard <std::mutex> ll{ r.second.rl };
+					lock_guard<mutex> ll(rooms[player->_room_id]->rl);
 					if (!rooms[player->_room_id]->radio_mission)
 						rooms[player->_room_id]->radio_mission = true;
 				}
@@ -61,7 +61,7 @@ void do_event() {
 			}
 			case EV_LAB_TEM: {
 				for (auto& r : rooms) {
-					//std::lock_guard <std::mutex> ll{ r.second.rl };
+					lock_guard<mutex> ll(rooms[player->_room_id]->rl);
 					if (!rooms[player->_room_id]->lab_temperature_mission)
 						rooms[player->_room_id]->lab_temperature_mission = true;
 				}
@@ -69,7 +69,7 @@ void do_event() {
 			}
 			case EV_BEDROOM_TEM: {
 				for (auto& r : rooms) {
-					//std::lock_guard <std::mutex> ll{ r.second.rl };
+					lock_guard<mutex> ll(rooms[player->_room_id]->rl);
 					if (!rooms[player->_room_id]->bedroom_temperature_mission)
 						rooms[player->_room_id]->bedroom_temperature_mission = true;
 				}

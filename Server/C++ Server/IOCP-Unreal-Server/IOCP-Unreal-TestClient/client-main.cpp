@@ -131,6 +131,10 @@ void process_packet(char* packet) {
         std::cout << "방에 입장하였습니다." << std::endl;
         break;
     }
+    case S2C_GAMESTART: {
+        std::cout << "게임이 시작되었습니다." << std::endl;
+        break;
+    }
     case S2C_MOVE: {
        // TODO
         break;

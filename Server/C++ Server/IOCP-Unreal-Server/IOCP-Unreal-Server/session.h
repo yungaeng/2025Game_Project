@@ -21,8 +21,7 @@ public:
 	int _hp;
 	int _atk;
 	int _room_id;
-	int _pid;
-	
+
 	char _name[MAX_NAME_LENGTH];
 	char _recv_buffer[BUF_SIZE]; // 각 세션별 수신 버퍼
 	int _prev_remain;
@@ -38,8 +37,6 @@ public:
 		memset(_recv_buffer, 0, BUF_SIZE);
 		_prev_remain = 0;
 		_type = 0;
-
-		_pid = -1;
 		_room_id = -1;
 	}
 	~session() {}
@@ -59,9 +56,9 @@ public:
 
 public:
 	void send_login_ok_packet();
-	void send_avata_info_packet();
 	void send_login_fail_packet(char reason);
 	void send_room_packet(long long c_id);
+	void send_avata_info_packet();
 	void send_enter_packet(long long c_id);
 	void send_move_packet(long long c_id);
 	void send_chat_packet(long long c_id, const char* mess);

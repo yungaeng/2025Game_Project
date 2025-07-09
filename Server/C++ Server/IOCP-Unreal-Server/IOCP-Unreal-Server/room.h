@@ -9,7 +9,6 @@ struct ROOM {
 	ROOM_STATE state = R_FREE;
 	std::mutex rl;
 	int id;
-	int player;
 	int control_fix_mission;
 	int armory_fix_mission;
 	bool course_modifi;
@@ -35,7 +34,7 @@ int get_room_id() {
 	// 준비 중인 방번호 찾기
 	for (auto& r : rooms) {
 		std::lock_guard <std::mutex> ll{ r.second->rl };
-		if (r.second->state == R_READY && r.second->player < MAX_ROOM_PLAYER)
+		if (r.second->state == R_READY && r.second->charging_mission.size() < MAX_ROOM_PLAYER)
 			return r.second->id;
 	}
 
