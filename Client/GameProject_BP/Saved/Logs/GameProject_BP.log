@@ -14361,3 +14361,1415 @@ LogConfig: Set CVar [[r.Shadow.DetectVertexShaderLayerAtRuntime:1]]
 [2025.07.11-12.27.31:579][339]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_27.AudioComponent_1) Not currently registered. Aborting.
 [2025.07.11-12.27.31:621][340]LogPlayLevel: Display: Destroying online subsystem :Context_72
 [2025.07.11-12.29.05:434][ 30]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2025.07.11-13.02.42:040][290]LogDerivedDataCache: C:/Users/user/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:01.064 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 1213 files in 2024 folders with total size 116 MiB.
+[2025.07.11-13.08.49:347][884]LogUObjectHash: Compacting FUObjectHashTables data took   0.66ms
+[2025.07.11-13.08.49:353][884]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.08.49:413][884]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.08.49:449][884]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.08.49:450][884]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplay1809BBEB4DEC7C6D476A0DBEDDEECD73.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.08.49:455][884]LogFileHelpers: InternalPromptForCheckoutAndSave took 101 ms (total: 5.22 sec)
+[2025.07.11-13.08.49:459][884]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.08.49:459][884]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.08.51:531][127]BlueprintLog: New page: Compile W_NoteDisplay
+[2025.07.11-13.08.51:585][127]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2025.07.11-13.08.52:524][197]LogUObjectHash: Compacting FUObjectHashTables data took   0.88ms
+[2025.07.11-13.08.53:770][323]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.07.11-13.08.53:774][323]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.07.11-13.08.53:774][323]PIE: New page: PIE session: NewMap (2025. 7. 12. 오전 7:08:53)
+[2025.07.11-13.08.53:795][323]LogPlayLevel: Creating play world package: /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.08.53:821][323]LogPlayLevel: PIE: StaticDuplicateObject took: (0.026551s)
+[2025.07.11-13.08.53:821][323]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/MyMap/NewMap.NewMap to /Game/MyMap/UEDPIE_0_NewMap.NewMap (0.026586s)
+[2025.07.11-13.08.53:829][323]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2025.07.11-13.08.53:831][323]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2025.07.11-13.08.53:831][323]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.07.11-13.08.53:831][323]LogAIModule: Creating AISystem for world NewMap
+[2025.07.11-13.08.53:831][323]LogPlayLevel: PIE: World Init took: (0.000808s)
+[2025.07.11-13.08.53:831][323]LogAudio: Display: Creating Audio Device:                 Id: 51, Scope: Unique, Realtime: True
+[2025.07.11-13.08.53:831][323]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.07.11-13.08.53:831][323]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.07.11-13.08.53:831][323]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.07.11-13.08.53:831][323]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.07.11-13.08.53:831][323]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.07.11-13.08.53:831][323]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.07.11-13.08.53:831][323]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.07.11-13.08.53:831][323]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.07.11-13.08.53:832][323]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.07.11-13.08.53:832][323]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.07.11-13.08.53:832][323]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.07.11-13.08.53:833][323]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.07.11-13.08.53:883][323]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Realtek(R) Audio)
+[2025.07.11-13.08.53:883][323]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.07.11-13.08.53:883][323]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.07.11-13.08.53:884][323]LogAudioMixer: Display: Creating Master Submix 'SM_Mute'
+[2025.07.11-13.08.53:884][323]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.07.11-13.08.53:884][323]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=51
+[2025.07.11-13.08.53:884][323]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=51
+[2025.07.11-13.08.53:885][323]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=51
+[2025.07.11-13.08.53:885][323]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=51
+[2025.07.11-13.08.53:885][323]LogInit: FAudioDevice initialized with ID 51.
+[2025.07.11-13.08.53:885][323]LogAudio: Display: Audio Device (ID: 51) registered with world 'NewMap'.
+[2025.07.11-13.08.53:885][323]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 51
+[2025.07.11-13.08.53:888][323]LogLoad: Game class is 'MyGameMode_C'
+[2025.07.11-13.08.53:893][323]LogWorld: Bringing World /Game/MyMap/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2025.07.11-22.08.53
+[2025.07.11-13.08.53:898][323]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.08.53:899][323]LogWorld: Bringing up level for play took: 0.011733
+[2025.07.11-13.08.53:902][323]LogOnline: OSS: Created online subsystem instance for: :Context_73
+[2025.07.11-13.08.53:904][323]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.11-13.08.53:904][323]LogTemp: Warning: DoneINIT
+[2025.07.11-13.08.53:907][323]PIE: Server logged in
+[2025.07.11-13.08.53:907][323]PIE: Play in editor total start time 0.133 seconds.
+[2025.07.11-13.08.55:725][537]LogScript: Warning: Script Msg: Attempted to access index 1 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.08.55:725][537]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_49.W_NoteDisplay_C_0
+[2025.07.11-13.08.55:725][537]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.08.55:725][537]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_49.W_NoteDisplay_C_0
+[2025.07.11-13.08.55:725][537]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 2 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.08.55:725][537]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_49.W_NoteDisplay_C_0
+[2025.07.11-13.08.55:725][537]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.08.55:725][537]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.08.55:725][537]LogViewport: Display: Viewport HideCursorDuringCapture Changed, False -> True
+[2025.07.11-13.08.55:725][537]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CaptureDuringMouseDown
+[2025.07.11-13.08.55:731][537]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.08.58:966][925]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.09.01:500][229]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.09.05:609][722]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.09.05:609][722]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.09.08:850][111]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.09.11:392][416]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.09.13:992][728]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.09.14:499][789]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 4
+[2025.07.11-13.09.15:497][908]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 4
+[2025.07.11-13.09.17:368][133]LogViewport: Display: Viewport MouseLockMode Changed, LockAlways -> LockOnCapture
+[2025.07.11-13.09.17:368][133]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.07.11-13.09.19:627][404]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.09.19:627][404]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.07.11-13.09.20:943][562]LogViewport: Display: Viewport MouseLockMode Changed, LockAlways -> LockOnCapture
+[2025.07.11-13.09.20:943][562]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.07.11-13.09.22:226][710]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.09.22:227][710]LogWorld: BeginTearingDown for /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.09.22:227][710]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.09.22:229][710]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.09.22:285][710]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.07.11-13.09.22:288][710]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.09.22:299][710]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.09.22:299][710]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 51
+[2025.07.11-13.09.22:299][710]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=51
+[2025.07.11-13.09.22:302][710]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=51
+[2025.07.11-13.09.22:324][710]LogUObjectHash: Compacting FUObjectHashTables data took   0.85ms
+[2025.07.11-13.09.22:329][710]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioComponent_2) Not currently registered. Aborting.
+[2025.07.11-13.09.22:329][710]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_33.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.09.22:329][710]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_21.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.09.22:330][710]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_27.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.09.22:358][711]LogPlayLevel: Display: Destroying online subsystem :Context_73
+[2025.07.11-13.09.22:874][766]LogUObjectHash: Compacting FUObjectHashTables data took   0.77ms
+[2025.07.11-13.12.01:839][278]LogUObjectHash: Compacting FUObjectHashTables data took   1.13ms
+[2025.07.11-13.12.01:844][278]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.12.01:899][278]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.12.01:936][278]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.12.01:936][278]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplay8BC3E62D48A12821ACBEDAAAEC0A16A2.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.12.01:942][278]LogFileHelpers: InternalPromptForCheckoutAndSave took 98 ms (total: 5.32 sec)
+[2025.07.11-13.12.01:944][278]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.12.01:944][278]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.12.03:122][412]BlueprintLog: New page: Compile W_NoteDisplay
+[2025.07.11-13.12.03:188][412]LogUObjectHash: Compacting FUObjectHashTables data took   0.84ms
+[2025.07.11-13.12.04:871][538]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.07.11-13.12.04:876][538]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.07.11-13.12.04:876][538]PIE: New page: PIE session: NewMap (2025. 7. 12. 오전 7:12:04)
+[2025.07.11-13.12.04:925][538]LogPlayLevel: Creating play world package: /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.12.04:956][538]LogPlayLevel: PIE: StaticDuplicateObject took: (0.031246s)
+[2025.07.11-13.12.04:956][538]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/MyMap/NewMap.NewMap to /Game/MyMap/UEDPIE_0_NewMap.NewMap (0.031314s)
+[2025.07.11-13.12.04:967][538]LogUObjectHash: Compacting FUObjectHashTables data took   0.92ms
+[2025.07.11-13.12.04:972][538]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2025.07.11-13.12.04:972][538]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.07.11-13.12.04:972][538]LogAIModule: Creating AISystem for world NewMap
+[2025.07.11-13.12.04:972][538]LogPlayLevel: PIE: World Init took: (0.000767s)
+[2025.07.11-13.12.04:972][538]LogAudio: Display: Creating Audio Device:                 Id: 52, Scope: Unique, Realtime: True
+[2025.07.11-13.12.04:972][538]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.07.11-13.12.04:972][538]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.07.11-13.12.04:972][538]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.07.11-13.12.04:972][538]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.07.11-13.12.04:972][538]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.07.11-13.12.04:972][538]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.07.11-13.12.04:972][538]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.07.11-13.12.04:972][538]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.07.11-13.12.04:972][538]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.07.11-13.12.04:972][538]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.07.11-13.12.04:972][538]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.07.11-13.12.04:975][538]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.07.11-13.12.05:024][538]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Realtek(R) Audio)
+[2025.07.11-13.12.05:024][538]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.07.11-13.12.05:024][538]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.07.11-13.12.05:024][538]LogAudioMixer: Display: Creating Master Submix 'SM_Mute'
+[2025.07.11-13.12.05:024][538]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.07.11-13.12.05:024][538]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=52
+[2025.07.11-13.12.05:024][538]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=52
+[2025.07.11-13.12.05:027][538]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=52
+[2025.07.11-13.12.05:027][538]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=52
+[2025.07.11-13.12.05:027][538]LogInit: FAudioDevice initialized with ID 52.
+[2025.07.11-13.12.05:027][538]LogAudio: Display: Audio Device (ID: 52) registered with world 'NewMap'.
+[2025.07.11-13.12.05:027][538]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 52
+[2025.07.11-13.12.05:028][538]LogLoad: Game class is 'MyGameMode_C'
+[2025.07.11-13.12.05:032][538]LogWorld: Bringing World /Game/MyMap/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2025.07.11-22.12.05
+[2025.07.11-13.12.05:038][538]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.12.05:040][538]LogWorld: Bringing up level for play took: 0.011486
+[2025.07.11-13.12.05:042][538]LogOnline: OSS: Created online subsystem instance for: :Context_74
+[2025.07.11-13.12.05:044][538]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.11-13.12.05:044][538]LogTemp: Warning: DoneINIT
+[2025.07.11-13.12.05:047][538]PIE: Server logged in
+[2025.07.11-13.12.05:047][538]PIE: Play in editor total start time 0.171 seconds.
+[2025.07.11-13.12.07:322][807]LogScript: Warning: Script Msg: Attempted to access index 1 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.12.07:322][807]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_50.W_NoteDisplay_C_0
+[2025.07.11-13.12.07:323][807]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.12.07:323][807]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_50.W_NoteDisplay_C_0
+[2025.07.11-13.12.07:323][807]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 2 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.12.07:323][807]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_50.W_NoteDisplay_C_0
+[2025.07.11-13.12.07:323][807]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.12.07:323][807]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.12.07:323][807]LogViewport: Display: Viewport HideCursorDuringCapture Changed, False -> True
+[2025.07.11-13.12.07:323][807]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CaptureDuringMouseDown
+[2025.07.11-13.12.07:328][807]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.12.17:205][992]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 0
+[2025.07.11-13.12.17:205][992]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.12.20:447][381]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.12.22:980][685]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.12.25:589][998]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.12.26:089][ 58]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 4
+[2025.07.11-13.12.27:089][178]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 4
+[2025.07.11-13.12.29:519][470]LogViewport: Display: Viewport MouseLockMode Changed, LockAlways -> LockOnCapture
+[2025.07.11-13.12.29:519][470]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.07.11-13.12.30:435][576]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.12.30:435][576]LogWorld: BeginTearingDown for /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.12.30:435][576]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.12.30:437][576]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.12.30:488][576]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.07.11-13.12.30:491][576]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.12.30:502][576]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.07.11-13.12.30:502][576]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 52
+[2025.07.11-13.12.30:502][576]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=52
+[2025.07.11-13.12.30:503][576]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=52
+[2025.07.11-13.12.30:512][576]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.12.30:535][576]LogUObjectHash: Compacting FUObjectHashTables data took   1.04ms
+[2025.07.11-13.12.30:541][576]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioComponent_2) Not currently registered. Aborting.
+[2025.07.11-13.12.30:541][576]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_33.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.12.30:541][576]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_21.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.12.30:541][576]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_27.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.12.30:568][577]LogPlayLevel: Display: Destroying online subsystem :Context_74
+[2025.07.11-13.12.31:117][636]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2025.07.11-13.12.37:933][430]LogUObjectHash: Compacting FUObjectHashTables data took   0.38ms
+[2025.07.11-13.12.38:728][522]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2025.07.11-13.12.38:728][522]LogWorld: UWorld::CleanupWorld for World_3, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.12.38:728][522]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.12.40:350][667]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2025.07.11-13.12.40:350][667]LogWorld: UWorld::CleanupWorld for World_35, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.12.40:350][667]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.13.01:227][ 37]LogUObjectHash: Compacting FUObjectHashTables data took   0.79ms
+[2025.07.11-13.13.01:232][ 37]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.13.01:268][ 37]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.13.01:304][ 37]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.13.01:304][ 37]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplay15A6D1C14CA003D4F1019C8302AD596C.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.13.01:311][ 37]LogFileHelpers: InternalPromptForCheckoutAndSave took 76 ms (total: 5.39 sec)
+[2025.07.11-13.13.01:311][ 37]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.13.01:312][ 37]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.13.02:099][130]BlueprintLog: New page: Compile W_NoteDisplay
+[2025.07.11-13.13.02:149][130]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2025.07.11-13.13.08:391][580]LogSlate: Window 'Color Picker' being destroyed
+[2025.07.11-13.13.09:450][681]BlueprintLog: New page: Compile W_NoteDisplay
+[2025.07.11-13.13.09:504][681]LogUObjectHash: Compacting FUObjectHashTables data took   0.90ms
+[2025.07.11-13.13.10:867][780]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.07.11-13.13.10:871][780]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.07.11-13.13.10:871][780]PIE: New page: PIE session: NewMap (2025. 7. 12. 오전 7:13:10)
+[2025.07.11-13.13.10:905][780]LogPlayLevel: Creating play world package: /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.13.10:933][780]LogPlayLevel: PIE: StaticDuplicateObject took: (0.028879s)
+[2025.07.11-13.13.10:933][780]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/MyMap/NewMap.NewMap to /Game/MyMap/UEDPIE_0_NewMap.NewMap (0.028953s)
+[2025.07.11-13.13.10:944][780]LogUObjectHash: Compacting FUObjectHashTables data took   0.84ms
+[2025.07.11-13.13.10:952][780]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2025.07.11-13.13.10:952][780]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.07.11-13.13.10:952][780]LogAIModule: Creating AISystem for world NewMap
+[2025.07.11-13.13.10:952][780]LogPlayLevel: PIE: World Init took: (0.000725s)
+[2025.07.11-13.13.10:952][780]LogAudio: Display: Creating Audio Device:                 Id: 53, Scope: Unique, Realtime: True
+[2025.07.11-13.13.10:952][780]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.07.11-13.13.10:952][780]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.07.11-13.13.10:952][780]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.07.11-13.13.10:952][780]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.07.11-13.13.10:952][780]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.07.11-13.13.10:952][780]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.07.11-13.13.10:952][780]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.07.11-13.13.10:952][780]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.07.11-13.13.10:953][780]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.07.11-13.13.10:953][780]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.07.11-13.13.10:953][780]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.07.11-13.13.10:954][780]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.07.11-13.13.11:004][780]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Realtek(R) Audio)
+[2025.07.11-13.13.11:004][780]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.07.11-13.13.11:004][780]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.07.11-13.13.11:004][780]LogAudioMixer: Display: Creating Master Submix 'SM_Mute'
+[2025.07.11-13.13.11:004][780]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.07.11-13.13.11:004][780]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=53
+[2025.07.11-13.13.11:004][780]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=53
+[2025.07.11-13.13.11:005][780]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=53
+[2025.07.11-13.13.11:006][780]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=53
+[2025.07.11-13.13.11:006][780]LogInit: FAudioDevice initialized with ID 53.
+[2025.07.11-13.13.11:006][780]LogAudio: Display: Audio Device (ID: 53) registered with world 'NewMap'.
+[2025.07.11-13.13.11:006][780]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 53
+[2025.07.11-13.13.11:007][780]LogLoad: Game class is 'MyGameMode_C'
+[2025.07.11-13.13.11:012][780]LogWorld: Bringing World /Game/MyMap/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2025.07.11-22.13.11
+[2025.07.11-13.13.11:017][780]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.13.11:019][780]LogWorld: Bringing up level for play took: 0.011396
+[2025.07.11-13.13.11:019][780]LogOnline: OSS: Created online subsystem instance for: :Context_75
+[2025.07.11-13.13.11:023][780]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.11-13.13.11:023][780]LogTemp: Warning: DoneINIT
+[2025.07.11-13.13.11:026][780]PIE: Server logged in
+[2025.07.11-13.13.11:026][780]PIE: Play in editor total start time 0.155 seconds.
+[2025.07.11-13.13.13:109][ 26]LogScript: Warning: Script Msg: Attempted to access index 1 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.13.13:109][ 26]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_51.W_NoteDisplay_C_0
+[2025.07.11-13.13.13:109][ 26]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.13.13:109][ 26]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_51.W_NoteDisplay_C_0
+[2025.07.11-13.13.13:109][ 26]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 2 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.13.13:109][ 26]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_51.W_NoteDisplay_C_0
+[2025.07.11-13.13.13:109][ 26]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.13.13:109][ 26]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.13.13:109][ 26]LogViewport: Display: Viewport HideCursorDuringCapture Changed, False -> True
+[2025.07.11-13.13.13:109][ 26]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CaptureDuringMouseDown
+[2025.07.11-13.13.13:114][ 26]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.13.16:692][455]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 0
+[2025.07.11-13.13.16:692][455]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.13.18:884][718]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.13.18:884][718]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.13.22:992][211]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.13.22:992][211]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.13.26:792][667]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 0
+[2025.07.11-13.13.26:792][667]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.13.28:767][904]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.13.28:767][904]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.13.31:367][216]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.13.31:367][216]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.13.31:875][277]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.13.31:875][277]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 4
+[2025.07.11-13.13.32:375][337]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.13.32:375][337]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 5
+[2025.07.11-13.13.32:875][397]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 5
+[2025.07.11-13.13.38:005][ 13]LogViewport: Display: Viewport MouseLockMode Changed, LockAlways -> LockOnCapture
+[2025.07.11-13.13.38:005][ 13]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.07.11-13.13.38:414][ 62]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.13.38:414][ 62]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.07.11-13.13.39:244][161]LogViewport: Display: Viewport MouseLockMode Changed, LockAlways -> LockOnCapture
+[2025.07.11-13.13.39:244][161]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.07.11-13.13.39:535][193]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.13.39:535][193]LogWorld: BeginTearingDown for /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.13.39:535][193]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.13.39:536][193]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.13.39:539][193]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.07.11-13.13.39:542][193]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.13.39:552][193]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.07.11-13.13.39:552][193]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 53
+[2025.07.11-13.13.39:552][193]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=53
+[2025.07.11-13.13.39:554][193]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=53
+[2025.07.11-13.13.39:557][193]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.13.39:575][193]LogUObjectHash: Compacting FUObjectHashTables data took   1.52ms
+[2025.07.11-13.13.39:579][193]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioComponent_2) Not currently registered. Aborting.
+[2025.07.11-13.13.39:579][193]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_33.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.13.39:579][193]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_21.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.13.39:579][193]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_27.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.13.39:658][195]LogPlayLevel: Display: Destroying online subsystem :Context_75
+[2025.07.11-13.13.41:209][379]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.07.11-13.13.41:214][379]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.07.11-13.13.41:214][379]PIE: New page: PIE session: NewMap (2025. 7. 12. 오전 7:13:41)
+[2025.07.11-13.13.41:245][379]LogPlayLevel: Creating play world package: /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.13.41:273][379]LogPlayLevel: PIE: StaticDuplicateObject took: (0.028090s)
+[2025.07.11-13.13.41:273][379]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/MyMap/NewMap.NewMap to /Game/MyMap/UEDPIE_0_NewMap.NewMap (0.028128s)
+[2025.07.11-13.13.41:283][379]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2025.07.11-13.13.41:285][379]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2025.07.11-13.13.41:285][379]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.07.11-13.13.41:286][379]LogAIModule: Creating AISystem for world NewMap
+[2025.07.11-13.13.41:286][379]LogPlayLevel: PIE: World Init took: (0.000798s)
+[2025.07.11-13.13.41:286][379]LogAudio: Display: Creating Audio Device:                 Id: 54, Scope: Unique, Realtime: True
+[2025.07.11-13.13.41:286][379]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.07.11-13.13.41:286][379]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.07.11-13.13.41:286][379]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.07.11-13.13.41:286][379]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.07.11-13.13.41:286][379]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.07.11-13.13.41:286][379]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.07.11-13.13.41:286][379]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.07.11-13.13.41:286][379]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.07.11-13.13.41:286][379]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.07.11-13.13.41:286][379]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.07.11-13.13.41:286][379]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.07.11-13.13.41:288][379]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.07.11-13.13.41:337][379]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Realtek(R) Audio)
+[2025.07.11-13.13.41:337][379]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.07.11-13.13.41:337][379]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.07.11-13.13.41:337][379]LogAudioMixer: Display: Creating Master Submix 'SM_Mute'
+[2025.07.11-13.13.41:337][379]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.07.11-13.13.41:337][379]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=54
+[2025.07.11-13.13.41:337][379]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=54
+[2025.07.11-13.13.41:339][379]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=54
+[2025.07.11-13.13.41:339][379]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=54
+[2025.07.11-13.13.41:339][379]LogInit: FAudioDevice initialized with ID 54.
+[2025.07.11-13.13.41:339][379]LogAudio: Display: Audio Device (ID: 54) registered with world 'NewMap'.
+[2025.07.11-13.13.41:339][379]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 54
+[2025.07.11-13.13.41:340][379]LogLoad: Game class is 'MyGameMode_C'
+[2025.07.11-13.13.41:345][379]LogWorld: Bringing World /Game/MyMap/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2025.07.11-22.13.41
+[2025.07.11-13.13.41:351][379]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.13.41:353][379]LogWorld: Bringing up level for play took: 0.012109
+[2025.07.11-13.13.41:354][379]LogOnline: OSS: Created online subsystem instance for: :Context_76
+[2025.07.11-13.13.41:357][379]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.11-13.13.41:357][379]LogTemp: Warning: DoneINIT
+[2025.07.11-13.13.41:359][379]PIE: Server logged in
+[2025.07.11-13.13.41:361][379]PIE: Play in editor total start time 0.147 seconds.
+[2025.07.11-13.13.43:426][623]LogScript: Warning: Script Msg: Attempted to access index 1 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.13.43:426][623]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_52.W_NoteDisplay_C_0
+[2025.07.11-13.13.43:426][623]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.13.43:426][623]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_52.W_NoteDisplay_C_0
+[2025.07.11-13.13.43:426][623]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 2 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.13.43:426][623]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_52.W_NoteDisplay_C_0
+[2025.07.11-13.13.43:426][623]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.13.43:426][623]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.13.43:426][623]LogViewport: Display: Viewport HideCursorDuringCapture Changed, False -> True
+[2025.07.11-13.13.43:426][623]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CaptureDuringMouseDown
+[2025.07.11-13.13.43:431][623]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.13.46:658][ 10]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 0
+[2025.07.11-13.13.46:658][ 10]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.13.49:742][380]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.13.49:742][380]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.13.52:659][730]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.13.52:659][730]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.13.53:301][807]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.13.53:301][807]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.13.54:614][965]LogViewport: Display: Viewport MouseLockMode Changed, LockAlways -> LockOnCapture
+[2025.07.11-13.13.54:614][965]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.07.11-13.13.55:145][ 24]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.13.55:145][ 24]LogWorld: BeginTearingDown for /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.13.55:146][ 24]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.13.55:148][ 24]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.13.55:153][ 24]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.07.11-13.13.55:157][ 24]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.13.55:169][ 24]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.07.11-13.13.55:169][ 24]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 54
+[2025.07.11-13.13.55:169][ 24]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=54
+[2025.07.11-13.13.55:171][ 24]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=54
+[2025.07.11-13.13.55:174][ 24]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.13.55:193][ 24]LogUObjectHash: Compacting FUObjectHashTables data took   0.97ms
+[2025.07.11-13.13.55:197][ 24]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioComponent_2) Not currently registered. Aborting.
+[2025.07.11-13.13.55:197][ 24]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_33.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.13.55:197][ 24]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_21.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.13.55:197][ 24]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_27.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.13.55:224][ 25]LogPlayLevel: Display: Destroying online subsystem :Context_76
+[2025.07.11-13.13.55:978][108]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2025.07.11-13.13.55:982][108]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.13.56:046][108]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.13.56:082][108]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.13.56:083][108]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplay8AC92D8241B960A8AEBF428771E420A4.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.13.56:087][108]LogFileHelpers: InternalPromptForCheckoutAndSave took 105 ms (total: 5.50 sec)
+[2025.07.11-13.13.56:089][108]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.13.56:089][108]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.14.22:736][ 86]LogUObjectHash: Compacting FUObjectHashTables data took   0.77ms
+[2025.07.11-13.14.22:741][ 86]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.14.22:799][ 86]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.14.22:835][ 86]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.14.22:835][ 86]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplay5AE08EBD41E2371B21EF6D8F8FD15AB8.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.14.22:841][ 86]LogFileHelpers: InternalPromptForCheckoutAndSave took 98 ms (total: 5.60 sec)
+[2025.07.11-13.14.22:843][ 86]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.14.22:843][ 86]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.14.25:061][334]BlueprintLog: New page: Compile W_NoteDisplay
+[2025.07.11-13.14.25:116][334]LogUObjectHash: Compacting FUObjectHashTables data took   0.85ms
+[2025.07.11-13.14.26:756][464]LogUObjectHash: Compacting FUObjectHashTables data took   0.93ms
+[2025.07.11-13.14.26:762][464]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.14.26:817][464]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.14.26:853][464]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.14.26:853][464]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplay11C7EBCB47382A91FF06B2886A4488B8.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.14.26:860][464]LogFileHelpers: InternalPromptForCheckoutAndSave took 97 ms (total: 5.70 sec)
+[2025.07.11-13.14.26:860][464]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.14.26:860][464]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.14.27:159][500]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.07.11-13.14.27:164][500]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.07.11-13.14.27:164][500]PIE: New page: PIE session: NewMap (2025. 7. 12. 오전 7:14:27)
+[2025.07.11-13.14.27:195][500]LogPlayLevel: Creating play world package: /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.14.27:224][500]LogPlayLevel: PIE: StaticDuplicateObject took: (0.029478s)
+[2025.07.11-13.14.27:224][500]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/MyMap/NewMap.NewMap to /Game/MyMap/UEDPIE_0_NewMap.NewMap (0.029516s)
+[2025.07.11-13.14.27:232][500]LogUObjectHash: Compacting FUObjectHashTables data took   0.82ms
+[2025.07.11-13.14.27:234][500]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2025.07.11-13.14.27:234][500]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.07.11-13.14.27:234][500]LogAIModule: Creating AISystem for world NewMap
+[2025.07.11-13.14.27:234][500]LogPlayLevel: PIE: World Init took: (0.000771s)
+[2025.07.11-13.14.27:234][500]LogAudio: Display: Creating Audio Device:                 Id: 55, Scope: Unique, Realtime: True
+[2025.07.11-13.14.27:234][500]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.07.11-13.14.27:234][500]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.07.11-13.14.27:234][500]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.07.11-13.14.27:234][500]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.07.11-13.14.27:234][500]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.07.11-13.14.27:234][500]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.07.11-13.14.27:234][500]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.07.11-13.14.27:234][500]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.07.11-13.14.27:235][500]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.07.11-13.14.27:235][500]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.07.11-13.14.27:235][500]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.07.11-13.14.27:236][500]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.07.11-13.14.27:285][500]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Realtek(R) Audio)
+[2025.07.11-13.14.27:285][500]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.07.11-13.14.27:285][500]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.07.11-13.14.27:285][500]LogAudioMixer: Display: Creating Master Submix 'SM_Mute'
+[2025.07.11-13.14.27:285][500]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.07.11-13.14.27:287][500]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=55
+[2025.07.11-13.14.27:287][500]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=55
+[2025.07.11-13.14.27:288][500]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=55
+[2025.07.11-13.14.27:288][500]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=55
+[2025.07.11-13.14.27:288][500]LogInit: FAudioDevice initialized with ID 55.
+[2025.07.11-13.14.27:288][500]LogAudio: Display: Audio Device (ID: 55) registered with world 'NewMap'.
+[2025.07.11-13.14.27:288][500]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 55
+[2025.07.11-13.14.27:289][500]LogLoad: Game class is 'MyGameMode_C'
+[2025.07.11-13.14.27:294][500]LogWorld: Bringing World /Game/MyMap/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2025.07.11-22.14.27
+[2025.07.11-13.14.27:299][500]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.14.27:301][500]LogWorld: Bringing up level for play took: 0.011508
+[2025.07.11-13.14.27:303][500]LogOnline: OSS: Created online subsystem instance for: :Context_77
+[2025.07.11-13.14.27:305][500]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.11-13.14.27:305][500]LogTemp: Warning: DoneINIT
+[2025.07.11-13.14.27:307][500]PIE: Server logged in
+[2025.07.11-13.14.27:309][500]PIE: Play in editor total start time 0.144 seconds.
+[2025.07.11-13.14.29:025][702]LogScript: Warning: Script Msg: Attempted to access index 1 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.14.29:025][702]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_53.W_NoteDisplay_C_0
+[2025.07.11-13.14.29:025][702]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.14.29:025][702]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_53.W_NoteDisplay_C_0
+[2025.07.11-13.14.29:025][702]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 2 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.14.29:025][702]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_53.W_NoteDisplay_C_0
+[2025.07.11-13.14.29:025][702]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.14.29:025][702]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.14.29:025][702]LogViewport: Display: Viewport HideCursorDuringCapture Changed, False -> True
+[2025.07.11-13.14.29:025][702]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CaptureDuringMouseDown
+[2025.07.11-13.14.29:029][702]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.14.32:267][ 90]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.14.34:800][394]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.14.38:907][887]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.14.38:907][887]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.14.42:158][277]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.14.44:691][581]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.14.47:283][892]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.14.47:783][952]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 4
+[2025.07.11-13.14.48:283][ 12]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 5
+[2025.07.11-13.14.48:791][ 73]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 5
+[2025.07.11-13.14.51:565][402]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.14.51:565][402]LogWorld: BeginTearingDown for /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.14.51:566][402]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.14.51:567][402]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.14.51:571][402]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.07.11-13.14.51:575][402]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.14.51:590][402]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.14.51:591][402]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 55
+[2025.07.11-13.14.51:591][402]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=55
+[2025.07.11-13.14.51:592][402]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=55
+[2025.07.11-13.14.51:615][402]LogUObjectHash: Compacting FUObjectHashTables data took   1.00ms
+[2025.07.11-13.14.51:619][402]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioComponent_2) Not currently registered. Aborting.
+[2025.07.11-13.14.51:619][402]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_33.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.14.51:619][402]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_21.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.14.51:619][402]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_27.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.14.51:641][403]LogPlayLevel: Display: Destroying online subsystem :Context_77
+[2025.07.11-13.15.01:931][630]Cmd: TRANSACTION UNDO
+[2025.07.11-13.15.01:931][630]LogEditorTransaction: Undo Create Pin Link
+[2025.07.11-13.15.38:249][622]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2025.07.11-13.15.38:253][622]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.15.38:309][622]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.15.38:347][622]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.15.38:347][622]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplayDEA4735648FFB44D113EBFB7D3F098E6.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.15.38:352][622]LogFileHelpers: InternalPromptForCheckoutAndSave took 99 ms (total: 5.79 sec)
+[2025.07.11-13.15.38:356][622]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.15.38:356][622]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.15.39:064][704]BlueprintLog: New page: Compile W_NoteDisplay
+[2025.07.11-13.15.39:120][704]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2025.07.11-13.15.55:976][515]LogUObjectHash: Compacting FUObjectHashTables data took   0.80ms
+[2025.07.11-13.15.55:985][515]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.15.56:047][515]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.15.56:082][515]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.15.56:082][515]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplayA26CE02D40A9505BBB486B8457F8ABD9.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.15.56:088][515]LogFileHelpers: InternalPromptForCheckoutAndSave took 102 ms (total: 5.90 sec)
+[2025.07.11-13.15.56:092][515]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.15.56:092][515]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.16.40:794][720]LogUObjectHash: Compacting FUObjectHashTables data took   0.81ms
+[2025.07.11-13.16.40:799][720]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.16.40:863][720]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.16.40:899][720]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.16.40:899][720]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplay651237054374EE8165115E95371A0816.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.16.40:905][720]LogFileHelpers: InternalPromptForCheckoutAndSave took 105 ms (total: 6.00 sec)
+[2025.07.11-13.16.40:908][720]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.16.40:908][720]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.16.41:158][747]BlueprintLog: New page: Compile W_NoteDisplay
+[2025.07.11-13.16.41:212][747]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2025.07.11-13.16.43:042][905]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.07.11-13.16.43:046][905]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.07.11-13.16.43:046][905]PIE: New page: PIE session: NewMap (2025. 7. 12. 오전 7:16:43)
+[2025.07.11-13.16.43:084][905]LogPlayLevel: Creating play world package: /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.16.43:111][905]LogPlayLevel: PIE: StaticDuplicateObject took: (0.026608s)
+[2025.07.11-13.16.43:111][905]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/MyMap/NewMap.NewMap to /Game/MyMap/UEDPIE_0_NewMap.NewMap (0.026641s)
+[2025.07.11-13.16.43:119][905]LogUObjectHash: Compacting FUObjectHashTables data took   0.82ms
+[2025.07.11-13.16.43:124][905]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2025.07.11-13.16.43:124][905]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.07.11-13.16.43:125][905]LogAIModule: Creating AISystem for world NewMap
+[2025.07.11-13.16.43:125][905]LogPlayLevel: PIE: World Init took: (0.000900s)
+[2025.07.11-13.16.43:125][905]LogAudio: Display: Creating Audio Device:                 Id: 56, Scope: Unique, Realtime: True
+[2025.07.11-13.16.43:125][905]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.07.11-13.16.43:125][905]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.07.11-13.16.43:125][905]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.07.11-13.16.43:125][905]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.07.11-13.16.43:125][905]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.07.11-13.16.43:125][905]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.07.11-13.16.43:125][905]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.07.11-13.16.43:125][905]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.07.11-13.16.43:125][905]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.07.11-13.16.43:125][905]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.07.11-13.16.43:125][905]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.07.11-13.16.43:128][905]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.07.11-13.16.43:178][905]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Realtek(R) Audio)
+[2025.07.11-13.16.43:178][905]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.07.11-13.16.43:178][905]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.07.11-13.16.43:178][905]LogAudioMixer: Display: Creating Master Submix 'SM_Mute'
+[2025.07.11-13.16.43:178][905]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.07.11-13.16.43:179][905]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=56
+[2025.07.11-13.16.43:179][905]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=56
+[2025.07.11-13.16.43:180][905]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=56
+[2025.07.11-13.16.43:180][905]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=56
+[2025.07.11-13.16.43:180][905]LogInit: FAudioDevice initialized with ID 56.
+[2025.07.11-13.16.43:180][905]LogAudio: Display: Audio Device (ID: 56) registered with world 'NewMap'.
+[2025.07.11-13.16.43:180][905]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 56
+[2025.07.11-13.16.43:181][905]LogLoad: Game class is 'MyGameMode_C'
+[2025.07.11-13.16.43:186][905]LogWorld: Bringing World /Game/MyMap/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2025.07.11-22.16.43
+[2025.07.11-13.16.43:191][905]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.16.43:192][905]LogWorld: Bringing up level for play took: 0.011543
+[2025.07.11-13.16.43:195][905]LogOnline: OSS: Created online subsystem instance for: :Context_78
+[2025.07.11-13.16.43:198][905]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.11-13.16.43:198][905]LogTemp: Warning: DoneINIT
+[2025.07.11-13.16.43:200][905]PIE: Server logged in
+[2025.07.11-13.16.43:201][905]PIE: Play in editor total start time 0.154 seconds.
+[2025.07.11-13.16.44:917][107]LogScript: Warning: Script Msg: Attempted to access index 1 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.16.44:917][107]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_54.W_NoteDisplay_C_0
+[2025.07.11-13.16.44:917][107]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.16.44:917][107]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_54.W_NoteDisplay_C_0
+[2025.07.11-13.16.44:917][107]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 2 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.16.44:917][107]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_54.W_NoteDisplay_C_0
+[2025.07.11-13.16.44:917][107]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.16.44:917][107]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.16.44:917][107]LogViewport: Display: Viewport HideCursorDuringCapture Changed, False -> True
+[2025.07.11-13.16.44:917][107]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CaptureDuringMouseDown
+[2025.07.11-13.16.44:922][107]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.16.48:167][496]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.16.50:699][800]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.16.53:300][112]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.16.54:799][292]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.16.54:799][292]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.16.56:195][457]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.16.56:195][457]LogWorld: BeginTearingDown for /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.16.56:195][457]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.16.56:196][457]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.16.56:198][457]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.07.11-13.16.56:202][457]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.16.56:214][457]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.07.11-13.16.56:214][457]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 56
+[2025.07.11-13.16.56:214][457]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=56
+[2025.07.11-13.16.56:217][457]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=56
+[2025.07.11-13.16.56:219][457]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.16.56:243][457]LogUObjectHash: Compacting FUObjectHashTables data took   1.38ms
+[2025.07.11-13.16.56:247][457]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioComponent_2) Not currently registered. Aborting.
+[2025.07.11-13.16.56:247][457]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_33.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.16.56:247][457]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_21.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.16.56:247][457]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_27.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.16.56:318][459]LogPlayLevel: Display: Destroying online subsystem :Context_78
+[2025.07.11-13.16.57:383][581]LogUObjectHash: Compacting FUObjectHashTables data took   0.77ms
+[2025.07.11-13.17.27:877][ 46]BlueprintLog: New page: Compile W_NoteDisplay
+[2025.07.11-13.17.27:929][ 46]LogUObjectHash: Compacting FUObjectHashTables data took   0.98ms
+[2025.07.11-13.17.28:354][ 61]LogUObjectHash: Compacting FUObjectHashTables data took   1.03ms
+[2025.07.11-13.17.28:362][ 61]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.17.28:412][ 61]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.17.28:448][ 61]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.17.28:448][ 61]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplay0C0FB3C642BCB45EFC0238B8C66A950E.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.17.28:453][ 61]LogFileHelpers: InternalPromptForCheckoutAndSave took 90 ms (total: 6.09 sec)
+[2025.07.11-13.17.28:456][ 61]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.17.28:456][ 61]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.17.29:470][164]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.07.11-13.17.29:473][164]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.07.11-13.17.29:473][164]PIE: New page: PIE session: NewMap (2025. 7. 12. 오전 7:17:29)
+[2025.07.11-13.17.29:505][164]LogPlayLevel: Creating play world package: /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.17.29:532][164]LogPlayLevel: PIE: StaticDuplicateObject took: (0.028251s)
+[2025.07.11-13.17.29:532][164]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/MyMap/NewMap.NewMap to /Game/MyMap/UEDPIE_0_NewMap.NewMap (0.028290s)
+[2025.07.11-13.17.29:543][164]LogUObjectHash: Compacting FUObjectHashTables data took   0.79ms
+[2025.07.11-13.17.29:545][164]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2025.07.11-13.17.29:545][164]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.07.11-13.17.29:545][164]LogAIModule: Creating AISystem for world NewMap
+[2025.07.11-13.17.29:545][164]LogPlayLevel: PIE: World Init took: (0.000782s)
+[2025.07.11-13.17.29:545][164]LogAudio: Display: Creating Audio Device:                 Id: 57, Scope: Unique, Realtime: True
+[2025.07.11-13.17.29:545][164]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.07.11-13.17.29:545][164]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.07.11-13.17.29:545][164]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.07.11-13.17.29:545][164]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.07.11-13.17.29:545][164]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.07.11-13.17.29:545][164]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.07.11-13.17.29:545][164]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.07.11-13.17.29:545][164]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.07.11-13.17.29:546][164]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.07.11-13.17.29:546][164]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.07.11-13.17.29:546][164]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.07.11-13.17.29:547][164]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.07.11-13.17.29:599][164]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Realtek(R) Audio)
+[2025.07.11-13.17.29:599][164]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.07.11-13.17.29:599][164]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.07.11-13.17.29:599][164]LogAudioMixer: Display: Creating Master Submix 'SM_Mute'
+[2025.07.11-13.17.29:599][164]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.07.11-13.17.29:600][164]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=57
+[2025.07.11-13.17.29:600][164]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=57
+[2025.07.11-13.17.29:601][164]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=57
+[2025.07.11-13.17.29:601][164]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=57
+[2025.07.11-13.17.29:601][164]LogInit: FAudioDevice initialized with ID 57.
+[2025.07.11-13.17.29:601][164]LogAudio: Display: Audio Device (ID: 57) registered with world 'NewMap'.
+[2025.07.11-13.17.29:601][164]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 57
+[2025.07.11-13.17.29:603][164]LogLoad: Game class is 'MyGameMode_C'
+[2025.07.11-13.17.29:608][164]LogWorld: Bringing World /Game/MyMap/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2025.07.11-22.17.29
+[2025.07.11-13.17.29:613][164]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.17.29:615][164]LogWorld: Bringing up level for play took: 0.011255
+[2025.07.11-13.17.29:616][164]LogOnline: OSS: Created online subsystem instance for: :Context_79
+[2025.07.11-13.17.29:619][164]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.11-13.17.29:619][164]LogTemp: Warning: DoneINIT
+[2025.07.11-13.17.29:621][164]PIE: Server logged in
+[2025.07.11-13.17.29:621][164]PIE: Play in editor total start time 0.148 seconds.
+[2025.07.11-13.17.31:456][378]LogScript: Warning: Script Msg: Attempted to access index 1 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.17.31:456][378]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_55.W_NoteDisplay_C_0
+[2025.07.11-13.17.31:456][378]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.17.31:456][378]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_55.W_NoteDisplay_C_0
+[2025.07.11-13.17.31:456][378]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 2 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.17.31:456][378]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_55.W_NoteDisplay_C_0
+[2025.07.11-13.17.31:456][378]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.17.31:456][378]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.17.31:456][378]LogViewport: Display: Viewport HideCursorDuringCapture Changed, False -> True
+[2025.07.11-13.17.31:456][378]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CaptureDuringMouseDown
+[2025.07.11-13.17.31:461][378]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.17.34:697][766]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.17.39:826][381]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.17.41:335][562]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.17.44:577][951]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.17.47:119][256]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.17.49:718][568]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.17.51:219][748]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.17.54:468][138]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.17.55:735][286]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.17.55:735][286]LogWorld: BeginTearingDown for /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.17.55:735][286]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.17.55:736][286]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.17.55:739][286]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.07.11-13.17.55:742][286]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.17.55:755][286]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.17.55:756][286]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 57
+[2025.07.11-13.17.55:756][286]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=57
+[2025.07.11-13.17.55:757][286]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=57
+[2025.07.11-13.17.55:785][286]LogUObjectHash: Compacting FUObjectHashTables data took   1.13ms
+[2025.07.11-13.17.55:789][286]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioComponent_2) Not currently registered. Aborting.
+[2025.07.11-13.17.55:789][286]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_33.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.17.55:789][286]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_21.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.17.55:789][286]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_27.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.17.55:810][287]LogPlayLevel: Display: Destroying online subsystem :Context_79
+[2025.07.11-13.17.57:323][461]LogUObjectHash: Compacting FUObjectHashTables data took   0.85ms
+[2025.07.11-13.18.00:791][847]LogUObjectHash: Compacting FUObjectHashTables data took   0.44ms
+[2025.07.11-13.18.00:796][847]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.11-13.18.00:854][847]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyFFT/W_NoteDisplay" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset" SILENT=true
+[2025.07.11-13.18.00:889][847]LogSavePackage: Moving output files for package: /Game/MyFFT/W_NoteDisplay
+[2025.07.11-13.18.00:889][847]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/W_NoteDisplay2FC7639244F4F6C1EB7C6684022BD7E4.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyFFT/W_NoteDisplay.uasset'
+[2025.07.11-13.18.00:895][847]LogFileHelpers: InternalPromptForCheckoutAndSave took 99 ms (total: 6.19 sec)
+[2025.07.11-13.18.00:899][847]AssetCheck: New page: Asset Save: W_NoteDisplay
+[2025.07.11-13.18.00:899][847]LogContentValidation: Display: Validating /Script/UMGEditor.WidgetBlueprint /Game/MyFFT/W_NoteDisplay.W_NoteDisplay
+[2025.07.11-13.18.01:788][947]BlueprintLog: New page: Compile W_NoteDisplay
+[2025.07.11-13.18.01:842][947]LogUObjectHash: Compacting FUObjectHashTables data took   0.83ms
+[2025.07.11-13.18.03:386][ 70]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.07.11-13.18.03:392][ 70]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.07.11-13.18.03:392][ 70]PIE: New page: PIE session: NewMap (2025. 7. 12. 오전 7:18:03)
+[2025.07.11-13.18.03:425][ 70]LogPlayLevel: Creating play world package: /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.18.03:453][ 70]LogPlayLevel: PIE: StaticDuplicateObject took: (0.028688s)
+[2025.07.11-13.18.03:453][ 70]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/MyMap/NewMap.NewMap to /Game/MyMap/UEDPIE_0_NewMap.NewMap (0.028728s)
+[2025.07.11-13.18.03:464][ 70]LogUObjectHash: Compacting FUObjectHashTables data took   0.87ms
+[2025.07.11-13.18.03:472][ 70]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2025.07.11-13.18.03:472][ 70]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.07.11-13.18.03:472][ 70]LogAIModule: Creating AISystem for world NewMap
+[2025.07.11-13.18.03:473][ 70]LogPlayLevel: PIE: World Init took: (0.000876s)
+[2025.07.11-13.18.03:473][ 70]LogAudio: Display: Creating Audio Device:                 Id: 58, Scope: Unique, Realtime: True
+[2025.07.11-13.18.03:473][ 70]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.07.11-13.18.03:473][ 70]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.07.11-13.18.03:473][ 70]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.07.11-13.18.03:473][ 70]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.07.11-13.18.03:473][ 70]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.07.11-13.18.03:473][ 70]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.07.11-13.18.03:473][ 70]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.07.11-13.18.03:473][ 70]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.07.11-13.18.03:473][ 70]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.07.11-13.18.03:473][ 70]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.07.11-13.18.03:473][ 70]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.07.11-13.18.03:474][ 70]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.07.11-13.18.03:528][ 70]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Realtek(R) Audio)
+[2025.07.11-13.18.03:528][ 70]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.07.11-13.18.03:528][ 70]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.07.11-13.18.03:528][ 70]LogAudioMixer: Display: Creating Master Submix 'SM_Mute'
+[2025.07.11-13.18.03:528][ 70]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.07.11-13.18.03:528][ 70]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=58
+[2025.07.11-13.18.03:528][ 70]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=58
+[2025.07.11-13.18.03:530][ 70]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=58
+[2025.07.11-13.18.03:530][ 70]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=58
+[2025.07.11-13.18.03:530][ 70]LogInit: FAudioDevice initialized with ID 58.
+[2025.07.11-13.18.03:530][ 70]LogAudio: Display: Audio Device (ID: 58) registered with world 'NewMap'.
+[2025.07.11-13.18.03:530][ 70]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 58
+[2025.07.11-13.18.03:532][ 70]LogLoad: Game class is 'MyGameMode_C'
+[2025.07.11-13.18.03:537][ 70]LogWorld: Bringing World /Game/MyMap/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2025.07.11-22.18.03
+[2025.07.11-13.18.03:542][ 70]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.18.03:544][ 70]LogWorld: Bringing up level for play took: 0.011672
+[2025.07.11-13.18.03:545][ 70]LogOnline: OSS: Created online subsystem instance for: :Context_80
+[2025.07.11-13.18.03:548][ 70]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.11-13.18.03:548][ 70]LogTemp: Warning: DoneINIT
+[2025.07.11-13.18.03:551][ 70]PIE: Server logged in
+[2025.07.11-13.18.03:551][ 70]PIE: Play in editor total start time 0.16 seconds.
+[2025.07.11-13.18.12:700][164]LogScript: Warning: Script Msg: Attempted to access index 1 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.18.12:700][164]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_56.W_NoteDisplay_C_0
+[2025.07.11-13.18.12:700][164]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 1 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.18.12:700][164]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_56.W_NoteDisplay_C_0
+[2025.07.11-13.18.12:700][164]LogScript: Warning: Script Msg: Attempted to access index 2 from array 'InitializedNotes' of length 2 in '/Game/MyFFT/W_NoteDisplay.W_NoteDisplay_C'!
+[2025.07.11-13.18.12:700][164]LogScript: Warning: Script Msg called by: W_NoteDisplay_C /Engine/Transient.UnrealEdEngine_0:GameInstance_56.W_NoteDisplay_C_0
+[2025.07.11-13.18.12:700][164]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.18.12:700][164]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.18.12:700][164]LogViewport: Display: Viewport HideCursorDuringCapture Changed, False -> True
+[2025.07.11-13.18.12:700][164]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently_IncludingInitialMouseDown -> CaptureDuringMouseDown
+[2025.07.11-13.18.12:706][164]LogAudioCaptureCore: Display: WasapiCapture AudioFormat SampeRate: 48000, BitDepth: 32-Bit Floating Point
+[2025.07.11-13.18.18:717][885]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.18.21:075][168]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.18.22:575][348]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.18.25:826][738]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.18.28:917][109]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.18.32:459][534]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.18.36:609][ 32]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.18.42:342][720]LogBlueprintUserMessages: [W_NoteDisplay_C_0] reset
+[2025.07.11-13.18.45:592][110]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 1
+[2025.07.11-13.18.48:456][453]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 2
+[2025.07.11-13.18.50:723][725]LogBlueprintUserMessages: [W_NoteDisplay_C_0] 3
+[2025.07.11-13.18.53:978][116]LogViewport: Display: Viewport MouseLockMode Changed, LockAlways -> LockOnCapture
+[2025.07.11-13.18.53:978][116]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.07.11-13.18.56:028][362]LogViewport: Display: Viewport MouseLockMode Changed, LockOnCapture -> LockAlways
+[2025.07.11-13.18.56:028][362]LogViewport: Display: Viewport MouseCaptureMode Changed, CapturePermanently -> CaptureDuringMouseDown
+[2025.07.11-13.18.56:720][445]LogViewport: Display: Viewport MouseLockMode Changed, LockAlways -> LockOnCapture
+[2025.07.11-13.18.56:720][445]LogViewport: Display: Viewport MouseCaptureMode Changed, CaptureDuringMouseDown -> CapturePermanently
+[2025.07.11-13.18.57:185][497]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.18.57:185][497]LogWorld: BeginTearingDown for /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.11-13.18.57:185][497]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.57:186][497]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.18.57:189][497]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.07.11-13.18.57:194][497]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.18.57:207][497]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2025.07.11-13.18.57:208][497]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 58
+[2025.07.11-13.18.57:208][497]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=58
+[2025.07.11-13.18.57:209][497]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=58
+[2025.07.11-13.18.57:212][497]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.11-13.18.57:233][497]LogUObjectHash: Compacting FUObjectHashTables data took   1.09ms
+[2025.07.11-13.18.57:237][497]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioComponent_2) Not currently registered. Aborting.
+[2025.07.11-13.18.57:237][497]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_33.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.18.57:237][497]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_21.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.18.57:237][497]LogActorComponent: ReregisterComponent: (/Game/MyMap/NewMap.NewMap:PersistentLevel.REINST_BP_SoundAnalyzer_C_0.TRASH_AudioCaptureComponent_27.AudioComponent_1) Not currently registered. Aborting.
+[2025.07.11-13.18.57:264][498]LogPlayLevel: Display: Destroying online subsystem :Context_80
+[2025.07.11-13.18.57:916][569]LogUObjectHash: Compacting FUObjectHashTables data took   0.86ms
+[2025.07.11-13.18.58:507][639]LogUObjectHash: Compacting FUObjectHashTables data took   0.37ms
+[2025.07.11-13.18.58:509][639]LogStall: Shutdown...
+[2025.07.11-13.18.58:515][639]LogStall: Shutdown complete.
+[2025.07.11-13.18.58:654][639]LogWorld: UWorld::CleanupWorld for World_38, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.58:654][639]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.18.58:658][639]LogWorld: UWorld::CleanupWorld for World_37, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.58:659][639]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.18.58:688][639]LogSlate: Window 'GameProject_BP - Unreal Editor' being destroyed
+[2025.07.11-13.18.58:754][640]Cmd: QUIT_EDITOR
+[2025.07.11-13.18.58:754][640]LogCore: Engine exit requested (reason: UUnrealEdEngine::CloseEditor())
+[2025.07.11-13.18.58:757][640]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)
+[2025.07.11-13.18.58:757][640]LogStaticMesh: Abandoning remaining async distance field tasks for shutdown
+[2025.07.11-13.18.58:757][640]LogStaticMesh: Abandoning remaining async card representation tasks for shutdown
+[2025.07.11-13.18.58:760][640]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.58:760][640]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.11-13.18.58:764][640]LogLevelSequenceEditor: LevelSequenceEditor subsystem deinitialized.
+[2025.07.11-13.18.59:721][640]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerXAudio2)...
+[2025.07.11-13.18.59:721][640]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...
+[2025.07.11-13.18.59:721][640]LogAudio: Display: Audio Device unregistered from world 'NewMap'.
+[2025.07.11-13.18.59:721][640]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 1
+[2025.07.11-13.18.59:721][640]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1
+[2025.07.11-13.18.59:723][640]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=1
+[2025.07.11-13.18.59:730][640]LogAudio: Display: Audio Device Manager Shutdown
+[2025.07.11-13.18.59:731][640]LogWindowsTextInputMethodSystem: Activated input method: 한국어(대한민국) - Microsoft 입력기 (TSF IME).
+[2025.07.11-13.18.59:734][640]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0
+[2025.07.11-13.18.59:735][640]LogExit: Preparing to exit.
+[2025.07.11-13.18.59:752][640]LogUObjectHash: Compacting FUObjectHashTables data took   1.29ms
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.add_controls_for_selected_options' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.add_controls_for_selected' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.add_null_above_selected' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.align_translation_rotation' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.align_translation_all' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.align_translation_x' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.align_translation_y' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.align_translation_z' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.align_rotation' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.align_scale' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.search_replace_name_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.search_replace_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.add_prefix_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.add_prefix_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.add_suffix_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.add_suffix_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.do_rename_dialog' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.do_rename_entry' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.set_bone_reference_pose' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:764][640]LogPython: Display: Object '/Engine/PythonTypes.ControlOutputFormat' was externally referenced when shutting down Python. Forcibly releasing its Python resources!
+[2025.07.11-13.18.59:949][640]LogWorld: UWorld::CleanupWorld for World_10, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:952][640]LogWorld: UWorld::CleanupWorld for World_36, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:955][640]LogWorld: UWorld::CleanupWorld for World_0, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:958][640]LogWorld: UWorld::CleanupWorld for World_4, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:961][640]LogWorld: UWorld::CleanupWorld for World_5, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:963][640]LogWorld: UWorld::CleanupWorld for World_7, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:966][640]LogWorld: UWorld::CleanupWorld for World_29, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:969][640]LogWorld: UWorld::CleanupWorld for World_30, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:972][640]LogWorld: UWorld::CleanupWorld for World_2, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:974][640]LogWorld: UWorld::CleanupWorld for World_1, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.18.59:977][640]LogWorld: UWorld::CleanupWorld for World_9, bSessionEnded=true, bCleanupResources=true
+[2025.07.11-13.19.00:032][640]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled
+[2025.07.11-13.19.00:041][640]LogExit: Editor shut down
+[2025.07.11-13.19.00:059][640]LogExit: Transaction tracking system shut down
+[2025.07.11-13.19.00:151][640]LogExit: Object subsystem successfully closed.
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: ================================================
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: Total job queries 16, among them cache hits 6 (37.50%)
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: Tracking 10 distinct input hashes that result in 8 distinct outputs (80.00%)
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: RAM used: 19.86 KiB of 1.60 GiB budget. Usage: 0.00%
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: Shaders Compiled: 0
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: Jobs assigned 0, completed 0 (0%)
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 0.00 s
+[2025.07.11-13.19.00:156][640]LogShaderCompilers: Display: ================================================
+[2025.07.11-13.19.00:177][640]LogShaderCompilers: Display: Shaders left to compile 0
+[2025.07.11-13.19.00:184][640]LogVirtualization: UE::Virtualization was shutdown
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module SequencerWidgets (1056)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module MovieSceneCapture (1054)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module Voice (1052)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module HierarchicalLODOutliner (1050)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module SubobjectEditor (1048)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module SceneOutliner (1046)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module AddContentDialog (1044)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module WidgetCarousel (1043)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module StatusBar (1040)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module UnsavedAssetsTracker (1038)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (1036)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module StatsViewer (1034)
+[2025.07.11-13.19.00:219][640]LogModuleManager: Shutting down and abandoning module SequenceRecorderSections (1032)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module AutomationWorker (1030)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module EngineAssetDefinitions (1028)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module TextureAlignMode (1026)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module BspMode (1024)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module GeometryMode (1022)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module PlanarCut (1020)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module FractureEngine (1018)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module CharacterAI (1016)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module CameraShakePreviewer (1014)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module WebMMediaFactory (1012)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module WebMMediaEditor (1010)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module WebMMedia (1008)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module WmfMediaFactory (1006)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module WmfMediaEditor (1004)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (1002)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module MediaCompositingEditor (1000)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module SequenceRecorder (999)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module OpenExrWrapper (996)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module ImgMediaFactory (994)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module ImgMediaEditor (992)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module AndroidMediaFactory (990)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module AndroidMediaEditor (988)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module AvfMediaFactory (986)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module AvfMediaEditor (984)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module WaveTableEditor (982)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module ResonanceAudioEditor (980)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module RigVMEditor (978)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module GooglePADEditor (976)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module AudioCaptureEditor (974)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module AndroidFileServerEditor (972)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module TemplateSequenceEditor (970)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module ActorSequenceEditor (968)
+[2025.07.11-13.19.00:220][640]LogModuleManager: Shutting down and abandoning module LevelSequenceEditor (966)
+[2025.07.11-13.19.00:221][640]LogModuleManager: Shutting down and abandoning module IKRigEditor (964)
+[2025.07.11-13.19.00:221][640]LogModuleManager: Shutting down and abandoning module ControlRigEditor (962)
+[2025.07.11-13.19.00:221][640]LogModuleManager: Shutting down and abandoning module SmartSnapping (960)
+[2025.07.11-13.19.00:221][640]LogModuleManager: Shutting down and abandoning module SessionServices (958)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module MeshPaint (956)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module VirtualTexturingEditor (954)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module PlacementMode (953)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module FoliageEdit (950)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module LandscapeEditor (948)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module SceneDepthPickerMode (946)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module ActorPickerMode (944)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module ViewportSnapping (942)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module EditorWidgets (940)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module ViewportInteraction (938)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module ClothPainter (936)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module SkeletalMeshEditor (935)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module WidgetRegistration (932)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module LogVisualizer (930)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (928)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (926)
+[2025.07.11-13.19.00:223][640]LogModuleManager: Shutting down and abandoning module PIEPreviewDeviceProfileSelector (925)
+[2025.07.11-13.19.00:224][640]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (923)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module WindowsPlatformEditor (920)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module MacPlatformEditor (918)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (916)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (914)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module RenderResourceViewer (912)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module GameplayDebuggerEditor (910)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module AnimationSettings (908)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module VirtualizationEditor (906)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module CSVtoSVG (904)
+[2025.07.11-13.19.00:245][640]LogModuleManager: Shutting down and abandoning module DerivedDataEditor (902)
+[2025.07.11-13.19.00:246][640]LogModuleManager: Shutting down and abandoning module EditorConfig (900)
+[2025.07.11-13.19.00:246][640]LogModuleManager: Shutting down and abandoning module EditorFramework (898)
+[2025.07.11-13.19.00:246][640]LogModuleManager: Shutting down and abandoning module StaticMeshEditor (896)
+[2025.07.11-13.19.00:246][640]LogModuleManager: Shutting down and abandoning module TraceInsights (894)
+[2025.07.11-13.19.00:246][640]MemoryProfiler: Shutdown
+[2025.07.11-13.19.00:246][640]NetworkingProfiler: Shutdown
+[2025.07.11-13.19.00:246][640]LoadingProfiler: Shutdown
+[2025.07.11-13.19.00:246][640]TimingProfiler: Shutdown
+[2025.07.11-13.19.00:246][640]LogModuleManager: Shutting down and abandoning module TraceServices (893)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module TraceAnalysis (892)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module EditorInteractiveToolsFramework (888)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module InteractiveToolsFramework (887)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module InputBindingEditor (884)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module MergeActors (882)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (880)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module LocalizationService (879)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module HardwareTargeting (876)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (874)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module UndoHistory (872)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module XmlParser (870)
+[2025.07.11-13.19.00:247][640]LogModuleManager: Shutting down and abandoning module Blutility (868)
+[2025.07.11-13.19.00:248][640]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (866)
+[2025.07.11-13.19.00:248][640]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (865)
+[2025.07.11-13.19.00:248][640]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (862)
+[2025.07.11-13.19.00:248][640]LogModuleManager: Shutting down and abandoning module InternationalizationSettings (861)
+[2025.07.11-13.19.00:248][640]LogModuleManager: Shutting down and abandoning module SettingsEditor (858)
+[2025.07.11-13.19.00:248][640]LogModuleManager: Shutting down and abandoning module ProjectLauncher (856)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module SessionFrontend (854)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module ProfilerClient (852)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module DeviceManager (850)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module AutomationController (848)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module AutomationWindow (846)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module Layers (844)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (842)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module DetailCustomizations (840)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module PackagesDialog (838)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module AnimationBlueprintEditor (836)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module Persona (834)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module AdvancedPreviewScene (833)
+[2025.07.11-13.19.00:249][640]LogModuleManager: Shutting down and abandoning module Kismet (830)
+[2025.07.11-13.19.00:256][640]LogModuleManager: Shutting down and abandoning module KismetWidgets (829)
+[2025.07.11-13.19.00:256][640]LogModuleManager: Shutting down and abandoning module GraphEditor (826)
+[2025.07.11-13.19.00:256][640]LogModuleManager: Shutting down and abandoning module StructViewer (824)
+[2025.07.11-13.19.00:256][640]LogModuleManager: Shutting down and abandoning module ClassViewer (822)
+[2025.07.11-13.19.00:258][640]LogModuleManager: Shutting down and abandoning module UncontrolledChangelists (820)
+[2025.07.11-13.19.00:258][640]LogModuleManager: Shutting down and abandoning module SourceControlWindowExtender (818)
+[2025.07.11-13.19.00:258][640]LogModuleManager: Shutting down and abandoning module SourceControlWindows (816)
+[2025.07.11-13.19.00:258][640]LogModuleManager: Shutting down and abandoning module OutputLog (814)
+[2025.07.11-13.19.00:259][640]LogModuleManager: Shutting down and abandoning module Documentation (812)
+[2025.07.11-13.19.00:259][640]LogModuleManager: Shutting down and abandoning module SparseVolumeTexture (810)
+[2025.07.11-13.19.00:259][640]LogModuleManager: Shutting down and abandoning module MovieSceneTracks (808)
+[2025.07.11-13.19.00:259][640]LogModuleManager: Shutting down and abandoning module MovieScene (806)
+[2025.07.11-13.19.00:259][640]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (804)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module BinkAudioDecoder (802)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module AudioMixerXAudio2 (800)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module AudioMixer (799)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module AudioMixerCore (798)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module LauncherPlatform (794)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module AnalyticsET (792)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module PortalServices (790)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module PortalRpc (788)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module MessagingRpc (786)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module AIModule (784)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module GameplayDebugger (783)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module AITestSuite (781)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module NavigationSystem (779)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module LevelInstanceEditor (776)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module TypedElementRuntime (774)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module TypedElementFramework (772)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module ImageWriteQueue (770)
+[2025.07.11-13.19.00:260][640]LogModuleManager: Shutting down and abandoning module ProfilerService (768)
+[2025.07.11-13.19.00:291][640]LogModuleManager: Shutting down and abandoning module ProfileVisualizer (766)
+[2025.07.11-13.19.00:291][640]LogModuleManager: Shutting down and abandoning module CacheTrackRecorder (764)
+[2025.07.11-13.19.00:291][640]LogModuleManager: Shutting down and abandoning module TakeRecorderSources (762)
+[2025.07.11-13.19.00:291][640]LogModuleManager: Shutting down and abandoning module TakeTrackRecorders (760)
+[2025.07.11-13.19.00:291][640]LogModuleManager: Shutting down and abandoning module TakesCore (758)
+[2025.07.11-13.19.00:291][640]LogModuleManager: Shutting down and abandoning module AudioSynesthesiaEditor (756)
+[2025.07.11-13.19.00:291][640]LogModuleManager: Shutting down and abandoning module MegascansPlugin (754)
+[2025.07.11-13.19.00:291][640]LogModuleManager: Shutting down and abandoning module Bridge (752)
+[2025.07.11-13.19.00:292][640]LogModuleManager: Shutting down and abandoning module ContentBrowserClassDataSource (750)
+[2025.07.11-13.19.00:292][640]LogModuleManager: Shutting down and abandoning module ContentBrowserFileDataSource (748)
+[2025.07.11-13.19.00:292][640]LogModuleManager: Shutting down and abandoning module ContentBrowserAssetDataSource (746)
+[2025.07.11-13.19.00:292][640]LogModuleManager: Shutting down and abandoning module CollectionManager (745)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module PortableObjectFileDataSource (742)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ObjectMixerEditor (740)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module LightMixer (738)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeEditorUtilities (736)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeEditorPipelines (734)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeEditor (732)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module UVEditorToolsEditorOnly (730)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module UVEditorTools (728)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module UVEditor (726)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeFbxParser (724)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeCommonParser (722)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeDispatcher (720)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeExport (718)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeMessages (716)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GLTFCore (714)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module WorldPartitionHLODUtilities (712)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (710)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module SequencerAnimTools (708)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ModelingToolsEditorMode (706)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module PluginBrowser (704)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MobileLauncherProfileWizard (702)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MaterialAnalyzer (700)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module EditorDebugTools (698)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module EditorScriptingUtilities (696)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module CryptoKeysOpenSSL (694)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module CryptoKeys (692)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ChangelistReview (690)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module CurveEditorTools (688)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module BlueprintHeaderView (686)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module TakeSequencer (684)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module TakeMovieScene (682)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeTestEditor (680)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeTests (678)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ToolPresetEditor (676)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ToolPresetAsset (674)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module StructUtilsTestSuite (672)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module StructUtilsNodes (670)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module StructUtilsEditor (668)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module StructUtilsEngine (666)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module OpenImageDenoise (664)
+[2025.07.11-13.19.00:294][640]LogOpenImageDenoise: OIDN shutting down
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MeshLODToolset (662)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module SkeletalMeshModifiers (660)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ModelingEditorUI (658)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryProcessingAdapters (656)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MeshModelingToolsEditorOnlyExp (654)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MeshModelingToolsExp (652)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module LocalizableMessageBlueprint (650)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module LocalizableMessage (648)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCollectionNodes (646)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCollectionTracks (644)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCollectionEngine (643)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCollectionSequencer (641)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCollectionEditor (638)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryFlowMeshProcessingEditor (636)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryFlowMeshProcessing (634)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryFlowCore (632)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module DataflowNodes (630)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module DataflowEnginePlugin (628)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module DataflowEditor (626)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ChaosNiagara (624)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ChaosSolverEditor (622)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ChaosUserDataPT (620)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module FractureEditor (618)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ChaosClothEditor (616)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module BackChannel (614)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AutomationUtilsEditor (612)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AutomationUtils (610)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module VariantManager (608)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module VariantManagerContentEditor (606)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module DatasmithContentEditor (604)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module RiderSourceCodeAccess (602)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (600)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module VisualStudioCodeSourceCodeAccess (598)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module UObjectPlugin (596)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module VisualStudioSourceCodeAccess (594)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module PluginUtils (592)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GitSourceControl (590)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module CLionSourceCodeAccess (588)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AnimationSharingEd (586)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module N10XSourceCodeAccess (584)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module DumpGPUServices (582)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module NiagaraEditorWidgets (580)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module OodleNetworkHandlerComponent (578)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AlembicImporter (576)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AlembicLibrary (575)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MediaPlateEditor (572)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MediaPlate (570)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MediaCompositing (568)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ImgMedia (566)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module SynthesisEditor (564)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ResonanceAudio (562)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponentEditor (560)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MobilePatchingUtils (558)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ModelingOperatorsEditorOnly (556)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ModelingOperators (554)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ModelingComponentsEditorOnly (552)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ModelingComponents (550)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryFramework (549)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MeshModelingToolsEditorOnly (546)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MeshModelingTools (544)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InputDebuggingEditor (542)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InputDebugging (540)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GooglePAD (538)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCacheTracks (536)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCache (534)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCacheStreamer (532)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCacheSequencer (530)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryCacheEd (528)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module DynamicMesh (526)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GeometryAlgorithms (524)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AudioCapture (522)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AudioCaptureWasapi (521)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AssetTags (518)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (516)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AppleImageUtilsBlueprintSupport (514)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AppleImageUtils (512)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AndroidPermission (510)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ActorLayerUtilitiesEditor (508)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ActorLayerUtilities (506)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module SequencerScriptingEditor (504)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module SequencerScripting (502)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module TemplateSequence (500)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ControlRigSpline (498)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module AnimationModifierLibrary (496)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module BlendSpaceMotionAnalysis (494)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module ACLPluginEditor (492)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (488)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (486)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module Paper2DEditor (484)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module EditorTraceUtilities (482)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module TraceUtilities (480)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InputEditor (478)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MeshPaintingToolset (476)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module MeshPaintEditorMode (474)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GameProject_BP (472)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangePipelines (470)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeImport (468)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeFactoryNodes (466)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module InterchangeNodes (464)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module FacialAnimationEditor (462)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module FacialAnimation (460)
+[2025.07.11-13.19.00:294][640]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (458)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module DataValidation (456)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module AssetManagerEditor (454)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module TreeMap (453)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module StructUtils (450)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module PythonScriptPlugin (448)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module PBIK (446)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module FullBodyIK (444)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module ChaosCachingEditor (442)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module TakeRecorder (441)
+[2025.07.11-13.19.00:295][640]LogModuleManager: Shutting down and abandoning module LevelEditor (439)
+[2025.07.11-13.19.00:296][640]LogModuleManager: Shutting down and abandoning module PixelInspectorModule (438)
+[2025.07.11-13.19.00:296][640]LogModuleManager: Shutting down and abandoning module CommonMenuExtensions (436)
+[2025.07.11-13.19.00:296][640]LogModuleManager: Shutting down and abandoning module MainFrame (434)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module HotReload (433)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module ChaosCaching (428)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module TraceDataFiltering (426)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module PropertyAccessNode (424)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module AnimationSharing (422)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module GameplayCameras (420)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module NiagaraAnimNotifies (418)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module Niagara (416)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module NiagaraEditor (415)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module ContentBrowser (414)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module ContentBrowserData (413)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module NiagaraCore (408)
+[2025.07.11-13.19.00:297][640]LogModuleManager: Shutting down and abandoning module UdpMessaging (406)
+[2025.07.11-13.19.00:397][640]LogModuleManager: Shutting down and abandoning module TcpMessaging (404)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module ImgMediaEngine (402)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module Synthesis (400)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module SoundFields (398)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module SignificanceManager (396)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module PropertyAccessEditor (394)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module RigVMDeveloper (392)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module RigVM (390)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (388)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module MsQuicRuntime (386)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module LocationServicesBPLibrary (384)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module MetasoundEditor (382)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module ToolMenus (381)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module AudioWidgets (379)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module AdvancedWidgets (378)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module MetasoundEngineTest (374)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module MetasoundEngine (372)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module WaveTable (371)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module AudioCodecEngine (369)
+[2025.07.11-13.19.00:498][640]LogModuleManager: Shutting down and abandoning module MetasoundStandardNodes (366)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module MetasoundFrontend (364)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module MetasoundGenerator (362)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module MetasoundGraphCore (360)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (358)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module CableComponent (356)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module AudioSynesthesia (354)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module AudioAnalyzer (353)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module AudioSynesthesiaCore (350)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module SignalProcessing (349)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module EnvironmentQueryEditor (346)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module ActorSequence (344)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module IKRigDeveloper (342)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module IKRig (340)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module ControlRigDeveloper (338)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module ControlRig (336)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module Constraints (335)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module LevelSequence (333)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module AnimationData (330)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module Paper2D (328)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module InputBlueprintNodes (326)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module BlueprintGraph (325)
+[2025.07.11-13.19.00:499][640]LogModuleManager: Shutting down and abandoning module EnhancedInput (322)
+[2025.07.11-13.19.00:500][640]LogModuleManager: Shutting down and abandoning module WindowsMoviePlayer (320)
+[2025.07.11-13.19.00:504][640]LogModuleManager: Shutting down and abandoning module WebMMoviePlayer (318)
+[2025.07.11-13.19.00:504][640]LogModuleManager: Shutting down and abandoning module AndroidFileServer (316)
+[2025.07.11-13.19.00:504][640]LogModuleManager: Shutting down and abandoning module NetworkReplayStreaming (314)
+[2025.07.11-13.19.00:504][640]LogModuleManager: Shutting down and abandoning module PacketHandler (312)
+[2025.07.11-13.19.00:504][640]LogModuleManager: Shutting down and abandoning module WorldPartitionEditor (310)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module AnimGraph (308)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module TimeManagement (306)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module AnimationDataController (304)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module ClothingSystemEditor (302)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module ClothingSystemRuntimeNv (300)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module MediaAssets (298)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module Overlay (296)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module OverlayEditor (295)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module VREditor (292)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module StringTableEditor (290)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (288)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (286)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module FunctionalTesting (284)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (282)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (281)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module ScriptableEditorWidgets (278)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module UMG (276)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module UMGEditor (275)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module EditorStyle (270)
+[2025.07.11-13.19.00:505][640]LogModuleManager: Shutting down and abandoning module SlateReflector (268)
+[2025.07.11-13.19.00:506][640]LogModuleManager: Shutting down and abandoning module Slate (266)
+[2025.07.11-13.19.00:506][640]LogModuleManager: Shutting down and abandoning module SlateCore (264)
+[2025.07.11-13.19.00:508][640]LogModuleManager: Shutting down and abandoning module SubobjectDataInterface (262)
+[2025.07.11-13.19.00:508][640]LogModuleManager: Shutting down and abandoning module LandscapeEditorUtilities (260)
+[2025.07.11-13.19.00:508][640]LogModuleManager: Shutting down and abandoning module UnrealEd (258)
+[2025.07.11-13.19.00:508][640]LogModuleManager: Shutting down and abandoning module MRMesh (256)
+[2025.07.11-13.19.00:508][640]LogModuleManager: Shutting down and abandoning module Messaging (254)
+[2025.07.11-13.19.00:508][640]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (252)
+[2025.07.11-13.19.00:508][640]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (250)
+[2025.07.11-13.19.00:508][640]LogModuleManager: Shutting down and abandoning module LiveCoding (248)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module Networking (246)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module Core (244)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module AssetDefinition (242)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module MovieSceneTools (240)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module CurveEditor (239)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module Sequencer (237)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module KismetCompiler (234)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module MeshBuilder (232)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module NaniteBuilder (230)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module MeshUtilities (228)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module MeshMergeUtilities (227)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module StaticMeshDescription (226)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module GeometryProcessingInterfaces (225)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module MeshReductionInterface (222)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module MeshBoneReduction (221)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module SkeletalMeshReduction (219)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module ProxyLODMeshReduction (217)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module QuadricMeshReduction (215)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module MaterialBaking (211)
+[2025.07.11-13.19.00:521][640]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (208)
+[2025.07.11-13.19.00:532][640]LogModuleManager: Shutting down and abandoning module TelemetryUtils (205)
+[2025.07.11-13.19.00:532][640]LogModuleManager: Shutting down and abandoning module NullInstallBundleManager (202)
+[2025.07.11-13.19.00:532][640]LogModuleManager: Shutting down and abandoning module ShaderPreprocessor (200)
+[2025.07.11-13.19.00:532][640]LogModuleManager: Shutting down and abandoning module DerivedDataCache (198)
+[2025.07.11-13.19.00:537][640]LogModuleManager: Shutting down and abandoning module TargetPlatform (196)
+[2025.07.11-13.19.00:537][640]LogModuleManager: Shutting down and abandoning module MetalShaderFormat (195)
+[2025.07.11-13.19.00:537][640]LogModuleManager: Shutting down and abandoning module VulkanShaderFormat (193)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (191)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module ShaderFormatD3D (189)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module ShaderFormatVectorVM (187)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module AudioFormatBINK (185)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module AudioFormatADPCM (183)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module AudioFormatOGG (181)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module AudioFormatOPUS (179)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module WindowsTargetPlatform (177)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module TVOSTargetPlatform (175)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module MacTargetPlatform (173)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module LinuxArm64TargetPlatform (171)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (169)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module IOSTargetPlatform (167)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (165)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module TextureFormat (163)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module ImageWrapper (162)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module TextureFormatOodle (160)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (158)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (156)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module TextureFormatETC2 (154)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (152)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (150)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module TurnkeySupport (147)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module InputCore (144)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module Settings (142)
+[2025.07.11-13.19.00:538][640]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (140)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module ChaosSolverEngine (138)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module FieldSystemEngine (137)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module Chaos (134)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module GeometryCore (133)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module WindowsPlatformFeatures (130)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module GameplayMediaEncoder (129)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module AVEncoder (128)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module D3D11RHI (124)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module ChaosCloth (122)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module GLTFExporter (120)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module VariantManagerContent (118)
+[2025.07.11-13.19.00:539][640]LogModuleManager: Shutting down and abandoning module DatasmithContent (116)
+[2025.07.11-13.19.00:540][640]LogModuleManager: Shutting down and abandoning module RenderDocPlugin (114)
+[2025.07.11-13.19.00:540][640]RenderDocPlugin: plugin has been unloaded.
+[2025.07.11-13.19.00:540][640]LogModuleManager: Shutting down and abandoning module PixWinPlugin (112)
+[2025.07.11-13.19.00:540][640]LogModuleManager: Shutting down and abandoning module NiagaraVertexFactories (110)
+[2025.07.11-13.19.00:540][640]LogModuleManager: Shutting down and abandoning module NiagaraShader (108)
+[2025.07.11-13.19.00:540][640]LogModuleManager: Shutting down and abandoning module LauncherChunkInstaller (106)
+[2025.07.11-13.19.00:540][640]LogModuleManager: Shutting down and abandoning module WmfMedia (104)
+[2025.07.11-13.19.00:541][640]LogModuleManager: Shutting down and abandoning module Media (103)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module ExrReaderGpu (100)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module WindowsDeviceProfileSelector (98)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module ChunkDownloader (96)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (94)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module AISupportModule (92)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module ACLPlugin (90)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (88)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module OnlineSubsystemUtils (86)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (84)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module XMPP (79)
+[2025.07.11-13.19.00:544][640]LogModuleManager: Shutting down and abandoning module WebSockets (78)
+[2025.07.11-13.19.00:567][640]LogModuleManager: Shutting down and abandoning module HTTP (75)
+[2025.07.11-13.19.00:567][640]LogHttp: Warning: [FHttpManager::Shutdown] Unbinding delegates for 1 outstanding Http Requests:
+[2025.07.11-13.19.00:567][640]LogHttp: Warning: 	verb=[POST] url=[https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7B0C80DE67-45F9-6D28-6ABC-2687F972B5C3%7D&AppID=UEEditor.Rocket.Release&AppVersion=5.3.2-29314046%2B%2B%2BUE5%2BRelease-5.3&UserID=5bc9ba7049bfb7c5400b65ae98de2dd3%7Cf36b5c60464e436bba3583d1c5a2ec67%7C2eab6d9c-ca8e-4c3b-a4b0-0ca448a6b557&AppEnvironment=datacollector-binary&UploadType=eteventstream] refs=[1] status=Processing
+[2025.07.11-13.19.00:586][640]LogModuleManager: Shutting down and abandoning module SSL (74)
+[2025.07.11-13.19.00:586][640]LogModuleManager: Shutting down and abandoning module OnlineServicesCommonEngineUtils (70)
+[2025.07.11-13.19.00:586][640]LogModuleManager: Shutting down and abandoning module OnlineServicesCommon (68)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module OnlineServicesInterface (66)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module DesktopPlatform (64)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module PythonScriptPluginPreload (62)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module PlatformCryptoOpenSSL (60)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module PlatformCryptoTypes (58)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module PlatformCrypto (56)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module PlasticSourceControl (54)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (52)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module SourceControl (51)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module XGEController (48)
+[2025.07.11-13.19.00:587][640]LogXGEController: Cleaning working directory: C:/Users/user/AppData/Local/Temp/UnrealXGEWorkingDir/
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module FastBuildController (46)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module IoStoreOnDemand (44)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module AnimationModifiers (42)
+[2025.07.11-13.19.00:587][640]LogModuleManager: Shutting down and abandoning module AudioEditor (40)
+[2025.07.11-13.19.00:588][640]LogModuleManager: Shutting down and abandoning module PropertyEditor (39)
+[2025.07.11-13.19.00:588][640]LogModuleManager: Shutting down and abandoning module Virtualization (36)
+[2025.07.11-13.19.00:588][640]LogModuleManager: Shutting down and abandoning module MessageLog (35)
+[2025.07.11-13.19.00:588][640]LogModuleManager: Shutting down and abandoning module TextureCompressor (32)
+[2025.07.11-13.19.00:588][640]LogModuleManager: Shutting down and abandoning module OpenColorIOWrapper (31)
+[2025.07.11-13.19.00:588][640]LogModuleManager: Shutting down and abandoning module RenderCore (28)
+[2025.07.11-13.19.00:588][640]LogModuleManager: Shutting down and abandoning module Landscape (26)
+[2025.07.11-13.19.00:588][640]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (24)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (22)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module Renderer (20)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module Engine (18)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module CoreUObject (16)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module SandboxFile (14)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module PakFile (12)
+[2025.07.11-13.19.00:589][640]LogPakFile: Destroying PakPlatformFile
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module RSA (11)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module NetworkFile (8)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module StreamingFile (6)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module CookOnTheFly (4)
+[2025.07.11-13.19.00:589][640]LogModuleManager: Shutting down and abandoning module StorageServerClient (2)
+[2025.07.11-13.19.00:591][640]LogD3D11RHI: Shutdown
+[2025.07.11-13.19.00:591][640]LogD3D11RHI: CleanupD3DDevice
+[2025.07.11-13.19.00:647][640]LogExit: Exiting.
+[2025.07.11-13.19.00:710][640]Log file closed, 07/11/25 22:19:00
