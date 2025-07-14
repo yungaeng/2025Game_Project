@@ -314,8 +314,6 @@ void worker_thread(HANDLE h_iocp) {
             break;
         }
         case OP_GAMESTART: {
-            // 하단은 rooms 자료구조를 순회하면서 해야 할 일 일괄처리
-        // 준비가 된 게임은 게임 시작
             sc_packet_gamestart p;
             p.size = sizeof(p);
             p.type = S2C_GAMESTART;

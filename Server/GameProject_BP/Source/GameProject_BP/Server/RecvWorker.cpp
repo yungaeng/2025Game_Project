@@ -44,7 +44,7 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
 		}
 		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_ROOM, [this](const TArray<uint8>& Data) {
-		const sc_packet_enter* p = reinterpret_cast<const sc_packet_enter*>(Data.GetData());
+		const sc_packet_room* p = reinterpret_cast<const sc_packet_room*>(Data.GetData());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_ROOM received"));
 		// TODO
 		});
@@ -77,8 +77,9 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
         const sc_packet_chat* p = reinterpret_cast<const sc_packet_chat*>(Data.GetData());
         GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_CHAT received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-           // TODO
-            
+            FString id = FString::Printf(TEXT("%lld"), p->id);
+            FString chat = p->message;
+            GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, "ID : " + id + " : " + chat);
         }
         });
 
