@@ -78,7 +78,7 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
         GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_CHAT received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
             FString id = FString::Printf(TEXT("%lld"), p->id);
-            FString chat = p->message;
+            FString chat = UTF8_TO_TCHAR(p->message);
             GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, "ID : " + id + " : " + chat);
         }
         });
