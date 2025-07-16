@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "protocol.h"
 #include <unordered_map>
-#include <mutex>
 
 /**
  * 
@@ -21,12 +20,9 @@ public:
 public:
 	class FSocket* m_Socket;
 	TSharedPtr<class RecvWorker> m_RecvworkerPtr;
-    std::mutex m_netlock;
 
-    bool m_loginstate = false;
-
-	
+    bool m_login = false;
 	bool m_gameover = false;
-	char m_result;
+    char m_result;
 };
 

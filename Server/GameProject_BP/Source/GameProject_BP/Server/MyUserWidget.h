@@ -20,7 +20,7 @@ class GAMEPROJECT_BP_API UMyUserWidget : public UUserWidget
 public:
     // BeginPlay와 유사하게 위젯이 생성될 때 호출되는 함수
     virtual void NativeConstruct() override;
-
+    virtual void NativeTick(const FGeometry& MyGeometry, float InDeltaTime) override;
 protected:
     // UI 요소들 (UPROPERTY(meta=(BindWidget))을 통해 위젯 블루프린트의 이름과 연결)
     UPROPERTY(meta = (BindWidget))
@@ -72,5 +72,12 @@ protected:
 
     // 다른 이벤트 처리 함수들... (위젯 블루프린트의 이벤트 그래프를 참고하여 추가)
     // 예를 들어, Input Text Changed (Committed) 이벤트도 고려할 수 있습니다.
+
+    // networker와 연동
+    TWeakPtr<class Networker> m_NetworkerPtr;
+    UPROPERTY(BlueprintReadOnly)
+    bool islogin;
+    UPROPERTY(BlueprintReadOnly)
+    bool isgameover;
 };
 

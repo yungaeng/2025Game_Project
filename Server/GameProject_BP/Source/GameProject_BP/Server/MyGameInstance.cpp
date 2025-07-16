@@ -73,7 +73,6 @@ void UMyGameInstance::SendSignin(FString input)
     strcpy_s(p.name, sizeof(p.name), TCHAR_TO_ANSI(*name));
     m_Socket->Send((uint8*)&p, sizeof(p), bytesSent);
 }
-
 void UMyGameInstance::SendLogin(FString input)
 {
 	FString name = input;
@@ -84,15 +83,6 @@ void UMyGameInstance::SendLogin(FString input)
 	strcpy_s(p.name, sizeof(p.name), TCHAR_TO_ANSI(*name));
 	m_Socket->Send((uint8*)&p, sizeof(p), bytesSent);
 }
-
-bool UMyGameInstance::GetLoginState()
-{
-    std::lock_guard<std::mutex> ll{ m_NetworkerPtr->m_netlock };
-    {
-        return m_NetworkerPtr->m_loginstate;
-    }
-}
-
 void UMyGameInstance::SendRoom(uint8 request)
 {
 	int32 bytesSent;
@@ -110,15 +100,5 @@ void UMyGameInstance::SendAttack()
 	p.type = C2S_ATTACK;
 	m_Socket->Send((uint8*)&p, p.size, bytesSent);
 }
-
-
-bool UMyGameInstance::GetGameOver()
-{
-    std::lock_guard<std::mutex> ll{ m_NetworkerPtr->m_netlock };
-    {
-        return m_NetworkerPtr->m_gameover;
-    }
-}
-
 
 

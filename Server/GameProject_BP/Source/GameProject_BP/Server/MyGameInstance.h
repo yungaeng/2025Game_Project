@@ -25,18 +25,13 @@ class GAMEPROJECT_BP_API UMyGameInstance : public UGameInstance
 	void SendSignin(FString input);
     UFUNCTION(BlueprintCallable)
     void SendLogin(FString input);
-    UFUNCTION(BlueprintCallable)
-    bool GetLoginState();
-
 	UFUNCTION(BlueprintCallable)
 	void SendRoom(uint8 request);
 	UFUNCTION(BlueprintCallable)
 	void SendAttack();
 
 
-	UFUNCTION(BlueprintCallable)
-	bool GetGameOver();
-
+    
 
 public:
 	// 서버와 연결
@@ -47,4 +42,5 @@ public:
 
 	// Recv작업을 위한 스레드를 생성하는 객체 포인터
 	TSharedPtr<class Networker> m_NetworkerPtr;
+
 };

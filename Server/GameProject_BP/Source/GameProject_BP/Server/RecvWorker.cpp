@@ -9,7 +9,7 @@
 #include "Networker.h"
 #include "RecvPacketHandler.h"
 
-RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) : m_Socket(Socket), m_NetworkerPtr(networker)
+RecvWorker::RecvWorker(class FSocket* Socket, TSharedPtr<class Networker> networker) : m_Socket(Socket), m_NetworkerPtr(networker)
 {
 	// 패킷 핸들러 등록
 	// SC_LOGIN_OK
@@ -17,10 +17,7 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
 		const sc_packet_login_ok* p = reinterpret_cast<const sc_packet_login_ok*>(Data.GetData());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_LOGIN_OK received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-            std::lock_guard<std::mutex> ll{ Net->m_netlock };
-            {
-                Net->m_loginstate = true;
-            }
+                Net->m_login = true;
         }
 		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_LOGIN_FAIL, [this](const TArray<uint8>& Data) {

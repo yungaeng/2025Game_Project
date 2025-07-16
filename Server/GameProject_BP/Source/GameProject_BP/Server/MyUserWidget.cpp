@@ -2,6 +2,7 @@
 
 
 #include "MyUserWidget.h"
+#include "Networker.h"
 
 void UMyUserWidget::NativeConstruct()
 {
@@ -30,8 +31,16 @@ void UMyUserWidget::NativeConstruct()
     {
         serveripedit->OnTextChanged.AddDynamic(this, &UMyUserWidget::OnEditableServeripChanged);
     }
+}
 
-    // 다른 위젯 이벤트 바인딩...
+void UMyUserWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
+{
+    Super::NativeTick(MyGeometry, InDeltaTime);
+
+    if (TSharedPtr<Networker> net = m_NetworkerPtr.Pin()) {
+        islogin = net->m_login;
+        isgameover = net->m_gameover;
+    }
 }
 
 void UMyUserWidget::OnSignInButtonClicked()
