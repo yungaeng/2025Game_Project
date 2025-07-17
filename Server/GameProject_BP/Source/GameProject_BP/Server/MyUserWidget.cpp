@@ -3,6 +3,7 @@
 
 #include "MyUserWidget.h"
 #include "MyGameInstance.h"
+#include <Kismet/GameplayStatics.h>
 
 void UMyUserWidget::NativeConstruct()
 {
