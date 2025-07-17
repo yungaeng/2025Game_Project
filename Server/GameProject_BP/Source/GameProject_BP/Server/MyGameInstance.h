@@ -30,9 +30,6 @@ class GAMEPROJECT_BP_API UMyGameInstance : public UGameInstance
 	UFUNCTION(BlueprintCallable)
 	void SendAttack();
 
-
-    
-
 public:
 	// 서버와 연결
 	class FSocket* m_Socket;

@@ -2,7 +2,7 @@
 
 
 #include "MyUserWidget.h"
-#include "Networker.h"
+#include "MyGameInstance.h"
 
 void UMyUserWidget::NativeConstruct()
 {
@@ -31,15 +31,18 @@ void UMyUserWidget::NativeConstruct()
     {
         serveripedit->OnTextChanged.AddDynamic(this, &UMyUserWidget::OnEditableServeripChanged);
     }
+
+    // 1. 현재 게임 인스턴스를 가져옵니다.
+    UMyGameInstance* MyGameInstance = Cast<UMyGameInstance>(GetGameInstance());
+    SetNetworker(MyGameInstance->m_NetworkerPtr);
 }
 
-void UMyUserWidget::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
+void UMyUserWidget::SetNetworker(TSharedPtr<Networker> InNetworker)
 {
-    Super::NativeTick(MyGeometry, InDeltaTime);
-
-    if (TSharedPtr<Networker> net = m_NetworkerPtr.Pin()) {
-        islogin = net->m_login;
-        isgameover = net->m_gameover;
+    TSharedPtr<Networker> Net = InNetworker;
+    if (Net.IsValid())
+    {
+        Net->OnLoginOk.AddUObject(this, &UMyUserWidget::HandleLoginOk);
     }
 }
 
@@ -50,7 +53,6 @@ void UMyUserWidget::OnSignInButtonClicked()
     // Set Text나 다른 노드들의 기능을 여기에 구현합니다.
     // 예를 들어, Text->SetText(FText::FromString(TEXT("로그인 시도 중...")));
 }
-
 void UMyUserWidget::OnLoginButtonClicked()
 {
     // Login 버튼 클릭 시 로직
@@ -67,22 +69,23 @@ void UMyUserWidget::OnLoginButtonClicked()
         UE_LOG(LogTemp, Warning, TEXT("서버 주소: %s"), *serverip);
     }
 }
-
 void UMyUserWidget::OnDisconnectButtonClicked()
 {
     // Disconnect 버튼 클릭 시 로직
     UE_LOG(LogTemp, Warning, TEXT("Disconnect 버튼 클릭됨!"));
 }
-
 void UMyUserWidget::OnEditableNameChanged(const FText& InText) // 변경된 부분
 {
     // EditableTextBox 텍스트 변경 시 로직
     UE_LOG(LogTemp, Warning, TEXT("EditableTextBox 텍스트 변경됨: %s"), *InText.ToString());
 }
-
 void UMyUserWidget::OnEditableServeripChanged(const FText& InText_202) // 변경된 부분
 {
     // EditableTextBox_202 텍스트 변경 시 로직 (Server IP)
     UE_LOG(LogTemp, Warning, TEXT("Server IP 텍스트 변경됨: %s"), *InText_202.ToString());
 }
 
+void UMyUserWidget::HandleLoginOk()
+{
+    islogin = true; // 로그인 상태 변경
+}

@@ -17,7 +17,9 @@ RecvWorker::RecvWorker(class FSocket* Socket, TSharedPtr<class Networker> networ
 		const sc_packet_login_ok* p = reinterpret_cast<const sc_packet_login_ok*>(Data.GetData());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_LOGIN_OK received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-                Net->m_login = true;
+            Net->m_login = true;
+            // 로그인 성공 델리게이트 브로드캐스트
+            Net->OnLoginOk.Broadcast();
         }
 		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_LOGIN_FAIL, [this](const TArray<uint8>& Data) {
