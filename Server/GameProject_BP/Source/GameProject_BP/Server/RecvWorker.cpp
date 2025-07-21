@@ -20,6 +20,7 @@ RecvWorker::RecvWorker(class FSocket* Socket, TSharedPtr<class Networker> networ
             Net->m_login = true;
             // 로그인 성공 델리게이트 브로드캐스트
             Net->OnLoginOk.Broadcast();
+            Net->m_login = true;
         }
 		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_LOGIN_FAIL, [this](const TArray<uint8>& Data) {

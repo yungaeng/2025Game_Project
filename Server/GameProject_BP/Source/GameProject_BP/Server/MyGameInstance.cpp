@@ -101,4 +101,11 @@ void UMyGameInstance::SendAttack()
 	m_Socket->Send((uint8*)&p, p.size, bytesSent);
 }
 
+bool UMyGameInstance::GetLoginOk()
+{
+    if(m_NetworkerPtr.IsValid())
+        return m_NetworkerPtr->m_login;
+    return false;
+};
+
 
