@@ -266,6 +266,8 @@
 /I "C:\Users\user\Desktop\2025Game_Project\Client\GameProject_BP\Intermediate\Build\Win64\UnrealEditor\Inc\GameProject_BP\UHT"
 /I "C:\Users\user\Desktop\2025Game_Project\Client\GameProject_BP\Source"
 /I "C:\Users\user\Desktop\2025Game_Project\Client\GameProject_BP\Source\GameProject_BP\Public"
+/I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
+/I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
 /external:I "ThirdParty\LibTiff\Source\Win64"
