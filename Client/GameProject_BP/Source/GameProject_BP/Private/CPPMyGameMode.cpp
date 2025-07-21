@@ -8,6 +8,11 @@ ACPPMyGameMode::ACPPMyGameMode()
 {
     PlayerControllerClass = ACPPMyController::StaticClass();
 
+    static ConstructorHelpers::FClassFinder<APlayerController> PlayerControllerBPClass(TEXT("/Game/BP_MyController.BP_MyController_C"));
+    if (PlayerControllerBPClass.Succeeded())
+    {
+        PlayerControllerClass = PlayerControllerBPClass.Class;
+    }
     static ConstructorHelpers::FClassFinder<APawn> AdventurerPawnClass(TEXT("/Game/MyAdventurer/BP_Adventurer.BP_Adventurer_C"));
     if (AdventurerPawnClass.Succeeded())
     {

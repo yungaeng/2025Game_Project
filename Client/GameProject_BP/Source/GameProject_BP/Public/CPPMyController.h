@@ -6,12 +6,14 @@
 #include "InputAction.h"
 #include "CPPMyController.generated.h"
 
+class UCPP_W_Indicator;
+
 UCLASS()
 class GAMEPROJECT_BP_API ACPPMyController : public APlayerController
 {
     GENERATED_BODY()
 
-    public:
+public:
     ACPPMyController();
 
 protected:
@@ -30,4 +32,12 @@ public:
 
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Input")
     class UInputAction* LookAction;
+
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "UI")
+    TSubclassOf<UCPP_W_Indicator> BP_IndicatorWidgetClass;
+
+private:
+ 
+    UPROPERTY()
+    UCPP_W_Indicator* IndicatorWidget;
 };

@@ -7,6 +7,8 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/LocalPlayer.h"
+#include "Blueprint/UserWidget.h"
+#include "CPP_W_Indicator.h" // 당신이 만든 위젯 헤더
 
 ACPPMyController::ACPPMyController()
 {
@@ -33,7 +35,7 @@ void ACPPMyController::BeginPlay()
 {
     Super::BeginPlay();
 
-    // EnhancedInputSubsystem에 매핑 컨텍스트 등록
+    
     if (ULocalPlayer* LocalPlayer = GetLocalPlayer())
     {
         if (UEnhancedInputLocalPlayerSubsystem* Subsystem = LocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
@@ -42,6 +44,16 @@ void ACPPMyController::BeginPlay()
             {
                 Subsystem->AddMappingContext(DefaultMappingContext, 0);
             }
+        }
+    }
+
+
+    if(BP_IndicatorWidgetClass)
+    {
+        IndicatorWidget = CreateWidget<UCPP_W_Indicator>(this, BP_IndicatorWidgetClass);
+        if (IndicatorWidget)
+        {
+            IndicatorWidget->AddToViewport();
         }
     }
 }

@@ -52,6 +52,9 @@
     <ClCompile Include="..\..\Source\GameProject_BP\Private\CPPMyGameMode.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_W_Indicator.cpp">
+      <Filter>Source\GameProject_BP\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GameProject_BP\Private\FFT1DComponent.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
@@ -68,6 +71,9 @@
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPPMyGameMode.h">
+      <Filter>Source\GameProject_BP\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_W_Indicator.h">
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\FFT1DComponent.h">
