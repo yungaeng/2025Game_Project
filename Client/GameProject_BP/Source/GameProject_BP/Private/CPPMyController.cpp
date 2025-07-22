@@ -8,7 +8,8 @@
 #include "UObject/ConstructorHelpers.h"
 #include "Engine/LocalPlayer.h"
 #include "Blueprint/UserWidget.h"
-#include "CPP_W_Indicator.h" // 당신이 만든 위젯 헤더
+#include "CPP_W_Indicator.h" 
+#include "Kismet/GameplayStatics.h"
 
 ACPPMyController::ACPPMyController()
 {
@@ -47,15 +48,6 @@ void ACPPMyController::BeginPlay()
         }
     }
 
-
-    if(BP_IndicatorWidgetClass)
-    {
-        IndicatorWidget = CreateWidget<UCPP_W_Indicator>(this, BP_IndicatorWidgetClass);
-        if (IndicatorWidget)
-        {
-            IndicatorWidget->AddToViewport();
-        }
-    }
 }
 
 void ACPPMyController::SetupInputComponent()
@@ -75,10 +67,41 @@ void ACPPMyController::SetupInputComponent()
     }
 }
 
+void ACPPMyController::OnPossess(APawn* InPawn)
+{
+    Super::OnPossess(InPawn);
+    ControlledPawn = InPawn;
+
+    SpawnIndicators(); 
+}
+
+void ACPPMyController::SpawnIndicators()
+{
+    TArray<AActor*> TargetActors;
+    UGameplayStatics::GetAllActorsOfClass(GetWorld(), APawn::StaticClass(), TargetActors);
+
+    for (AActor* Actor : TargetActors)
+    {
+        if (Actor == ControlledPawn) continue; // 본인 제외
+
+        // 위젯 생성
+        if (BP_IndicatorWidgetClass)
+        {
+            UCPP_W_Indicator* Indicator = CreateWidget<UCPP_W_Indicator>(this, BP_IndicatorWidgetClass);
+            if (Indicator)
+            {
+                Indicator->SetTarget(Actor); // 타겟 지정
+                Indicator->AddToViewport();  // 뷰포트에 추가
+                IndicatorWidgets.Add(Indicator);
+            }
+        }
+    }
+}
+
 void ACPPMyController::Move(const FInputActionValue& Value)
 {
     FVector2D MovementVector = Value.Get<FVector2D>();
-    APawn* ControlledPawn = GetPawn();
+    
     if (!ControlledPawn || MovementVector.IsNearlyZero())
         return;
 

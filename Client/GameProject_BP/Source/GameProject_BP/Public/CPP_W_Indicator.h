@@ -14,7 +14,7 @@ public:
     void SetTarget(AActor* NewTarget);
 
     UFUNCTION(BlueprintCallable, Category = "Indicator")
-    bool CalculateScreenPosition(FVector WorldLocation, FVector2D& OutScreenLocation, bool& bIsOnScreen) const;
+    bool CalculateScreenPosition(FVector WorldLocation, FVector2D& OutScreenLocation, bool& bIsOnScreen);
 
 
 protected:
@@ -29,5 +29,7 @@ protected:
 private:
     FVector2D SavedViewportSize;
     void CheckViewportSizeChanged();
-    bool CalculateScreenPosition(FVector WorldLocation, FVector2D& OutScreenLocation, bool& bIsOnScreen) const;
+    bool bDidSetVisibleOnce = false;
+    bool bDidSetPivot = false;
+    FVector2D GetEdgeClampedPosition(const FVector2D& ScreenPosition, const FVector2D& ViewportSize) const;
 };
