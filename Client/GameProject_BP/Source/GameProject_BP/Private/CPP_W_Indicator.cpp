@@ -33,13 +33,13 @@ void UCPP_W_Indicator::NativeTick(const FGeometry& MyGeometry, float InDeltaTime
 
     if (!TargetActor || !IndicatorIcon) { return; }
 
-    // ===== Viewport & UI Scale =====
+   
     const FVector2D RawViewportSize = UWidgetLayoutLibrary::GetViewportSize(this);
     const float     UIScale = UWidgetLayoutLibrary::GetViewportScale(this); // DPI
-    const FVector2D ViewportSize = RawViewportSize / UIScale;                    // UMG 좌표계와 맞춤
+    const FVector2D ViewportSize = RawViewportSize / UIScale;                    
     SavedViewportSize = ViewportSize;
 
-    // ===== 거리 체크 =====
+
     APawn* OwnerPawn = GetOwningPlayerPawn();
     if (!OwnerPawn) { return; }
 
@@ -51,12 +51,12 @@ void UCPP_W_Indicator::NativeTick(const FGeometry& MyGeometry, float InDeltaTime
         return;
     }
 
-    // ===== 스크린 좌표 계산 =====
+    //스크린 좌표 계산 
     FVector2D ScreenPos;
     bool bOnScreen = false;
     const bool bProjected = CalculateScreenPosition(TargetActor->GetActorLocation(), ScreenPos, bOnScreen);
 
-    // 디버그
+   
     UE_LOG(LogIndicator, Warning, TEXT("P:%d On:%d Scr:%s VP:%s Scale:%f"),
         bProjected, bOnScreen, *ScreenPos.ToString(), *ViewportSize.ToString(), UIScale);
 
@@ -66,19 +66,19 @@ void UCPP_W_Indicator::NativeTick(const FGeometry& MyGeometry, float InDeltaTime
         return;
     }
 
-    // 온스크린이면 숨김 (오프스크린 전용)
+    // 온스크린이면 숨김 
     if (bOnScreen)
     {
         IndicatorIcon->SetVisibility(ESlateVisibility::Hidden);
         return;
     }
 
-    // ===== 오프스크린 → 가장자리로 이동 =====
+    //가장자리로 이동
     const FVector2D EdgePos = GetEdgeClampedPosition(ScreenPos, ViewportSize);
 
     if (UCanvasPanelSlot* CanvasSlot = Cast<UCanvasPanelSlot>(IndicatorIcon->Slot))
     {
-        // 한 번만 중앙 피벗 세팅
+        
         if (!bDidSetPivot)
         {
             CanvasSlot->SetAlignment(FVector2D(0.5f, 0.5f));
@@ -87,13 +87,13 @@ void UCPP_W_Indicator::NativeTick(const FGeometry& MyGeometry, float InDeltaTime
         CanvasSlot->SetPosition(EdgePos);
     }
 
-    // ===== 회전 =====
+    // 회전 
     const FVector2D Center = ViewportSize * 0.5f;
     const FVector2D Dir = (EdgePos - Center).GetSafeNormal();
     const float AngleDeg = FMath::Atan2(Dir.Y, Dir.X) * 180.f / PI;
     IndicatorIcon->SetRenderTransformAngle(AngleDeg);
 
-    // ===== 스케일 =====
+    // 스케일 
     const float MinDistance = 50.f;
     const float T = FMath::Clamp((Distance - MinDistance) / (MaxVisibleDistance - MinDistance), 0.f, 1.f);
     const float Scale = FMath::Lerp(1.f, 0.2f, T);
@@ -126,10 +126,10 @@ bool UCPP_W_Indicator::CalculateScreenPosition(FVector WorldLocation,
     APlayerController* PC = UGameplayStatics::GetPlayerController(GetWorld(), 0);
     if (!PC) return false;
 
-    // 픽셀 좌표로 투영
+   
     bool bProjected = PC->ProjectWorldLocationToScreen(WorldLocation, OutScreenLocation, true); // bPlayerViewportRelative = true
 
-    // DPI 보정
+    
     const float UIScale = UWidgetLayoutLibrary::GetViewportScale(this);
     OutScreenLocation /= UIScale;
 

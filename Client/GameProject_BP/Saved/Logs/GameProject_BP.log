@@ -7267,3 +7267,75 @@ LogConfig: Set CVar [[r.Shadow.DetectVertexShaderLayerAtRuntime:1]]
 [2025.07.22-10.09.44:473][339]LogContentValidation: Display: Validating /Script/Engine.World /Game/MyMap/NewMap.NewMap
 [2025.07.22-10.09.51:259][120]LogSlate: Took 0.000924 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansFallback.ttf' (3848K)
 [2025.07.22-10.09.57:274][797]LogDerivedDataCache: C:/Users/user/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:09.093 and deleted 0 files with total size 0 MiB and 0 empty folders. Scanned 5357 files in 6538 folders with total size 237 MiB.
+[2025.07.22-10.15.11:922][732]LogAssetEditorSubsystem: Opening Asset editor for InputMappingContext /Game/MyAdventurer/IMC_Adventurer.IMC_Adventurer
+[2025.07.22-10.15.17:406][373]LogUObjectHash: Compacting FUObjectHashTables data took   0.44ms
+[2025.07.22-10.15.17:408][373]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2025.07.22-10.15.17:453][373]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/MyAdventurer/IMC_Adventurer" FILE="../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/IMC_Adventurer.uasset" SILENT=true
+[2025.07.22-10.15.17:455][373]LogSavePackage: Moving output files for package: /Game/MyAdventurer/IMC_Adventurer
+[2025.07.22-10.15.17:455][373]LogSavePackage: Moving '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Saved/IMC_Adventurer14FF2657430FF595AD08CEBD452B0616.tmp' to '../../../../../../Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/IMC_Adventurer.uasset'
+[2025.07.22-10.15.17:463][373]LogFileHelpers: InternalPromptForCheckoutAndSave took 55 ms (total: 317 ms)
+[2025.07.22-10.15.17:465][373]AssetCheck: New page: Asset Save: IMC_Adventurer
+[2025.07.22-10.15.17:465][373]LogContentValidation: Display: Validating /Script/EnhancedInput.InputMappingContext /Game/MyAdventurer/IMC_Adventurer.IMC_Adventurer
+[2025.07.22-10.15.19:461][593]LogDebuggerCommands: Repeating last play command: Selected Viewport
+[2025.07.22-10.15.19:466][593]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2025.07.22-10.15.19:466][593]PIE: New page: PIE session: NewMap (2025. 7. 23. 오전 4:15:19)
+[2025.07.22-10.15.19:498][593]LogPlayLevel: Creating play world package: /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.22-10.15.19:546][593]LogPlayLevel: PIE: StaticDuplicateObject took: (0.048506s)
+[2025.07.22-10.15.19:546][593]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/MyMap/NewMap.NewMap to /Game/MyMap/UEDPIE_0_NewMap.NewMap (0.048548s)
+[2025.07.22-10.15.19:549][593]LogUObjectHash: Compacting FUObjectHashTables data took   0.35ms
+[2025.07.22-10.15.19:550][593]LogWorldSubsystemInput: UEnhancedInputDeveloperSettings::bEnableWorldSubsystem is false, the world subsystem will not be created!
+[2025.07.22-10.15.19:550][593]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2025.07.22-10.15.19:550][593]LogAIModule: Creating AISystem for world NewMap
+[2025.07.22-10.15.19:550][593]LogPlayLevel: PIE: World Init took: (0.000852s)
+[2025.07.22-10.15.19:550][593]LogAudio: Display: Creating Audio Device:                 Id: 5, Scope: Unique, Realtime: True
+[2025.07.22-10.15.19:550][593]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2025.07.22-10.15.19:550][593]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2025.07.22-10.15.19:550][593]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2025.07.22-10.15.19:550][593]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2025.07.22-10.15.19:550][593]LogAudioMixer: Display: 	Number of buffers to queue:			  1
+[2025.07.22-10.15.19:550][593]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2025.07.22-10.15.19:550][593]LogAudioMixer: Display: 	Number of Async Source Workers:		  4
+[2025.07.22-10.15.19:550][593]LogAudio: Display: AudioDevice MaxSources: 32
+[2025.07.22-10.15.19:551][593]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2025.07.22-10.15.19:551][593]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2025.07.22-10.15.19:551][593]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2025.07.22-10.15.19:552][593]LogAudioMixer: Display: Initializing audio mixer using platform API: 'XAudio2'
+[2025.07.22-10.15.19:609][593]LogAudioMixer: Display: Using Audio Hardware Device 스피커(Realtek(R) Audio)
+[2025.07.22-10.15.19:610][593]LogAudioMixer: Display: Initializing Sound Submixes...
+[2025.07.22-10.15.19:610][593]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2025.07.22-10.15.19:610][593]LogAudioMixer: Display: Creating Master Submix 'SM_Mute'
+[2025.07.22-10.15.19:610][593]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2025.07.22-10.15.19:611][593]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called. InstanceID=5
+[2025.07.22-10.15.19:611][593]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048, InstanceID=5
+[2025.07.22-10.15.19:613][593]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal(), InstanceID=5
+[2025.07.22-10.15.19:613][593]LogInit: FAudioDevice initialized with ID 5.
+[2025.07.22-10.15.19:613][593]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time. InstanceID=5
+[2025.07.22-10.15.19:613][593]LogAudio: Display: Audio Device (ID: 5) registered with world 'NewMap'.
+[2025.07.22-10.15.19:613][593]LogAudioMixer: Initializing Audio Bus Subsystem for audio device with ID 5
+[2025.07.22-10.15.19:614][593]LogLoad: Game class is 'MyGameMode_C'
+[2025.07.22-10.15.19:620][593]LogWorld: Bringing World /Game/MyMap/UEDPIE_0_NewMap.NewMap up for play (max tick rate 0) at 2025.07.22-19.15.19
+[2025.07.22-10.15.19:620][593]LogWorld: Bringing up level for play took: 0.006240
+[2025.07.22-10.15.19:622][593]LogOnline: OSS: Created online subsystem instance for: :Context_7
+[2025.07.22-10.15.19:624][593]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.22-10.15.19:624][593]LogTemp: Warning: DoneINIT
+[2025.07.22-10.15.19:624][593]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.22-10.15.19:624][593]LogTemp: Warning: DoneINIT
+[2025.07.22-10.15.19:624][593]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.22-10.15.19:624][593]LogTemp: Warning: DoneINIT
+[2025.07.22-10.15.19:625][593]LogAudioMixer: Display: Registering submix SoundSubmix /Game/MyFFT/SM_Analyzer.SM_Analyzer.
+[2025.07.22-10.15.19:625][593]LogTemp: Warning: DoneINIT
+[2025.07.22-10.15.19:626][593]PIE: Server logged in
+[2025.07.22-10.15.19:626][593]PIE: Play in editor total start time 0.16 seconds.
+[2025.07.22-10.15.22:669][949]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.22-10.15.22:669][949]LogWorld: BeginTearingDown for /Game/MyMap/UEDPIE_0_NewMap
+[2025.07.22-10.15.22:670][949]LogWorld: UWorld::CleanupWorld for NewMap, bSessionEnded=true, bCleanupResources=true
+[2025.07.22-10.15.22:672][949]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.22-10.15.22:676][949]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2025.07.22-10.15.22:678][949]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2025.07.22-10.15.22:684][949]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2025.07.22-10.15.22:686][949]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID 5
+[2025.07.22-10.15.22:686][949]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=5
+[2025.07.22-10.15.22:687][949]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called. InstanceID=5
+[2025.07.22-10.15.22:693][949]LogUObjectHash: Compacting FUObjectHashTables data took   0.45ms
+[2025.07.22-10.15.22:742][950]LogPlayLevel: Display: Destroying online subsystem :Context_7
+[2025.07.22-10.15.23:626][ 50]LogUObjectHash: Compacting FUObjectHashTables data took   0.33ms
