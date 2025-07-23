@@ -48,10 +48,11 @@ void disconnect(long long c_id) {
     g_db.DeleteDB(c_id);
     g_db.SelectDB();
 
-    DWORD num_bytes;
+    /*DWORD num_bytes;
     ULONG_PTR key;
     WSAOVERLAPPED* over = nullptr;
     PostQueuedCompletionStatus(h_iocp, num_bytes, key, over);
+    */
 }
 void process_packet(long long c_id, char* packet)
 {
@@ -200,7 +201,13 @@ void process_packet(long long c_id, char* packet)
         break;
     }
     case C2S_ATTACK: {
-        // TODO : 어택처리 해야함
+        // TODO : 어택처리 해야함, 현재는 미션 완료로 사용중
+        std::cout << "All Mission Clear" << std::endl;
+        int roomid = clients[c_id]->_room_id;
+        for (auto& cl : clients) {
+            if (cl.second->_room_id == roomid)
+                cl.second->send_move_packet(c_id);
+        }
         break;
     }
     case C2S_CHAT: {
