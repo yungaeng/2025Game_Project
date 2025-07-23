@@ -4,20 +4,30 @@ using UnrealBuildTool;
 
 public class GameProject_BP : ModuleRules
 {
-	public GameProject_BP(ReadOnlyTargetRules Target) : base(Target)
-	{
-		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AudioCapture", "AudioAnalyzer", "AudioMixer", "Sockets", "Networking", "OnlineSubsystemSteam", "OnlineSubsystem" });
+    public GameProject_BP(ReadOnlyTargetRules Target) : base(Target)
+    {
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PrivateDependencyModuleNames.AddRange(new string[] { "AudioCapture", "AudioAnalyzer", "AudioMixer" });
+        PublicDependencyModuleNames.AddRange(new string[] {
+            "Core", "CoreUObject", "Engine", "InputCore",
+            "AudioCapture", "AudioAnalyzer", "AudioMixer",
+            "Sockets", "Networking", "OnlineSubsystemSteam", "OnlineSubsystem"
+        });
 
-		// Uncomment if you are using Slate UI
-		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
-		
-		// Uncomment if you are using online features
-		// PrivateDependencyModuleNames.Add("OnlineSubsystem");
+        PrivateDependencyModuleNames.AddRange(new string[] {
+            "AudioCapture", "AudioAnalyzer", "AudioMixer"
+        });
 
-		// To include OnlineSubsystemSteam, add it to the plugins section in your uproject file with the Enabled attribute set to true
-	}
+        if (Target.bBuildEditor)
+        {
+            PrivateDependencyModuleNames.AddRange(new string[] {
+                "UMGEditor",
+                "SequencerCore",
+                "CurveEditor",
+                "PropertyEditor",
+                "EditorConfig",
+                "UnrealEd"
+            });
+        }
+    }
 }
