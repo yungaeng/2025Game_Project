@@ -52,6 +52,9 @@
     <ClCompile Include="..\..\Source\GameProject_BP\Private\CPPMyGameMode.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_Screeming.cpp">
+      <Filter>Source\GameProject_BP\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_W_Indicator.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
@@ -64,6 +67,9 @@
     <ClCompile Include="..\..\Source\GameProject_BP\Private\PitchDetectorComponent.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GameProject_BP\Private\SoundAnalyzerBase.cpp">
+      <Filter>Source\GameProject_BP\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\GameProject_BP\Public">
       <UniqueIdentifier>{E0C4C47B-9305-3DBE-ADC1-2126B5E242E1}</UniqueIdentifier>
     </Filter>
@@ -71,6 +77,9 @@
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPPMyGameMode.h">
+      <Filter>Source\GameProject_BP\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Screeming.h">
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_W_Indicator.h">
@@ -83,6 +92,9 @@
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\PitchDetectorComponent.h">
+      <Filter>Source\GameProject_BP\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GameProject_BP\Public\SoundAnalyzerBase.h">
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
   </ItemGroup>
