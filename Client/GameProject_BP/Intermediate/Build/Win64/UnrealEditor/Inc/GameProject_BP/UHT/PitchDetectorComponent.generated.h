@@ -32,7 +32,9 @@ GAMEPROJECT_BP_API void FOnPitchDetected_DelegateWrapper(const FMulticastScriptD
 #define FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_PitchDetectorComponent_h_45_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execFrequencyToNoteName); \
-	DECLARE_FUNCTION(execGetCurrentPitch);
+	DECLARE_FUNCTION(execGetCurrentPitch); \
+	DECLARE_FUNCTION(execStartAnalysis); \
+	DECLARE_FUNCTION(execStopAnalysis);
 
 
 #define FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_PitchDetectorComponent_h_45_ACCESSORS

@@ -225,12 +225,28 @@ void FOnPitchDetected_DelegateWrapper(const FMulticastScriptDelegate& OnPitchDet
 		*(FPitchInfo*)Z_Param__Result=P_THIS->GetCurrentPitch();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UPitchDetectorComponent::execStartAnalysis)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->StartAnalysis();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UPitchDetectorComponent::execStopAnalysis)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->StopAnalysis();
+		P_NATIVE_END;
+	}
 	void UPitchDetectorComponent::StaticRegisterNativesUPitchDetectorComponent()
 	{
 		UClass* Class = UPitchDetectorComponent::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "FrequencyToNoteName", &UPitchDetectorComponent::execFrequencyToNoteName },
 			{ "GetCurrentPitch", &UPitchDetectorComponent::execGetCurrentPitch },
+			{ "StartAnalysis", &UPitchDetectorComponent::execStartAnalysis },
+			{ "StopAnalysis", &UPitchDetectorComponent::execStopAnalysis },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -320,6 +336,58 @@ void FOnPitchDetected_DelegateWrapper(const FMulticastScriptDelegate& OnPitchDet
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UPitchDetectorComponent_StartAnalysis_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UPitchDetectorComponent_StartAnalysis_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Audio Analysis" },
+		{ "ModuleRelativePath", "Public/PitchDetectorComponent.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPitchDetectorComponent_StartAnalysis_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPitchDetectorComponent, nullptr, "StartAnalysis", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPitchDetectorComponent_StartAnalysis_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPitchDetectorComponent_StartAnalysis_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_UPitchDetectorComponent_StartAnalysis()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPitchDetectorComponent_StartAnalysis_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UPitchDetectorComponent_StopAnalysis_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UPitchDetectorComponent_StopAnalysis_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Audio Analysis" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "// \xec\xa2\x85\xeb\xa3\x8c \xec\xb2\x98\xeb\xa6\xac (\xeb\xa6\xac\xec\x8a\xa4\xeb\x84\x88 \xed\x95\xb4\xec\xa0\x9c\xec\x9a\xa9)\n" },
+#endif
+		{ "ModuleRelativePath", "Public/PitchDetectorComponent.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "\xec\xa2\x85\xeb\xa3\x8c \xec\xb2\x98\xeb\xa6\xac (\xeb\xa6\xac\xec\x8a\xa4\xeb\x84\x88 \xed\x95\xb4\xec\xa0\x9c\xec\x9a\xa9)" },
+#endif
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UPitchDetectorComponent_StopAnalysis_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UPitchDetectorComponent, nullptr, "StopAnalysis", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UPitchDetectorComponent_StopAnalysis_Statics::Function_MetaDataParams), Z_Construct_UFunction_UPitchDetectorComponent_StopAnalysis_Statics::Function_MetaDataParams) };
+	UFunction* Z_Construct_UFunction_UPitchDetectorComponent_StopAnalysis()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UPitchDetectorComponent_StopAnalysis_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(UPitchDetectorComponent);
 	UClass* Z_Construct_UClass_UPitchDetectorComponent_NoRegister()
 	{
@@ -364,6 +432,8 @@ void FOnPitchDetected_DelegateWrapper(const FMulticastScriptDelegate& OnPitchDet
 	const FClassFunctionLinkInfo Z_Construct_UClass_UPitchDetectorComponent_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UPitchDetectorComponent_FrequencyToNoteName, "FrequencyToNoteName" }, // 3900205772
 		{ &Z_Construct_UFunction_UPitchDetectorComponent_GetCurrentPitch, "GetCurrentPitch" }, // 4079660151
+		{ &Z_Construct_UFunction_UPitchDetectorComponent_StartAnalysis, "StartAnalysis" }, // 3475609102
+		{ &Z_Construct_UFunction_UPitchDetectorComponent_StopAnalysis, "StopAnalysis" }, // 1456533235
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UPitchDetectorComponent_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -492,9 +562,9 @@ void FOnPitchDetected_DelegateWrapper(const FMulticastScriptDelegate& OnPitchDet
 		{ FPitchInfo::StaticStruct, Z_Construct_UScriptStruct_FPitchInfo_Statics::NewStructOps, TEXT("PitchInfo"), &Z_Registration_Info_UScriptStruct_PitchInfo, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FPitchInfo), 1422901608U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_PitchDetectorComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPitchDetectorComponent, UPitchDetectorComponent::StaticClass, TEXT("UPitchDetectorComponent"), &Z_Registration_Info_UClass_UPitchDetectorComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPitchDetectorComponent), 504617937U) },
+		{ Z_Construct_UClass_UPitchDetectorComponent, UPitchDetectorComponent::StaticClass, TEXT("UPitchDetectorComponent"), &Z_Registration_Info_UClass_UPitchDetectorComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPitchDetectorComponent), 3613332094U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_PitchDetectorComponent_h_2723019871(TEXT("/Script/GameProject_BP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_PitchDetectorComponent_h_477305060(TEXT("/Script/GameProject_BP"),
 		Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_PitchDetectorComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_PitchDetectorComponent_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_PitchDetectorComponent_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_PitchDetectorComponent_h_Statics::ScriptStructInfo),
 		nullptr, 0);
