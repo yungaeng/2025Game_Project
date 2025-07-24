@@ -55,6 +55,9 @@
     <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_Screeming.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_Tool.cpp">
+      <Filter>Source\GameProject_BP\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_W_Indicator.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
@@ -80,6 +83,9 @@
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Screeming.h">
+      <Filter>Source\GameProject_BP\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Tool.h">
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_W_Indicator.h">
