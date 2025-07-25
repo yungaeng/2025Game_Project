@@ -1,11 +1,11 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Networker.h"
+#include "server/Networker.h"
 #include "Sockets.h"
 #include "Common\TcpSocketBuilder.h"
 #include "SocketSubsystem.h"
-#include "RecvWorker.h"
+#include "server/RecvWorker.h"
 
 Networker::Networker(FSocket* Socket) : m_Socket(Socket)
 {
@@ -23,6 +23,6 @@ void Networker::RecvThreadRun()
 
 void Networker::Disconnect()
 {
-	m_gameover = false;
+	m_isgameover = false;
 	m_RecvworkerPtr->Destroy();
 }

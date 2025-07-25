@@ -1,44 +1,36 @@
 #pragma once
-constexpr int BUF_SIZE = 265;
+constexpr int BUF_SIZE = 272;
 constexpr short PORT = 3000;
 
-// ±æÀÌ¿Í Å©±â¿¡ ´ëÇÑ Á¤º¸
+// ê¸¸ì´ì™€ í¬ê¸°ì— ëŒ€í•œ ì •ë³´
 constexpr int  MAX_USER = 500;
 constexpr int  VIEW_RANGE = 15;
-constexpr short MAX_CHAT_LENGTH = 100;
+constexpr short MAX_CHAT_LENGTH = 255;
 constexpr char MAX_NAME_LENGTH = 20;
-constexpr int MAX_ROOM_PLAYER = 5;
 
-// ÆĞÅ¶ Å¸ÀÔ
-constexpr char C2S_SIGNIN = 1;			// È¸¿ø°¡ÀÔ
+// íŒ¨í‚· íƒ€ì…
+constexpr char C2S_SIGNIN = 1;
 constexpr char C2S_LOGIN = 2;
 constexpr char C2S_ROOM = 3;
 constexpr char C2S_MOVE = 4;
 constexpr char C2S_MISSION = 5;
 constexpr char C2S_ATTACK = 6;
 constexpr char C2S_CHAT = 7;
-constexpr char C2S_TELEPORT = 8;		// µ¿Á¢ Å×½ºÆ® ÇÒ ¶§
+constexpr char C2S_TELEPORT = 8;		// ë™ì ‘ í…ŒìŠ¤íŠ¸ í•  ë•Œ
 constexpr char C2S_LOGOUT = 9;
 
 constexpr char S2C_LOGIN_OK = 10;
 constexpr char S2C_LOGIN_FAIL = 11;
-constexpr char S2C_ROOM = 12;
-constexpr char S2C_AVATAR_INFO = 13;
-constexpr char S2C_ENTER = 14;
-constexpr char S2C_GAMESTART = 15;
-constexpr char S2C_MOVE = 16;
-constexpr char S2C_CHAT = 17;
-constexpr char S2C_STAT_CHANGE = 18;
-constexpr char S2C_LEAVE = 19;
-constexpr char S2C_GAMEOVER = 20;
+constexpr char S2C_AVATAR_INFO = 12;
+constexpr char S2C_ENTER = 13;
+constexpr char S2C_MOVE = 14;
+constexpr char S2C_CHAT = 15;
+constexpr char S2C_STAT_CHANGE = 16;
+constexpr char S2C_LEAVE = 17;
+constexpr char S2C_GAMEOVER = 18;
 
 #pragma pack (push, 1)
 
-struct cs_packet_signin {
-	unsigned char  size;
-	char  type;
-	char  name[MAX_NAME_LENGTH];
-};
 struct cs_packet_login {
 	unsigned char  size;
 	char  type;
@@ -67,7 +59,7 @@ struct cs_packet_attack {
 struct cs_packet_chat {
 	unsigned char  size;
 	char  type;
-	char  message[MAX_CHAT_LENGTH];
+	char  message[MAX_CHAT_LENGTH];		// NULL terminated ë¬¸ìì—´
 };
 struct cs_packet_teleport {
 	unsigned char  size;
@@ -87,16 +79,10 @@ struct sc_packet_login_fail {
 	unsigned char size;
 	char type;
 	long long  id;
-	char reason;			// 0 : ¾Ë¼ö ¾ø´Â ÀÌÀ¯
-							// 1 : ´Ù¸¥ Å¬¶óÀÌ¾ğÆ®¿¡¼­ »ç¿ëÁß
-							// 2 : ºÎÀûÀıÇÑ ID (Æ¯¼ö¹®ÀÚ, 20ÀÚ ÀÌ»ó)
-							// 3 : ¼­¹ö¿¡ µ¿Á¢ÀÌ ³Ê¹« ¸¹À½
-							// 4 : ÇØ´çµÇ´Â °èÁ¤ÀÌ ¾øÀ½
-};
-struct sc_packet_room
-{
-	unsigned char size;
-	char type;
+	char reason;			// 0 : ì•Œìˆ˜ ì—†ëŠ” ì´ìœ 
+	// 1 : ë‹¤ë¥¸ í´ë¼ì´ì–¸íŠ¸ì—ì„œ ì‚¬ìš©ì¤‘
+	// 2 : ë¶€ì ì ˆí•œ ID (íŠ¹ìˆ˜ë¬¸ì, 20ì ì´ìƒ)
+	// 3 : ì„œë²„ì— ë™ì ‘ì´ ë„ˆë¬´ ë§ìŒ
 };
 struct sc_packet_avatar_info {
 	unsigned char size;
@@ -111,12 +97,8 @@ struct sc_packet_enter {
 	long long  id;
 	char name[MAX_NAME_LENGTH];
 	char o_type;						// 0 : adventurer
-										// 1 : imposter  
+	// 1 : imposter  
 	float x, y, z;
-};
-struct sc_packet_gamestart {
-	unsigned char size;
-	char type;
 };
 struct sc_packet_move {
 	unsigned char size;
@@ -127,9 +109,10 @@ struct sc_packet_move {
 struct sc_packet_chat {
 	unsigned char size;
 	char type;
-	long long  id;						// ¸Ş¼¼Áö¸¦ º¸³½ ObjectÀÇ ID
-										// -1 => SYSTEM MESSAG
-	char message[MAX_CHAT_LENGTH];		// NULL terminated ¹®ÀÚ¿­
+	long long  id;						// ë©”ì„¸ì§€ë¥¼ ë³´ë‚¸ Objectì˜ ID
+	// -1 => SYSTEM MESSAGE
+	//       ì „íˆ¬ ë©”ì„¸ì§€ ë³´ë‚¼ë•Œ ì‚¬ìš©
+	char message[MAX_CHAT_LENGTH];		// NULL terminated ë¬¸ìì—´
 };
 struct sc_packet_stat_change {
 	unsigned char size;
@@ -145,9 +128,8 @@ struct sc_packet_leave {
 struct sc_packet_gameover {
 	unsigned char size;
 	char type;
-	char result;	// 0 : ÀÓÆ÷½Â
-					// 1 : Å½Çè°¡ ½Â
+	char result;	// 0 : ì„í¬ìŠ¹
+					// 1 : íƒí—˜ê°€ ìŠ¹
 };
-
 
 #pragma pack (pop)

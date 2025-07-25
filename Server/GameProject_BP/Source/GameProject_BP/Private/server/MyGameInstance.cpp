@@ -1,12 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "MyGameInstance.h"
+#include "server/MyGameInstance.h"
 #include "Sockets.h"
 #include "Common\TcpSocketBuilder.h"
 #include "SocketSubsystem.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include "Networker.h"
+#include "server/Networker.h"
 
 bool UMyGameInstance::ConnectToServer(FString AddrIP)
 {
@@ -104,8 +104,22 @@ void UMyGameInstance::SendAttack()
 bool UMyGameInstance::GetLoginOk()
 {
     if(m_NetworkerPtr.IsValid())
-        return m_NetworkerPtr->m_login;
+        return m_NetworkerPtr->m_islogin;
     return false;
-};
+}
+
+bool UMyGameInstance::GetCharacter()
+{
+    if (m_NetworkerPtr.IsValid())
+        return m_NetworkerPtr->m_isimposter;
+    return false;
+}
+
+bool UMyGameInstance::GetGameOver()
+{
+    if (m_NetworkerPtr.IsValid())
+        return m_NetworkerPtr->m_isgameover;
+    return false;
+}
 
 

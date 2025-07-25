@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
-#include "protocol.h"
+#include "server/protocol.h"
 #include "MyGameInstance.generated.h"
 
 /**
@@ -20,19 +20,25 @@ class GAMEPROJECT_BP_API UMyGameInstance : public UGameInstance
 	bool ConnectToServer(FString AddrIP);
 	UFUNCTION(BlueprintCallable)
 	void DisconnectToServer();
-    
 
-	UFUNCTION(BlueprintCallable)
-	void SendSignin(FString input);
     UFUNCTION(BlueprintCallable)
-    void SendLogin(FString input);
+    void SendSignin(FString input);
+	UFUNCTION(BlueprintCallable)
+	void SendLogin(FString input);
 	UFUNCTION(BlueprintCallable)
 	void SendRoom(uint8 request);
 	UFUNCTION(BlueprintCallable)
 	void SendAttack();
 
 
-    
+    UFUNCTION(BlueprintCallable)
+    bool GetLoginOk();
+    UFUNCTION(BlueprintCallable)
+    bool GetCharacter();
+	UFUNCTION(BlueprintCallable)
+	bool GetGameOver();
+
+
 public:
 	// 서버와 연결
 	class FSocket* m_Socket;
@@ -42,7 +48,4 @@ public:
 
 	// Recv작업을 위한 스레드를 생성하는 객체 포인터
 	TSharedPtr<class Networker> m_NetworkerPtr;
-
-    UFUNCTION(BlueprintCallable)
-    bool GetLoginOk();
 };

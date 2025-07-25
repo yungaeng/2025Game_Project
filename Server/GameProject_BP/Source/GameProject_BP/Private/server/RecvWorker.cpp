@@ -1,15 +1,15 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "RecvWorker.h"
+#include "server/RecvWorker.h"
 #include "Sockets.h"
 #include "Common\TcpSocketBuilder.h"
 #include "SocketSubsystem.h"
-#include "protocol.h"
-#include "Networker.h"
-#include "RecvPacketHandler.h"
+#include "server/protocol.h"
+#include "server/Networker.h"
+#include "server/RecvPacketHandler.h"
 
-RecvWorker::RecvWorker(class FSocket* Socket, TSharedPtr<class Networker> networker) : m_Socket(Socket), m_NetworkerPtr(networker)
+RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) : m_Socket(Socket), m_NetworkerPtr(networker)
 {
 	// 패킷 핸들러 등록
 	// SC_LOGIN_OK
@@ -17,10 +17,7 @@ RecvWorker::RecvWorker(class FSocket* Socket, TSharedPtr<class Networker> networ
 		const sc_packet_login_ok* p = reinterpret_cast<const sc_packet_login_ok*>(Data.GetData());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_LOGIN_OK received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-            Net->m_login = true;
-            // 로그인 성공 델리게이트 브로드캐스트
-            Net->OnLoginOk.Broadcast();
-            Net->m_login = true;
+            Net->m_islogin = true;
         }
 		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_LOGIN_FAIL, [this](const TArray<uint8>& Data) {
@@ -32,63 +29,57 @@ RecvWorker::RecvWorker(class FSocket* Socket, TSharedPtr<class Networker> networ
 				// 1 : 다른 클라이언트에서 사용중
 				// 2 : 부적절한 ID (특수문자, 20자 이상)
 				// 3 : 서버에 동접이 너무 많음
-            FString reason = &(p->reason);
-            GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, reason);
 		}
 		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_AVATAR_INFO, [this](const TArray<uint8>& Data) {
 		const sc_packet_avatar_info* p = reinterpret_cast<const sc_packet_avatar_info*>(Data.GetData());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_AVATAR_INFO received"));
 		if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-			// TODO
+			
 		}
 		});
-	RecvPacketHandler::Get().RegisterHandler(S2C_ROOM, [this](const TArray<uint8>& Data) {
-		const sc_packet_room* p = reinterpret_cast<const sc_packet_room*>(Data.GetData());
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_ROOM received"));
-		// TODO
+	RecvPacketHandler::Get().RegisterHandler(S2C_ENTER, [this](const TArray<uint8>& Data) {
+		const sc_packet_enter* p = reinterpret_cast<const sc_packet_enter*>(Data.GetData());
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_ENTER received"));
+		if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin())
+		{
+			
+		}
 		});
-    RecvPacketHandler::Get().RegisterHandler(S2C_GAMESTART, [this](const TArray<uint8>& Data) {
-        const sc_packet_enter* p = reinterpret_cast<const sc_packet_enter*>(Data.GetData());
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_GAMESTART received"));
-
-        });
 	RecvPacketHandler::Get().RegisterHandler(S2C_MOVE, [this](const TArray<uint8>& Data) {
 		const sc_packet_move* p = reinterpret_cast<const sc_packet_move*>(Data.GetData());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_MOVE received"));
-	    // TODO
+		if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
+			
+		}
 		});
-    RecvPacketHandler::Get().RegisterHandler(S2C_LEAVE, [this](const TArray<uint8>& Data) {
-        const sc_packet_leave* p = reinterpret_cast<const sc_packet_leave*>(Data.GetData());
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_LEAVE received"));
-        if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-            // TODO
-        }
-        });
-
+	RecvPacketHandler::Get().RegisterHandler(S2C_CHAT, [this](const TArray<uint8>& Data) {
+		const sc_packet_chat* p = reinterpret_cast<const sc_packet_chat*>(Data.GetData());
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_CHAT received"));
+		if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
+			
+		}
+		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_STAT_CHANGE, [this](const TArray<uint8>& Data) {
 		const sc_packet_stat_change* p = reinterpret_cast<const sc_packet_stat_change*>(Data.GetData());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_STAT_CHANGE received"));
 		if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-			// TODO
+			
 		}
 		});
-    RecvPacketHandler::Get().RegisterHandler(S2C_CHAT, [this](const TArray<uint8>& Data) {
-        const sc_packet_chat* p = reinterpret_cast<const sc_packet_chat*>(Data.GetData());
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_CHAT received"));
+	RecvPacketHandler::Get().RegisterHandler(S2C_LEAVE, [this](const TArray<uint8>& Data) {
+		const sc_packet_leave* p = reinterpret_cast<const sc_packet_leave*>(Data.GetData());
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_LEAVE received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-            FString id = FString::Printf(TEXT("%lld"), p->id);
-            FString chat = UTF8_TO_TCHAR(p->message);
-            GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, "ID : " + id + " : " + chat);
-        }
-        });
 
+        }
+		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_GAMEOVER, [this](const TArray<uint8>& Data) {
 		const sc_packet_gameover* p = reinterpret_cast<const sc_packet_gameover*>(Data.GetData());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_MOVE received"));
 		if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
 			Net->m_result = p->result;
-			Net->m_gameover = true;
+			Net->m_isgameover = true;
 		}
 		});
 	m_RecvThread = FRunnableThread::Create(this, (TEXT("RecvWorkerThread")));

@@ -27,5 +27,4 @@ protected:
 	FRunnableThread* m_RecvThread = nullptr;
 	TWeakPtr<class Networker> m_NetworkerPtr = nullptr;
 	bool m_Running = true;
-    
 };

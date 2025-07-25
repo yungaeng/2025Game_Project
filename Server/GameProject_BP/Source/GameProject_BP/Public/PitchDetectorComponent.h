@@ -51,6 +51,14 @@ class GAMEPROJECT_BP_API UPitchDetectorComponent : public UActorComponent, publi
 
     virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+    // 종료 처리 (리스너 해제용)
+    UFUNCTION(BlueprintCallable, Category = "Audio Analysis")
+    void StopAnalysis();
+
+    UFUNCTION(BlueprintCallable, Category = "Audio Analysis")
+    void StartAnalysis();
+
+
     // ISubmixBufferListener 인터페이스 구현
     virtual void OnNewSubmixBuffer(const USoundSubmix* OwningSubmix, float* AudioData, int32 NumSamples, int32 NumChannels, const int32 SampleRate, double AudioClock);
 

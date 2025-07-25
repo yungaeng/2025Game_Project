@@ -3,15 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "protocol.h"
+#include "server/protocol.h"
 
 /**
  * 
  */
-
-// 로그인 성공 시 호출될 델리게이트를 정의합니다.
-DECLARE_MULTICAST_DELEGATE(FOnLoginOkDelegate);
-
 class GAMEPROJECT_BP_API Networker : public TSharedFromThis<Networker>
 {
 public:
@@ -20,15 +16,13 @@ public:
 
 	void RecvThreadRun();
 	void Disconnect();
-
-    // 델리게이트 선언
-    FOnLoginOkDelegate OnLoginOk;
 public:
 	class FSocket* m_Socket;
 	TSharedPtr<class RecvWorker> m_RecvworkerPtr;
 
-    bool m_login = false;
-	bool m_gameover = false;
-    char m_result;
+    bool m_islogin;
+    bool m_isimposter;
+	bool m_isgameover;
+	char m_result;
 };
 
