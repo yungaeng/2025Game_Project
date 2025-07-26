@@ -7,10 +7,10 @@ public class GameProject_BP : ModuleRules
 	public GameProject_BP(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+	
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AudioCapture", "AudioAnalyzer", "AudioMixer", "Sockets", "Networking", "OnlineSubsystemSteam", "OnlineSubsystem" });
 
-        PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AudioCapture", "AudioAnalyzer", "AudioMixer", "Sockets", "Networking", "OnlineSubsystemSteam", "OnlineSubsystem" });
-
-        PrivateDependencyModuleNames.AddRange(new string[] { "AudioCapture", "AudioAnalyzer", "AudioMixer" });
+		PrivateDependencyModuleNames.AddRange(new string[] { "AudioCapture", "AudioAnalyzer", "AudioMixer" });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
