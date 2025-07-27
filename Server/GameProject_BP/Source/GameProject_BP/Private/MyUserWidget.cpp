@@ -43,7 +43,7 @@ void UMyUserWidget::SetNetworker(TSharedPtr<Networker> InNetworker)
     TSharedPtr<Networker> Net = InNetworker;
     if (Net.IsValid())
     {
-        Net->OnLoginOk.AddUObject(this, &UMyUserWidget::HandleLoginOk);
+        //Net->OnLoginOk.AddUObject(this, &UMyUserWidget::HandleLoginOk);
     }
 }
 
