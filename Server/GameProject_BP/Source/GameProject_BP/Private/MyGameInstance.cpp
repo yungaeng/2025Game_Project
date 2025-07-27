@@ -122,4 +122,17 @@ bool UMyGameInstance::GetGameOver()
     return false;
 }
 
+bool UMyGameInstance::GetGameOverState()
+{
+    if (m_NetworkerPtr.IsValid()) {
+
+        if (m_NetworkerPtr->m_result == 0)
+            return true;
+        else
+            return false;
+    }
+    else
+        return false;
+}
+
 

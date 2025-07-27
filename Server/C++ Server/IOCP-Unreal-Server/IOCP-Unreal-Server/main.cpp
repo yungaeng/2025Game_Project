@@ -189,6 +189,18 @@ void process_packet(long long c_id, char* packet)
         break;
     }
     case C2S_MOVE: { 
+        // TODO : 이동 처리 해야함, 현재는 임포스터 완료로 사용중
+        std::cout << "All Adventurer Dead" << std::endl;
+        int roomid = clients[c_id]->_room_id;
+        for (auto& cl : clients) {
+            if (cl.second->_room_id == roomid) {
+                sc_packet_gameover go;
+                go.type = S2C_GAMEOVER;
+                go.result = 0;
+                cl.second->do_send(&go);
+            }
+        }
+        break;
         break;
     }
     case C2S_MISSION: {
@@ -205,8 +217,12 @@ void process_packet(long long c_id, char* packet)
         std::cout << "All Mission Clear" << std::endl;
         int roomid = clients[c_id]->_room_id;
         for (auto& cl : clients) {
-            if (cl.second->_room_id == roomid)
-                cl.second->send_move_packet(c_id);
+            if (cl.second->_room_id == roomid) {
+                sc_packet_gameover go;
+                go.type = S2C_GAMEOVER;
+                go.result = 1;
+                cl.second->do_send(&go);
+            }  
         }
         break;
     }
