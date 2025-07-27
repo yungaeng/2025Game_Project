@@ -222,7 +222,7 @@ void process_packet(long long c_id, char* packet)
         int roomid = clients[c_id]->_room_id;
         for (auto& cl : clients) {
             if (cl.second->_room_id == roomid)
-                cl.second->do_send(&go);
+                cl.second->send_gameover();
         }
         break;
     }

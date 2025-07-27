@@ -85,3 +85,11 @@ void session::send_stat_change(long long affected_id, int hp) {
 	p.hp = hp;
 	do_send(&p);
 }
+
+void session::send_gameover() {
+	sc_packet_gameover p;
+	p.size = sizeof(p);
+	p.type = S2C_GAMEOVER;
+	p.result = 1;
+	do_send(&p);
+}

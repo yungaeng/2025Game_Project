@@ -50,7 +50,7 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
 		const sc_packet_move* p = reinterpret_cast<const sc_packet_move*>(Data.GetData());
 		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_MOVE received"));
 		if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-            Net->m_isgameover = true;
+            //Net->m_isgameover = true;
 		}
 		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_CHAT, [this](const TArray<uint8>& Data) {
@@ -76,7 +76,7 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
 		});
 	RecvPacketHandler::Get().RegisterHandler(S2C_GAMEOVER, [this](const TArray<uint8>& Data) {
 		const sc_packet_gameover* p = reinterpret_cast<const sc_packet_gameover*>(Data.GetData());
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_MOVE received"));
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_GAMEOVER received"));
 		if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
 			Net->m_result = p->result;
 			Net->m_isgameover = true;
