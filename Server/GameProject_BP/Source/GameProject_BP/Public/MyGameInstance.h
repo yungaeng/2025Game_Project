@@ -37,7 +37,8 @@ class GAMEPROJECT_BP_API UMyGameInstance : public UGameInstance
     bool GetCharacter();
 	UFUNCTION(BlueprintCallable)
 	bool GetGameOver();
-
+    UFUNCTION(BlueprintCallable)
+    bool GetGameOverState();
 
 public:
 	// 서버와 연결

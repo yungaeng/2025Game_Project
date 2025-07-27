@@ -24,7 +24,7 @@ public:
 
     bool m_islogin;
     bool m_isimposter;
-	bool m_isgameover;
+	bool m_isgameover = false;
 	char m_result;
 };
 
