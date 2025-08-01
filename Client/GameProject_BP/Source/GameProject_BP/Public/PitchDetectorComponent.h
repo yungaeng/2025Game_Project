@@ -51,13 +51,6 @@ class GAMEPROJECT_BP_API UPitchDetectorComponent : public UActorComponent, publi
 
     virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-    // 종료 처리 (리스너 해제용)
-    UFUNCTION(BlueprintCallable, Category = "Audio Analysis")
-    void StopAnalysis();
-
-    UFUNCTION(BlueprintCallable, Category = "Audio Analysis")
-    void StartAnalysis();
-
     // ISubmixBufferListener 인터페이스 구현
     virtual void OnNewSubmixBuffer(const USoundSubmix* OwningSubmix, float* AudioData, int32 NumSamples, int32 NumChannels, const int32 SampleRate, double AudioClock);
 
@@ -85,6 +78,9 @@ class GAMEPROJECT_BP_API UPitchDetectorComponent : public UActorComponent, publi
     // 마이크 입력을 처리할 서브믹스 (보통 MasterSubmix 또는 VoiceChatSubmix)
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Audio Analysis")
     USoundSubmix* TargetSubmix;
+
+    UFUNCTION(BlueprintCallable, Category = "Audio Analysis")
+    void CleanupSubmix();
 
 private:
     // FFT 컴포넌트
