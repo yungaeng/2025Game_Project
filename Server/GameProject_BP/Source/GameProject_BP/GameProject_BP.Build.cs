@@ -8,7 +8,7 @@ public class GameProject_BP : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "AudioCapture", "AudioAnalyzer", "AudioMixer" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput", "AudioCapture", "AudioAnalyzer", "AudioMixer" , "UMG","Slate","SlateCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] { "AudioCapture", "AudioAnalyzer", "AudioMixer" });
 

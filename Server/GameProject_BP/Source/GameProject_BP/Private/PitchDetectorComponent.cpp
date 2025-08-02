@@ -270,12 +270,12 @@ FString UPitchDetectorComponent::FrequencyToNoteName(float Frequency)
                                 TEXT("F"), TEXT("G"), TEXT("G"), TEXT("A"), TEXT("A"), TEXT("B") };
 
     int32 NoteIndex = (MidiNote) % 12; // C를 0으로 만들기 위한 조정 (MIDI에서 C0 = 12)
-    
+
 
     // 음정 이름 생성
     FString NoteName = NoteNames[NoteIndex];
 
-    
+
 
     return NoteName;
 }
@@ -289,50 +289,15 @@ float UPitchDetectorComponent::AmplitudeToDB(float Amplitude) const
     return FMath::Max(20.0f * FMath::LogX(10.0f, Amplitude * 10000), MIN_DB);
 }
 
-void UPitchDetectorComponent::StopAnalysis()
+void UPitchDetectorComponent::CleanupSubmix()
 {
     if (GEngine && GEngine->GetActiveAudioDevice().IsValid())
     {
         FAudioDevice* AudioDevice = GEngine->GetActiveAudioDevice().GetAudioDevice();
         if (AudioDevice && TargetSubmix)
         {
+            UE_LOG(LogTemp, Warning, TEXT("[PitchDetector] Unregistering submix listener"));
             AudioDevice->UnregisterSubmixBufferListener(this, TargetSubmix);
-            UE_LOG(LogTemp, Warning, TEXT("PitchDetector: Unregistered from Submix"));
         }
     }
-
-    bIsDetecting = false;
-}
-
-
-// PitchDetectorComponent.cpp
-
-void UPitchDetectorComponent::StartAnalysis()
-{
-    if (!TargetSubmix)
-    {
-        UE_LOG(LogTemp, Error, TEXT("PitchDetector: TargetSubmix not set!"));
-        return;
-    }
-
-    if (!GEngine || !GEngine->GetActiveAudioDevice().IsValid())
-    {
-        UE_LOG(LogTemp, Error, TEXT("PitchDetector: No valid audio device"));
-        return;
-    }
-
-    FAudioDevice* AudioDevice = GEngine->GetActiveAudioDevice().GetAudioDevice();
-    if (!AudioDevice)
-    {
-        UE_LOG(LogTemp, Error, TEXT("PitchDetector: AudioDevice is null"));
-        return;
-    }
-
-    // 등록 중복 방지
-    AudioDevice->RegisterSoundSubmix(TargetSubmix, true);
-    AudioDevice->RegisterSubmixBufferListener(this, TargetSubmix);
-
-    bIsDetecting = true;
-
-    UE_LOG(LogTemp, Warning, TEXT("PitchDetector: Started analysis on Submix [%s]"), *TargetSubmix->GetName());
 }
