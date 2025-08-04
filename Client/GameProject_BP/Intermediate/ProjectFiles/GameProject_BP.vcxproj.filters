@@ -58,6 +58,9 @@
     <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_Computer2.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_Portal.cpp">
+      <Filter>Source\GameProject_BP\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_Screeming.cpp">
       <Filter>Source\GameProject_BP\Private</Filter>
     </ClCompile>
@@ -95,6 +98,9 @@
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Computer2.h">
+      <Filter>Source\GameProject_BP\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Portal.h">
       <Filter>Source\GameProject_BP\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Screeming.h">

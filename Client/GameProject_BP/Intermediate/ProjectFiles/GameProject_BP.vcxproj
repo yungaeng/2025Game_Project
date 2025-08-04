@@ -143,6 +143,11 @@
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
+    <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_Portal.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
     <ClCompile Include="..\..\Source\GameProject_BP\Private\CPP_Screeming.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
@@ -187,6 +192,7 @@
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPPMyGameMode.h"/>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Computer.h"/>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Computer2.h"/>
+    <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Portal.h"/>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Screeming.h"/>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_Tool.h"/>
     <ClInclude Include="..\..\Source\GameProject_BP\Public\CPP_ToolCollecter.h"/>
