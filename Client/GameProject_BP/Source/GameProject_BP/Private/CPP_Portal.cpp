@@ -74,5 +74,5 @@ void ACPP_Portal::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* Ot
 void ACPP_Portal::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor,
     UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
-    // Optional: 처리할 내용이 있으면 작성
+    
 }
