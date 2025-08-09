@@ -1,0 +1,22 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyMap/NewMap.umap",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/BP_Adventurer.uasset",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/MiniMap_RenderTarget2D.uasset",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/M_MinMap.uasset",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/W_Minimap.uasset",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/Minimap/M_MinMap.uasset",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/Minimap/MiniMap_RenderTarget2D.uasset",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/Minimap/W_Minimap.uasset",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyGameMode.uasset",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/Minimap/Arrow.uasset",
+				"C:/Users/user/Desktop/2025Game_Project/Client/GameProject_BP/Content/MyAdventurer/Minimap/Arrow_Sprite.uasset"
+			]
+		}
+	]
+}
