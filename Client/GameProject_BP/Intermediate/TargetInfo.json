@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "GameProject_BP",
+			"Path": "..\\Source\\GameProject_BP.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "GameProject_BPEditor",
+			"Path": "..\\Source\\GameProject_BPEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
