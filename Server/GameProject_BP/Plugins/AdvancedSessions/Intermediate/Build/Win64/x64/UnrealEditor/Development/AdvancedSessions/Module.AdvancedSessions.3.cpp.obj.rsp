@@ -1,11 +1,11 @@
-"F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Module.AdvancedSessions.3.cpp"
-/FI"F:\Git Repository\2025Game_Project\Server\Server\Intermediate\Build\Win64\x64\GameProject_BPEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
-/FI"F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Definitions.AdvancedSessions.h"
-/Yu"F:\Git Repository\2025Game_Project\Server\Server\Intermediate\Build\Win64\x64\GameProject_BPEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
-/Fp"F:\Git Repository\2025Game_Project\Server\Server\Intermediate\Build\Win64\x64\GameProject_BPEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.pch"
-/Fo"F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Module.AdvancedSessions.3.cpp.obj"
-/sourceDependencies "F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Module.AdvancedSessions.3.cpp.dep.json"
-@"F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\AdvancedSessions.Shared.rsp"
+"F:\Git Repository\2025Game_Project\Server\GameProject_BP\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Module.AdvancedSessions.3.cpp"
+/FI"F:\Git Repository\2025Game_Project\Server\GameProject_BP\Intermediate\Build\Win64\x64\GameProject_BPEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
+/FI"F:\Git Repository\2025Game_Project\Server\GameProject_BP\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Definitions.AdvancedSessions.h"
+/Yu"F:\Git Repository\2025Game_Project\Server\GameProject_BP\Intermediate\Build\Win64\x64\GameProject_BPEditor\Development\Engine\SharedPCH.Engine.Cpp20.h"
+/Fp"F:\Git Repository\2025Game_Project\Server\GameProject_BP\Intermediate\Build\Win64\x64\GameProject_BPEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.pch"
+/Fo"F:\Git Repository\2025Game_Project\Server\GameProject_BP\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Module.AdvancedSessions.3.cpp.obj"
+/sourceDependencies "F:\Git Repository\2025Game_Project\Server\GameProject_BP\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\Module.AdvancedSessions.3.cpp.dep.json"
+@"F:\Git Repository\2025Game_Project\Server\GameProject_BP\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSessions\AdvancedSessions.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi
