@@ -270,7 +270,7 @@ FString UPitchDetectorComponent::FrequencyToNoteName(float Frequency)
                                 TEXT("F"), TEXT("G"), TEXT("G"), TEXT("A"), TEXT("A"), TEXT("B") };
 
     int32 NoteIndex = (MidiNote) % 12; // C를 0으로 만들기 위한 조정 (MIDI에서 C0 = 12)
-
+    
 
     // 음정 이름 생성
     FString NoteName = NoteNames[NoteIndex];

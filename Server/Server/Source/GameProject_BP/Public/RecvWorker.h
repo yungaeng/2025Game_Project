@@ -5,26 +5,26 @@
 #include "CoreMinimal.h"
 
 /**
- *
+ * 
  */
 class GAMEPROJECT_BP_API RecvWorker : public FRunnable
 {
 public:
-    RecvWorker(class FSocket* Socket, TSharedPtr<class Networker> networker);
-    ~RecvWorker();
+	RecvWorker(class FSocket* Socket, TSharedPtr<class Networker> networker);
+	~RecvWorker();
 
-    virtual bool Init() override;
-    virtual uint32 Run() override;
-    virtual void Exit() override;
+	virtual bool Init() override;
+	virtual uint32 Run() override;
+	virtual void Exit() override;
 
-    void Destroy();
+	void Destroy();
 
 private:
-    void Recv();
+	void Recv();
 
 protected:
-    FSocket* m_Socket;
-    FRunnableThread* m_RecvThread = nullptr;
-    TWeakPtr<class Networker> m_NetworkerPtr = nullptr;
-    bool m_Running = true;
+	FSocket* m_Socket;
+	FRunnableThread* m_RecvThread = nullptr;
+	TWeakPtr<class Networker> m_NetworkerPtr = nullptr;
+	bool m_Running = true;
 };

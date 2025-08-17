@@ -1,11 +1,11 @@
-"F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\Module.AdvancedSessions.2.cpp"
-/FI"F:\Git Repository\2025Game_Project\Server\Server\Intermediate\Build\Win64\x64\GameProject_BP\Development\Engine\SharedPCH.Engine.Cpp20.h"
-/FI"F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\Definitions.AdvancedSessions.h"
-/Yu"F:\Git Repository\2025Game_Project\Server\Server\Intermediate\Build\Win64\x64\GameProject_BP\Development\Engine\SharedPCH.Engine.Cpp20.h"
-/Fp"F:\Git Repository\2025Game_Project\Server\Server\Intermediate\Build\Win64\x64\GameProject_BP\Development\Engine\SharedPCH.Engine.Cpp20.h.pch"
-/Fo"F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\Module.AdvancedSessions.2.cpp.obj"
-/sourceDependencies "F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\Module.AdvancedSessions.2.cpp.dep.json"
-@"F:\Git Repository\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\AdvancedSessions.Shared.rsp"
+"D:\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\Module.AdvancedSessions.2.cpp"
+/FI"D:\Server\Intermediate\Build\Win64\x64\GameProject_BP\Development\Engine\SharedPCH.Engine.Cpp20.h"
+/FI"D:\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\Definitions.AdvancedSessions.h"
+/Yu"D:\Server\Intermediate\Build\Win64\x64\GameProject_BP\Development\Engine\SharedPCH.Engine.Cpp20.h"
+/Fp"D:\Server\Intermediate\Build\Win64\x64\GameProject_BP\Development\Engine\SharedPCH.Engine.Cpp20.h.pch"
+/Fo"D:\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\Module.AdvancedSessions.2.cpp.obj"
+/sourceDependencies "D:\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\Module.AdvancedSessions.2.cpp.dep.json"
+@"D:\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealGame\Development\AdvancedSessions\AdvancedSessions.Shared.rsp"
 /Zc:inline
 /nologo
 /Oi

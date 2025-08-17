@@ -13,17 +13,16 @@ Networker::Networker(FSocket* Socket) : m_Socket(Socket)
 
 Networker::~Networker()
 {
-    Disconnect();
+	Disconnect();
 }
 
 void Networker::RecvThreadRun()
 {
-    m_RecvworkerPtr = MakeShared<RecvWorker>(m_Socket, AsShared());
+	m_RecvworkerPtr = MakeShared<RecvWorker>(m_Socket, AsShared());
 }
 
 void Networker::Disconnect()
 {
-    m_isgameover = false;
-    m_RecvworkerPtr->Destroy();
+	m_isgameover = false;
+	m_RecvworkerPtr->Destroy();
 }
-

@@ -6,25 +6,25 @@
 #include "protocol.h"
 
 /**
- *
+ * 
  */
 class GAMEPROJECT_BP_API Networker : public TSharedFromThis<Networker>
 {
 public:
-    Networker(class FSocket* Socket);
-    ~Networker();
+	Networker(class FSocket* Socket);
+	~Networker();
 
-    void RecvThreadRun();
-    void Disconnect();
+	void RecvThreadRun();
+	void Disconnect();
 public:
-    class FSocket* m_Socket;
-    TSharedPtr<class RecvWorker> m_RecvworkerPtr;
+	class FSocket* m_Socket;
+	TSharedPtr<class RecvWorker> m_RecvworkerPtr;
 
 
 
     bool m_islogin;
     bool m_isimposter;
-    bool m_isgameover = false;
-    char m_result;
+	bool m_isgameover = false;
+	char m_result;
 };
 

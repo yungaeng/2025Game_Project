@@ -34,7 +34,7 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
         const sc_packet_avatar_info* p = reinterpret_cast<const sc_packet_avatar_info*>(Data.GetData());
         GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_AVATAR_INFO received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-            //Net->m_isimposter = true;
+
         }
         });
     RecvPacketHandler::Get().RegisterHandler(S2C_ENTER, [this](const TArray<uint8>& Data) {
@@ -90,15 +90,15 @@ RecvWorker::~RecvWorker()
 
 bool RecvWorker::Init()
 {
-    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("RecvThread is Init!!")));
-    return true;
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::Printf(TEXT("RecvThread is Init!!")));
+	return true;
 }
 
 uint32 RecvWorker::Run()
 {
-    while (m_Running)
-        Recv();
-    return 0;
+	while (m_Running)
+		Recv();
+	return 0;
 }
 
 void RecvWorker::Exit()
@@ -107,26 +107,26 @@ void RecvWorker::Exit()
 
 void RecvWorker::Destroy()
 {
-    m_Running = false;
+	m_Running = false;
 }
 
 void RecvWorker::Recv()
 {
-    uint32 bytesPending;
-    if (m_Socket->HasPendingData(bytesPending))
-    {
-        int32 readBytes;
-        TArray<uint8> data;
-        data.SetNumUninitialized(BUF_SIZE);
-        m_Socket->Recv(data.GetData(), data.Num(), readBytes);
+	uint32 bytesPending;
+	if (m_Socket->HasPendingData(bytesPending))
+	{
+		int32 readBytes;
+		TArray<uint8> data;
+		data.SetNumUninitialized(BUF_SIZE);
+		m_Socket->Recv(data.GetData(), data.Num(), readBytes);
 
-        if (readBytes > 0)
-        {
-            uint8 packetSize = data[0];
-            char packetType = data[1];
+		if (readBytes > 0)
+		{
+			uint8 packetSize = data[0];
+			char packetType = data[1];
 
-            RecvPacketHandler::Get().HandlePacket(packetType, data);
-        }
-    }
+			RecvPacketHandler::Get().HandlePacket(packetType, data);
+		}
+	}
 }
 
