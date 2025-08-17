@@ -1,0 +1,9 @@
+/Saved
+/Intermediate
+/*.log
+*.ini
+*.json
+/.vs
+/Build
+*.sln
+*_BuiltData.uasset
