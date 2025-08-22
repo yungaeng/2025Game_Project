@@ -205,11 +205,22 @@ void process_packet(long long c_id, char* packet)
     }
     case C2S_MISSION: {
         cs_packet_mission* p = reinterpret_cast<cs_packet_mission*>(packet);
-        std::cout << "Client [" << c_id << "] requested mission: " << static_cast<int>(p->mission) << std::endl;
-        ROOM_EVENT ev{};
-        ev.client_id = c_id;
-        ev.event_id = (EVENT_TYPE)p->mission;
-        event_queue.push(ev); // 이벤트 큐에 푸시
+        std::cout << "Client [" << c_id << "] mission clear " << static_cast<int>(p->mission) << std::endl;
+        
+        // 이벤트 방식
+        //ROOM_EVENT ev{};
+        //ev.client_id = c_id;
+        //ev.event_id = (EVENT_TYPE)p->mission;
+        //event_queue.push(ev); // 이벤트 큐에 푸시
+        // 
+        // 이벤트 방식은 잠시 접어두고 직접 rooms 데이터에 접근하자
+
+        int roomid = clients[c_id]->_room_id;
+        lock_guard<mutex> ll{ rooms[roomid]->rl };
+        {
+            mission_clear(roomid, p->mission);
+        }
+        
         break;
     }
     case C2S_ATTACK: {
