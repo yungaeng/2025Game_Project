@@ -57,13 +57,7 @@ public:
 public:
 	void send_login_ok_packet();
 	void send_login_fail_packet(char reason);
-	void send_room_packet(long long c_id);
-	void send_avata_info_packet();
-	void send_enter_packet(long long c_id);
-	void send_move_packet(long long c_id);
 	void send_chat_packet(long long c_id, const char* mess);
-	void send_stat_change(long long affected_id, int hp);
-	void send_leave_packet(long long c_id);
 	void send_gameover();
 };
 extern concurrency::concurrent_unordered_map<long long, std::shared_ptr<session>> clients;

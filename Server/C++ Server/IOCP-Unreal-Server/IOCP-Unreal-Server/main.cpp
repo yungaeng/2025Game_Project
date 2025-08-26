@@ -1,6 +1,5 @@
 #pragma once
 #include "room.h"
-#include "event.h"
 #include <iostream>
 #include <vector>
 #include <thread>
@@ -15,11 +14,9 @@ DB g_db;                       // DB
 
 concurrency::concurrent_unordered_map<long long, std::shared_ptr<session>> clients;
 std::mutex clients_lock;
-concurrency::concurrent_priority_queue<ROOM_EVENT> event_queue;
 concurrency::concurrent_unordered_map<int, std::shared_ptr<ROOM>> rooms;
 
 std::atomic<long long> next_client_id = 0;
-std::atomic<int> pid_counter = 0; // pid와 겹치지 않게 이름 변경
 
 long long get_new_client_id() {
     long long new_id = next_client_id.fetch_add(1);
@@ -38,8 +35,7 @@ void disconnect(long long c_id) {
         if (clients[c_id]->_room_id != -1) {
             for (auto& cl : clients) {
                 if (cl.second->_id == c_id) continue;
-                if (cl.second->_room_id == cl.second->_room_id)
-                    cl.second->send_leave_packet(c_id);
+                if (cl.second->_room_id == cl.second->_room_id);
             }
         }
     }
@@ -78,7 +74,6 @@ void process_packet(long long c_id, char* packet)
             // 새 회원 등록하고 로그인 시켜줌.
             g_db.InsertDB(ld);
             clients[c_id]->send_login_ok_packet();
-            clients[c_id]->send_avata_info_packet();
         }
             
         // 현재 DB 보여주기
@@ -96,7 +91,6 @@ void process_packet(long long c_id, char* packet)
 
         if (g_db.FindDB(NAME)) {
             clients[c_id]->send_login_ok_packet();
-            clients[c_id]->send_avata_info_packet();
         }
         else {
             // 4 : 해당되는 계정이 없음
@@ -110,9 +104,9 @@ void process_packet(long long c_id, char* packet)
     }
     case C2S_ROOM: {
         cs_packet_room* p = reinterpret_cast<cs_packet_room*>(packet);
-        switch (p->requst)
+        switch (p->req)
         {
-        case 'C': { // 새 방 생성
+        case create: { // 새 방 생성
             int room_id = create_room_num();
             rooms[room_id] = std::make_shared<ROOM>();
             {
@@ -127,12 +121,9 @@ void process_packet(long long c_id, char* packet)
                     clients[c_id]->_room_id = room_id;
                 }
             }
-            // 방에 입장하였음을 알리고 아바타 정보(유저가 조종하는 캐릭터)를 보내줌
-            clients[c_id]->send_room_packet(c_id);
-            clients[c_id]->send_avata_info_packet();
             break;
         } 
-        case 'J': { // 기존 방 입장
+        case join: { // 기존 방 입장
             int room_id = get_room_id();
             if(-1 != room_id)
             {
@@ -152,15 +143,13 @@ void process_packet(long long c_id, char* packet)
                 }
             }
             // 방을 찾지 못하였으면 기본값(-1)이 할당됨
-            clients[c_id]->send_room_packet(c_id);
 
             // 방을 찾았다면 아바타 정보(유저가 조종하는 캐릭터)를 보내줌
             if (clients[c_id]->_room_id != -1) {
-                clients[c_id]->send_avata_info_packet();
             }
             break;
         }
-        case 'L':
+        case leave:
         {
             int room_id = clients[c_id]->_room_id;
             // 방을 배정받은 클라만 나감처리 가능
@@ -177,8 +166,7 @@ void process_packet(long long c_id, char* packet)
 
                 // 방에 남아있는 플레이어들에게는 나갔다는 패킷전달이 필요함 
                 for (auto& cl : clients) {
-                    if (cl.second->_room_id == room_id)
-                        cl.second->send_leave_packet(c_id);
+                    //if (cl.second->_room_id == room_id)
                 }
             }
             break;
@@ -188,24 +176,9 @@ void process_packet(long long c_id, char* packet)
         }
         break;
     }
-    case C2S_MOVE: { 
-        // TODO : 이동 처리 해야함, 현재는 임포스터 완료로 사용중
-        std::cout << "All Adventurer Dead" << std::endl;
-        sc_packet_gameover go;
-        go.type = S2C_GAMEOVER;
-        go.result = 0;
-
-        int roomid = clients[c_id]->_room_id;
-        for (auto& cl : clients) {
-            if (cl.second->_room_id == roomid)
-                cl.second->do_send(&go);
-        }
-        break;
-        break;
-    }
     case C2S_MISSION: {
         cs_packet_mission* p = reinterpret_cast<cs_packet_mission*>(packet);
-        std::cout << "Client [" << c_id << "] mission clear " << static_cast<int>(p->mission) << std::endl;
+        std::cout << "Client [" << c_id << "] mission clear " << static_cast<int>(p->mis) << std::endl;
         
         // 이벤트 방식
         //ROOM_EVENT ev{};
@@ -218,24 +191,13 @@ void process_packet(long long c_id, char* packet)
         int roomid = clients[c_id]->_room_id;
         lock_guard<mutex> ll{ rooms[roomid]->rl };
         {
-            mission_clear(roomid, p->mission);
+            mission_clear(roomid, p->mis);
         }
         
         break;
     }
     case C2S_ATTACK: {
-        // TODO : 어택처리 해야함, 현재는 미션 완료로 사용중
-        std::cout << "All Mission Clear" << std::endl;
-        sc_packet_gameover go;
-        go.type = S2C_GAMEOVER;
-        go.result = 1;
-
-        int roomid = clients[c_id]->_room_id;
-        for (auto& cl : clients) {
-            if (cl.second->_room_id == roomid)
-                cl.second->send_gameover();
-        }
-        break;
+        // TODO : 어택처리 해야함
     }
     case C2S_CHAT: {
         cs_packet_chat* p = reinterpret_cast<cs_packet_chat*>(packet);
@@ -338,26 +300,11 @@ void worker_thread(HANDLE h_iocp) {
         }
         case OP_DISCONNECT: {
             for (auto& cl : clients) {
-                // clients 자료구조를 순회하면서 해야 할 일 일괄처리
                 // disconnect 처리(맵에서 삭제)
                 if (cl.second->_state == ST_FREE) {
                     lock_guard<mutex> ll{ clients_lock };
                     clients.unsafe_erase(cl.second->_id);
-                }
-            }
-            break;
-        }
-        case OP_GAMESTART: {
-            sc_packet_gamestart p;
-            p.size = sizeof(p);
-            p.type = S2C_GAMESTART;
-
-            for (auto& r : rooms) {
-                if (r.second->state == R_INGAME) {
-                    for (auto& cl : clients) {
-                        if (cl.second->_room_id == r.second->id)
-                            cl.second->do_send(&p);
-                    }
+                    cout << "disconnect " << cl.second->_id << endl;
                 }
             }
             break;
@@ -476,8 +423,6 @@ int main()
         worker_threads.emplace_back(worker_thread, h_iocp);
     }
 
-    std::thread event_thread{ do_event }; // 이벤트 처리 스레드
-
     std::cout << "Worker threads : " << num_threads << std::endl;
     std::cout << "Now server is running" << std::endl;
     g_db.SelectDB();
@@ -488,7 +433,6 @@ int main()
 
     //--------------------------- 여기서부터 서버 종료---------------------------------
     // 모든 스레드가 종료될 때까지 기다림
-    event_thread.join();
     for (auto& th : worker_threads) {
         th.join();
     }

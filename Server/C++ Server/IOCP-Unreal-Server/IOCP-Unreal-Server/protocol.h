@@ -10,27 +10,33 @@ constexpr char MAX_NAME_LENGTH = 20;
 constexpr int MAX_ROOM_PLAYER = 5;
 
 // 패킷 타입
-constexpr char C2S_SIGNIN = 1;			// 회원가입
-constexpr char C2S_LOGIN = 2;
-constexpr char C2S_ROOM = 3;
-constexpr char C2S_MOVE = 4;
-constexpr char C2S_MISSION = 5;
-constexpr char C2S_ATTACK = 6;
-constexpr char C2S_CHAT = 7;
-constexpr char C2S_TELEPORT = 8;		// 동접 테스트 할 때
-constexpr char C2S_LOGOUT = 9;
+constexpr char C2S_SIGNIN = 01;			// 회원가입
+constexpr char C2S_LOGIN = 02;
+constexpr char C2S_ROOM = 03;
+constexpr char C2S_MISSION = 04;
+constexpr char C2S_ATTACK = 05;
+constexpr char C2S_CHAT = 06;
+constexpr char C2S_LOGOUT = 07;
 
 constexpr char S2C_LOGIN_OK = 10;
 constexpr char S2C_LOGIN_FAIL = 11;
-constexpr char S2C_ROOM = 12;
-constexpr char S2C_AVATAR_INFO = 13;
-constexpr char S2C_ENTER = 14;
-constexpr char S2C_GAMESTART = 15;
-constexpr char S2C_MOVE = 16;
-constexpr char S2C_CHAT = 17;
-constexpr char S2C_STAT_CHANGE = 18;
-constexpr char S2C_LEAVE = 19;
-constexpr char S2C_GAMEOVER = 20;
+constexpr char S2C_MISSION = 12;
+constexpr char S2C_ATTACK = 13;
+constexpr char S2C_CHAT = 14;
+constexpr char S2C_GAMEOVER = 15;
+
+enum requst {
+	create, join, leave
+};
+enum mission {
+	control_fix, 
+	armory_fix, 
+	course_modifi,
+	charging,
+	radio,
+	lab_temperature,
+	bedroom_temperature
+};
 
 #pragma pack (push, 1)
 
@@ -44,21 +50,15 @@ struct cs_packet_login {
 	char  type;
 	char  name[MAX_NAME_LENGTH];
 };
-struct cs_packet_room
-{
+struct cs_packet_room {
 	unsigned char size;
 	char type;
-	char requst;
-};
-struct cs_packet_move {
-	unsigned char  size;
-	char  type;
-	char  direction;
+	requst req;
 };
 struct cs_packet_mission {
 	unsigned char  size;
 	char  type;
-	char  mission;
+	mission mis;
 };
 struct cs_packet_attack {
 	unsigned char  size;
@@ -68,10 +68,6 @@ struct cs_packet_chat {
 	unsigned char  size;
 	char  type;
 	char  message[MAX_CHAT_LENGTH];
-};
-struct cs_packet_teleport {
-	unsigned char  size;
-	char  type;
 };
 struct cs_packet_logout {
 	unsigned char  size;
@@ -93,36 +89,14 @@ struct sc_packet_login_fail {
 							// 3 : 서버에 동접이 너무 많음
 							// 4 : 해당되는 계정이 없음
 };
-struct sc_packet_room
-{
-	unsigned char size;
-	char type;
+struct sc_packet_mission {
+	unsigned char  size;
+	char  type;
+	mission mis;
 };
-struct sc_packet_avatar_info {
-	unsigned char size;
-	char type;
-	long long  id;
-	float x, y, z;
-	int hp;
-};
-struct sc_packet_enter {
-	unsigned char size;
-	char type;
-	long long  id;
-	char name[MAX_NAME_LENGTH];
-	char o_type;						// 0 : adventurer
-										// 1 : imposter  
-	float x, y, z;
-};
-struct sc_packet_gamestart {
-	unsigned char size;
-	char type;
-};
-struct sc_packet_move {
-	unsigned char size;
-	char type;
-	long long id;
-	float x, y, z;
+struct sc_packet_attack {
+	unsigned char  size;
+	char  type;
 };
 struct sc_packet_chat {
 	unsigned char size;
@@ -131,23 +105,11 @@ struct sc_packet_chat {
 										// -1 => SYSTEM MESSAG
 	char message[MAX_CHAT_LENGTH];		// NULL terminated 문자열
 };
-struct sc_packet_stat_change {
-	unsigned char size;
-	char type;
-	long long  id;
-	int hp;
-};
-struct sc_packet_leave {
-	unsigned char size;
-	char type;
-	long long  id;
-};
 struct sc_packet_gameover {
 	unsigned char size;
 	char type;
 	char result;	// 0 : 임포승
 					// 1 : 탐험가 승
 };
-
 
 #pragma pack (pop)

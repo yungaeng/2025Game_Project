@@ -140,7 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="db.h" />
-    <ClInclude Include="event.h" />
     <ClInclude Include="ex_over.h" />
     <ClInclude Include="net_header.h" />
     <ClInclude Include="protocol.h" />
@@ -149,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="db.cpp" />
+    <ClCompile Include="game_header.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="session.cpp" />
   </ItemGroup>

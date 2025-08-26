@@ -70,21 +70,14 @@ void send_login(const char* name) {
     strcpy_s(login_packet.name, sizeof(login_packet.name), name); // MAX_NAME_LEN 정의 필요
     send(client_socket, reinterpret_cast<char*>(&login_packet), sizeof(login_packet), 0);
 }
-void send_room(const char requst) {
+void send_room(requst req) {
     cs_packet_room room_packet;
     room_packet.size = sizeof(room_packet);
     room_packet.type = C2S_ROOM;
-    room_packet.requst = requst;
+    room_packet.req = req;
     send(client_socket, reinterpret_cast<char*>(&room_packet), sizeof(room_packet), 0);
 }
 
-void send_move(const char dir) {
-    cs_packet_move move_packet;
-    move_packet.size = sizeof(move_packet);
-    move_packet.type = C2S_MOVE;
-    move_packet.direction = dir;
-    send(client_socket, reinterpret_cast<char*>(&move_packet), sizeof(move_packet), 0);
-}
 void send_attack() {
     cs_packet_attack attack_packet;
     attack_packet.size = sizeof(attack_packet);
@@ -98,11 +91,11 @@ void send_chat(const char* message) {
     strcpy_s(chat_packet.message, MAX_CHAT_LENGTH, message);
     send(client_socket, reinterpret_cast<char*>(&chat_packet), sizeof(chat_packet), 0);
 }
-void send_mission(const char mission) {
+void send_mission(mission mis) {
     cs_packet_mission mission_packet;
     mission_packet.size = sizeof(mission_packet);
     mission_packet.type = C2S_MISSION;
-    mission_packet.mission = mission;
+    mission_packet.mis = mis;
     send(client_socket, reinterpret_cast<char*>(&mission_packet), sizeof(mission_packet), 0);
 }
 
@@ -116,46 +109,6 @@ void process_packet(char* packet) {
     case S2C_LOGIN_FAIL: {
         sc_packet_login_fail* p = reinterpret_cast<sc_packet_login_fail*>(packet);
         std::cout << "로그인 실패! 서버가 요청을 거부했습니다. 에러 코드" << int(p->reason) << std::endl;
-        break;
-    }
-    case S2C_AVATAR_INFO: {
-        sc_packet_avatar_info* p = reinterpret_cast<sc_packet_avatar_info*>(packet);
-        // myid가 아직 설정되지 않았다면 최초 로그인
-        if (myid == -1) 
-            myid = p->id;
-        std::cout << "연결 성공! ID: " << myid << " (" << p->x << ", " << p->y << ")에 로그인됨." << std::endl;
-        break;
-    }
-    case S2C_ROOM: {
-        sc_packet_room* p = reinterpret_cast<sc_packet_room*>(packet);
-        std::cout << "방에 입장하였습니다." << std::endl;
-        break;
-    }
-    case S2C_GAMESTART: {
-        std::cout << "게임이 시작되었습니다." << std::endl;
-        break;
-    }
-    case S2C_MOVE: {
-       // TODO
-        break;
-    }
-    case S2C_ENTER: {
-        sc_packet_enter* p = reinterpret_cast<sc_packet_enter*>(packet);
-        std::cout << "플레이어 [ID: " << p->id << ", 이름: " << p->name << "] (" << p->x << ", " << p->y << ") 입장." << std::endl;
-        break;
-    }
-    case S2C_LEAVE: {
-        sc_packet_leave* p = reinterpret_cast<sc_packet_leave*>(packet);
-        if (p->id == myid) {
-            myid = -1;
-            std::cout << "자신이 게임에서 떠났습니다." << std::endl;
-        }
-        else
-            std::cout << "플레이어 [ID: " << p->id << "] 퇴장." << std::endl;
-        break;
-    }
-    case S2C_STAT_CHANGE: {
-        // TODO
         break;
     }
     case S2C_CHAT: {
@@ -295,20 +248,6 @@ int main() {
         std::cin >> input_char;
 
         switch (toupper(input_char)) { // 대소문자 구분 없이 처리
-        case 'M': {
-            std::cout << "이동 방향 입력 (W/A/S/D): ";
-            char move_dir;
-            std::cin >> move_dir;
-            send_move(toupper(move_dir));
-            break;
-        }
-        case 'R': {
-            std::cout << "요청 타입 create/join/leave (C/J/L)";
-            char move_dir;
-            std::cin >> move_dir;
-            send_room(toupper(move_dir));
-            break;
-        }
         case 'A': {
             send_attack();
             break;
@@ -324,7 +263,7 @@ int main() {
             std::cout << "미션 타입 입력 (숫자): ";
             int mission_type_int;
             std::cin >> mission_type_int;
-            send_mission(static_cast<char>(mission_type_int));
+            send_mission(static_cast<mission>(mission_type_int));
             break;
         }
         case 'Q': {

@@ -31,7 +31,7 @@ bool DB::InitDB()
 bool DB::InsertDB(logindata ld)
 {
 	std::string insert_query
-		= "INSERT INTO user_data (username, password) VALUES ('" + ld.NAME + "', '" + std::to_string(ld.ID) + "')";
+		= "INSERT INTO user_data (name, password) VALUES ('" + ld.NAME + "', '" + std::to_string(ld.ID) + "')";
 
 	if (mysql_query(ConnPtr, insert_query.c_str()))
 	{

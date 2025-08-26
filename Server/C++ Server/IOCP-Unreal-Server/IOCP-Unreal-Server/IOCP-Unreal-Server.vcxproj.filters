@@ -16,9 +16,6 @@
     <Filter Include="소스 파일\DB">
       <UniqueIdentifier>{b183ebd1-01a9-42cf-9e47-e8509570a3d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\event">
-      <UniqueIdentifier>{a00d821a-33da-4618-884f-f3f1ca04f744}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\ex_over">
       <UniqueIdentifier>{2223bc6c-0e73-4942-8ba6-aaaadce53b2a}</UniqueIdentifier>
     </Filter>
@@ -39,9 +36,6 @@
     <ClInclude Include="ex_over.h">
       <Filter>소스 파일\ex_over</Filter>
     </ClInclude>
-    <ClInclude Include="event.h">
-      <Filter>소스 파일\event</Filter>
-    </ClInclude>
     <ClInclude Include="net_header.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -61,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="db.cpp">
       <Filter>소스 파일\DB</Filter>
+    </ClCompile>
+    <ClCompile Include="game_header.h">
+      <Filter>헤더 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
