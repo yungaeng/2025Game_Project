@@ -1,5 +1,39 @@
 {
 	"RemapUnityFiles": 
 	{
+		"Module.GameProject_BP.cpp.obj": [
+			"CPPMyController.gen.cpp.obj",
+			"CPPMyGameMode.gen.cpp.obj",
+			"CPP_Computer.gen.cpp.obj",
+			"CPP_Computer2.gen.cpp.obj",
+			"CPP_Portal.gen.cpp.obj",
+			"CPP_Screeming.gen.cpp.obj",
+			"CPP_Tool.gen.cpp.obj",
+			"CPP_ToolCollecter.gen.cpp.obj",
+			"CPP_W_Indicator.gen.cpp.obj",
+			"FFT1DComponent.gen.cpp.obj",
+			"GameProject_BP.init.gen.cpp.obj",
+			"MissionBase.gen.cpp.obj",
+			"MyFFTComponent.gen.cpp.obj",
+			"PitchDetectorComponent.gen.cpp.obj",
+			"SoundAnalyzerBase.gen.cpp.obj",
+			"W_CheckMission.gen.cpp.obj",
+			"GameProject_BP.cpp.obj",
+			"CPPMyController.cpp.obj",
+			"CPPMyGameMode.cpp.obj",
+			"CPP_Computer.cpp.obj",
+			"CPP_Computer2.cpp.obj",
+			"CPP_Portal.cpp.obj",
+			"CPP_Screeming.cpp.obj",
+			"CPP_Tool.cpp.obj",
+			"CPP_ToolCollecter.cpp.obj",
+			"CPP_W_Indicator.cpp.obj",
+			"FFT1DComponent.cpp.obj",
+			"MissionBase.cpp.obj",
+			"MyFFTComponent.cpp.obj",
+			"PitchDetectorComponent.cpp.obj",
+			"SoundAnalyzerBase.cpp.obj",
+			"W_CheckMission.cpp.obj"
+		]
 	}
 }
