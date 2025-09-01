@@ -13,7 +13,7 @@ struct ROOM {
 	int control_fix_mission;
 	int armory_fix_mission;
 	bool course_modifi;
-	vector<bool> charging_mission;
+	bool charging_mission;
 	bool radio_mission;
 	bool lab_temperature_mission;
 	bool bedroom_temperature_mission;
@@ -37,7 +37,7 @@ int get_room_id() {
 	// 준비 중인 방번호 찾기
 	for (auto& r : rooms) {
 		std::lock_guard <std::mutex> ll{ r.second->rl };
-		if (r.second->state == R_READY && r.second->charging_mission.size() < MAX_ROOM_PLAYER)
+		if (r.second->state == R_READY)
 			return r.second->id;
 	}
 
@@ -59,11 +59,26 @@ void mission_clear(int roomid, char mission) {
 				r.second->armory_fix_mission++;
 			    break;
 			}
-			case 2:
-			case 3:
-			case 4:
-			case 5:
-			case 6:
+			case 2: {
+				r.second->charging_mission = true;
+				break;
+			}
+			case 3: {
+				r.second->course_modifi = true;
+				break;
+			}
+			case 4: {
+				r.second->radio_mission = true;
+				break;
+			}
+			case 5: {
+				r.second->lab_temperature_mission = true;
+				break;
+			}
+			case 6: {
+				r.second->bedroom_temperature_mission = true;
+				break;
+			}
 			default:
 				break;
 			}
