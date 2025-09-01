@@ -25,6 +25,15 @@ void session::send_chat_packet(long long c_id, const char* mess) {
 	do_send(&p);
 }
 
+void session::send_mission_packet(long long c_id, char miss)
+{
+	sc_packet_mission p;
+	p.size = sizeof(p);
+	p.type = S2C_MISSION;
+	p.mis = static_cast<mission>(miss);
+	do_send(&p);
+}
+
 void session::send_gameover() {
 	sc_packet_gameover p;
 	p.size = sizeof(p);

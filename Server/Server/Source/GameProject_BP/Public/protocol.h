@@ -1,4 +1,7 @@
 #pragma once
+#include "CoreMinimal.h"
+#include "protocol.generated.h"
+
 constexpr int BUF_SIZE = 265;
 constexpr short PORT = 3000;
 
@@ -36,6 +39,25 @@ enum mission {
     radio,
     lab_temperature,
     bedroom_temperature
+};
+
+USTRUCT(Atomic, BlueprintType)
+struct FMyMission
+{
+    GENERATED_USTRUCT_BODY()
+public:
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int32 tp_fix;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int32 not_tp_fix;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool charging; 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool password;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool fft;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    bool temperature;
 };
 
 #pragma pack (push, 1)

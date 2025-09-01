@@ -1,6 +1,7 @@
 #pragma once
 #include <unordered_map>
 #include "session.h"
+#include <iostream>
 
 enum ROOM_STATE { R_FREE, R_READY, R_INGAME };
 atomic<int> room_num = -1;
@@ -15,8 +16,7 @@ struct ROOM {
 	bool course_modifi;
 	bool charging_mission;
 	bool radio_mission;
-	bool lab_temperature_mission;
-	bool bedroom_temperature_mission;
+	bool temperature_mission;
 };
 extern concurrency::concurrent_unordered_map<int, std::shared_ptr<ROOM>> rooms;
 extern std::mutex map_lock;
@@ -53,30 +53,37 @@ void mission_clear(int roomid, char mission) {
 			{
 			case 0: {
 				r.second->control_fix_mission++;
+				std::cout << "Room ID : " << roomid << " fix_mission 1 " << r.second->control_fix_mission << std::endl;
 				break;
 			}
 			case 1: {
 				r.second->armory_fix_mission++;
+				std::cout << "Room ID : " << roomid << " fix_mission 2 " << r.second->armory_fix_mission << std::endl;
 			    break;
 			}
 			case 2: {
 				r.second->charging_mission = true;
+				std::cout << "Room ID : " << roomid << " sound_charging_mission clear" << std::endl;
 				break;
 			}
 			case 3: {
 				r.second->course_modifi = true;
+				std::cout << "Room ID : " << roomid << " password_mission clear" << std::endl;
 				break;
 			}
 			case 4: {
 				r.second->radio_mission = true;
+				std::cout << "Room ID : " << roomid << " fft_mission clear" << std::endl;
 				break;
 			}
 			case 5: {
-				r.second->lab_temperature_mission = true;
+				r.second->temperature_mission = true;
+				std::cout << "Room ID : " << roomid << " temperature_mission clear" << std::endl;
 				break;
 			}
 			case 6: {
-				r.second->bedroom_temperature_mission = true;
+				r.second->temperature_mission = false;
+				std::cout << "Room ID : " << roomid << " temperature_mission reset" << std::endl;
 				break;
 			}
 			default:

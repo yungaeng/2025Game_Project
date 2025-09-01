@@ -20,7 +20,7 @@ public:
 	class FSocket* m_Socket;
 	TSharedPtr<class RecvWorker> m_RecvworkerPtr;
 
-
+    FMyMission mission;
 
     bool m_islogin;
     bool m_isimposter;

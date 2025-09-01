@@ -89,7 +89,16 @@ void UMyAdvancedFriendsGameInstance::SendRoom(uint8 request)
     cs_packet_room p{};
     p.size = sizeof(p);
     p.type = C2S_ROOM;
-    p.requst = request;
+    p.req = static_cast<requst>(request);
+    m_Socket->Send((uint8*)&p, sizeof(p), bytesSent);
+}
+void UMyAdvancedFriendsGameInstance::SendMission(uint8 miss)
+{
+    int32 bytesSent;
+    cs_packet_mission p{};
+    p.size = sizeof(p);
+    p.type = C2S_MISSION;
+    p.mis = static_cast<mission>(miss);
     m_Socket->Send((uint8*)&p, sizeof(p), bytesSent);
 }
 void UMyAdvancedFriendsGameInstance::SendAttack()
@@ -113,6 +122,15 @@ bool UMyAdvancedFriendsGameInstance::GetCharacter()
     if (m_NetworkerPtr.IsValid())
         return m_NetworkerPtr->m_isimposter;
     return false;
+}
+
+FMyMission UMyAdvancedFriendsGameInstance::GetMission()
+{
+    FMyMission mission;
+    if (m_NetworkerPtr.IsValid()){
+        mission = m_NetworkerPtr->mission;
+    }
+    return mission;
 }
 
 bool UMyAdvancedFriendsGameInstance::GetGameOver()

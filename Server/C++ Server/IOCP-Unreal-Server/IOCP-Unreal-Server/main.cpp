@@ -113,8 +113,7 @@ void process_packet(long long c_id, char* packet)
                 lock_guard<mutex> ll{ rooms[room_id]->rl };
                 rooms[room_id]->id = room_id;
                 rooms[room_id]->state = R_READY;
-                // 차징 미션을 늘리는 방식으로 PID를 대체
-                rooms[room_id]->charging_mission.emplace_back(false);
+                
                 {
                     // 각각 세션에 정보를 저장만 시키고 개인 클라에게 굳이 룸정보를 전달하지 않음
                     lock_guard<mutex> ll{ clients[c_id]->_s_lock };
@@ -128,18 +127,13 @@ void process_packet(long long c_id, char* packet)
             if(-1 != room_id)
             {
                 lock_guard<mutex> ll{ rooms[room_id]->rl };
-                // 플레이어를 방에 지정하기 전, 방이 가득 찼는지 확인해야 함
-                if (rooms[room_id]->charging_mission.size() <= MAX_ROOM_PLAYER) {
-                    // 차징 미션을 늘리는 방식으로 PID를 대체
-                    rooms[room_id]->charging_mission.emplace_back(false);
+                if (rooms[room_id]->state == R_READY) {
                     {
                         lock_guard<mutex> ll{ clients[c_id]->_s_lock };
                         clients[c_id]->_room_id = room_id;
                     }
                     // 이제 방이 가득 찼다면 게임 시작
-                    if (rooms[room_id]->charging_mission.size() == MAX_ROOM_PLAYER) {
-                        rooms[room_id]->state = R_INGAME;
-                    }
+                    rooms[room_id]->state = R_INGAME;
                 }
             }
             // 방을 찾지 못하였으면 기본값(-1)이 할당됨
@@ -189,11 +183,15 @@ void process_packet(long long c_id, char* packet)
         // 이벤트 방식은 잠시 접어두고 직접 rooms 데이터에 접근하자
 
         int roomid = clients[c_id]->_room_id;
-        lock_guard<mutex> ll{ rooms[roomid]->rl };
-        {
+      
             mission_clear(roomid, p->mis);
-        }
+       
         
+        for (auto& cl : clients) {
+            if (cl.second->_room_id == clients[c_id]->_room_id)
+                cl.second->send_mission_packet(c_id, p->mis);
+        }
+
         break;
     }
     case C2S_ATTACK: {
