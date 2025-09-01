@@ -150,13 +150,7 @@ void EmptyLinkFunctionForGeneratedCodeMissionBase() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMissionBase_OnRep_IsComplete_Statics::Function_MetaDataParams[] = {
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// RepNotify: \xed\x81\xb4\xeb\x9d\xbc \xeb\x8f\x99\xea\xb8\xb0\xed\x99\x94 \xed\x99\x95\xec\x9d\xb8\xec\x9a\xa9\n" },
-#endif
 		{ "ModuleRelativePath", "Public/MissionBase.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "RepNotify: \xed\x81\xb4\xeb\x9d\xbc \xeb\x8f\x99\xea\xb8\xb0\xed\x99\x94 \xed\x99\x95\xec\x9d\xb8\xec\x9a\xa9" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AMissionBase_OnRep_IsComplete_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMissionBase, nullptr, "OnRep_IsComplete", nullptr, nullptr, nullptr, 0, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_AMissionBase_OnRep_IsComplete_Statics::Function_MetaDataParams), Z_Construct_UFunction_AMissionBase_OnRep_IsComplete_Statics::Function_MetaDataParams) };
@@ -195,11 +189,11 @@ void EmptyLinkFunctionForGeneratedCodeMissionBase() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMissionBase_SetMissionComplete_Statics::Function_MetaDataParams[] = {
 		{ "Category", "Mission" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xec\x99\x84\xeb\xa3\x8c \xec\xb2\x98\xeb\xa6\xac (\xec\x84\x9c\xeb\xb2\x84\xec\x97\x90\xec\x84\x9c\xeb\xa7\x8c \xed\x98\xb8\xec\xb6\x9c)\n" },
+		{ "Comment", "// \xec\x99\x84\xeb\xa3\x8c \xec\xb2\x98\xeb\xa6\xac \n" },
 #endif
 		{ "ModuleRelativePath", "Public/MissionBase.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xec\x99\x84\xeb\xa3\x8c \xec\xb2\x98\xeb\xa6\xac (\xec\x84\x9c\xeb\xb2\x84\xec\x97\x90\xec\x84\x9c\xeb\xa7\x8c \xed\x98\xb8\xec\xb6\x9c)" },
+		{ "ToolTip", "\xec\x99\x84\xeb\xa3\x8c \xec\xb2\x98\xeb\xa6\xac" },
 #endif
 	};
 #endif
@@ -248,8 +242,8 @@ void EmptyLinkFunctionForGeneratedCodeMissionBase() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMissionBase_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMissionBase_GetMissionID, "GetMissionID" }, // 810226205
 		{ &Z_Construct_UFunction_AMissionBase_IsComplete, "IsComplete" }, // 2335874219
-		{ &Z_Construct_UFunction_AMissionBase_OnRep_IsComplete, "OnRep_IsComplete" }, // 3706564641
-		{ &Z_Construct_UFunction_AMissionBase_SetMissionComplete, "SetMissionComplete" }, // 1549377104
+		{ &Z_Construct_UFunction_AMissionBase_OnRep_IsComplete, "OnRep_IsComplete" }, // 3773125289
+		{ &Z_Construct_UFunction_AMissionBase_SetMissionComplete, "SetMissionComplete" }, // 639745442
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMissionBase_Statics::FuncInfo) < 2048);
 #if WITH_METADATA
@@ -262,11 +256,11 @@ void EmptyLinkFunctionForGeneratedCodeMissionBase() {}
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMissionBase_Statics::NewProp_MissionID_MetaData[] = {
 		{ "Category", "Mission" },
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xeb\xaf\xb8\xec\x85\x98 ID (Enum\xec\x9c\xbc\xeb\xa1\x9c \xeb\xb0\x94\xea\xbe\xb8\xea\xb3\xa0 \xec\x8b\xb6\xeb\x8b\xa4\xeb\xa9\xb4 E_MissionID \xea\xb0\x99\xec\x9d\x80 Enum \xed\x83\x80\xec\x9e\x85\xec\x9d\x84 \xeb\xa7\x8c\xeb\x93\xa4\xec\x96\xb4 \xea\xb5\x90\xec\xb2\xb4 \xea\xb0\x80\xeb\x8a\xa5)\n" },
+		{ "Comment", "// \xeb\xaf\xb8\xec\x85\x98 ID\n" },
 #endif
 		{ "ModuleRelativePath", "Public/MissionBase.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xeb\xaf\xb8\xec\x85\x98 ID (Enum\xec\x9c\xbc\xeb\xa1\x9c \xeb\xb0\x94\xea\xbe\xb8\xea\xb3\xa0 \xec\x8b\xb6\xeb\x8b\xa4\xeb\xa9\xb4 E_MissionID \xea\xb0\x99\xec\x9d\x80 Enum \xed\x83\x80\xec\x9e\x85\xec\x9d\x84 \xeb\xa7\x8c\xeb\x93\xa4\xec\x96\xb4 \xea\xb5\x90\xec\xb2\xb4 \xea\xb0\x80\xeb\x8a\xa5)" },
+		{ "ToolTip", "\xeb\xaf\xb8\xec\x85\x98 ID" },
 #endif
 	};
 #endif
@@ -340,9 +334,9 @@ void EmptyLinkFunctionForGeneratedCodeMissionBase() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_MissionBase_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AMissionBase, AMissionBase::StaticClass, TEXT("AMissionBase"), &Z_Registration_Info_UClass_AMissionBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMissionBase), 2712597436U) },
+		{ Z_Construct_UClass_AMissionBase, AMissionBase::StaticClass, TEXT("AMissionBase"), &Z_Registration_Info_UClass_AMissionBase, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMissionBase), 1170182167U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_MissionBase_h_2690960395(TEXT("/Script/GameProject_BP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_MissionBase_h_1623398898(TEXT("/Script/GameProject_BP"),
 		Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_MissionBase_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_MissionBase_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
