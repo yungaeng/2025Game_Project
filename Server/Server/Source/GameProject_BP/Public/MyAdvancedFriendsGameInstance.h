@@ -26,10 +26,6 @@ class GAMEPROJECT_BP_API UMyAdvancedFriendsGameInstance : public UAdvancedFriend
     void SendLogin(FString input);
     UFUNCTION(BlueprintCallable)
     void SendRoom(uint8 request);
-
-    UFUNCTION(BlueprintCallable)
-    void SendMission(uint8 miss);
-
     UFUNCTION(BlueprintCallable)
     void SendAttack();
 
@@ -38,8 +34,6 @@ class GAMEPROJECT_BP_API UMyAdvancedFriendsGameInstance : public UAdvancedFriend
     bool GetLoginOk();
     UFUNCTION(BlueprintCallable)
     bool GetCharacter();
-    UFUNCTION(BlueprintCallable)
-    FMyMission GetMission();
     UFUNCTION(BlueprintCallable)
     bool GetGameOver();
     UFUNCTION(BlueprintCallable)
