@@ -15,6 +15,7 @@
 #include "SoundAnalyzerBase.h"
 
 
+
 ACPP_Screeming::ACPP_Screeming()
 {
     PrimaryActorTick.bCanEverTick = true;
@@ -136,6 +137,17 @@ void ACPP_Screeming::PreInitializeComponents()
             UE_LOG(LogTemp, Warning, TEXT("ACPP_Screeming: SoundAnalyzer not found (tag Screeming)"));
         }
     }
+    ACharacter* PlayerChar = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0);
+    if (PlayerChar)
+    {
+        
+        ACharacter* Adventurer = Cast<ACharacter>(PlayerChar);
+        if (Adventurer)
+        {
+            Adventurer->ScreeningMissionCheck = this;
+        }
+    }
+    
 
  //Imposter 
     {

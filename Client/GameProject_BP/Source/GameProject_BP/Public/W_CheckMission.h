@@ -3,6 +3,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/CheckBox.h"
+#include "Components/Image.h"
 #include "W_CheckMission.generated.h"
 
 /**
@@ -17,6 +18,9 @@ class GAMEPROJECT_BP_API UW_CheckMission : public UUserWidget
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission", meta = (ExposeOnSpawn = "true"))
     AActor* MissionActor = nullptr;
+    UImage* RandomSyllablebox;
+    UImage* MatchingPasswordbox;
+    UImage* Screemingbox;
 
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mission")
@@ -37,4 +41,7 @@ protected:
 private:
     bool ReadBoolFromMission(bool& OutValue) const;
     void UpdateCheckBox();
+    void RightSyllableCheck();
+    void MatchingPassword();
+    void Screeming();
 };

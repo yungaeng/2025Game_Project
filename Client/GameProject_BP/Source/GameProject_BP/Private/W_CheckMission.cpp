@@ -5,12 +5,18 @@ void UW_CheckMission::NativeConstruct()
 {
     Super::NativeConstruct();
     UpdateCheckBox();
+    RightSyllableCheck();
+    MatchingPassword();
+    Screeming();
 }
 
 void UW_CheckMission::NativeTick(const FGeometry& MyGeometry, float InDeltaTime)
 {
     Super::NativeTick(MyGeometry, InDeltaTime);
     UpdateCheckBox();
+    RightSyllableCheck();
+    MatchingPassword();
+    Screeming();
 }
 
 bool UW_CheckMission::ReadBoolFromMission(bool& OutValue) const
@@ -35,6 +41,37 @@ void UW_CheckMission::UpdateCheckBox()
 
     bool bValue = bCheckedWhenActorInvalid;
     const bool bOk = ReadBoolFromMission(bValue);
-    // bOk가 false면 bCheckedWhenActorInvalid 값 사용
+   
     CheckBox_Mission->SetIsChecked(bValue);
+}
+
+void UW_CheckMission::RightSyllableCheck()
+{
+    if (RandomSyllablebox)
+    {
+     
+        FLinearColor NewColor = FLinearColor(0.f, 1.f, 0.f, 1.f);
+        RandomSyllablebox->SetColorAndOpacity(NewColor);
+    }
+}
+
+
+void UW_CheckMission::MatchingPassword()
+{
+    if (MatchingPasswordbox)
+    {
+
+        FLinearColor NewColor = FLinearColor(0.f, 1.f, 0.f, 1.f);
+        MatchingPasswordbox->SetColorAndOpacity(NewColor);
+    }
+}
+
+void UW_CheckMission::Screeming()
+{
+    if (Screemingbox)
+    {
+
+        FLinearColor NewColor = FLinearColor(0.f, 1.f, 0.f, 1.f);
+        Screemingbox->SetColorAndOpacity(NewColor);
+    }
 }

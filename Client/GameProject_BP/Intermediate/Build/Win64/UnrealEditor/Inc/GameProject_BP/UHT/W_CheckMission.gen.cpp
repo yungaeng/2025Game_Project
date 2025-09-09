@@ -71,40 +71,22 @@ void EmptyLinkFunctionForGeneratedCodeW_CheckMission() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UW_CheckMission_Statics::NewProp_MissionActor_MetaData[] = {
 		{ "Category", "Mission" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xeb\xb8\x94\xeb\xa3\xa8\xed\x94\x84\xeb\xa6\xb0\xed\x8a\xb8 \xeb\xaf\xb8\xec\x85\x98 \xec\x95\xa1\xed\x84\xb0(\xec\x98\x88: BP_FixTemperature). CreateWidget \xec\x8b\x9c \xec\xa3\xbc\xec\x9e\x85\n" },
-#endif
 		{ "ExposeOnSpawn", "true" },
 		{ "ModuleRelativePath", "Public/W_CheckMission.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xeb\xb8\x94\xeb\xa3\xa8\xed\x94\x84\xeb\xa6\xb0\xed\x8a\xb8 \xeb\xaf\xb8\xec\x85\x98 \xec\x95\xa1\xed\x84\xb0(\xec\x98\x88: BP_FixTemperature). CreateWidget \xec\x8b\x9c \xec\xa3\xbc\xec\x9e\x85" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UW_CheckMission_Statics::NewProp_MissionActor = { "MissionActor", nullptr, (EPropertyFlags)0x0011000000000005, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UW_CheckMission, MissionActor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UW_CheckMission_Statics::NewProp_MissionActor_MetaData), Z_Construct_UClass_UW_CheckMission_Statics::NewProp_MissionActor_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UW_CheckMission_Statics::NewProp_CompleteVarName_MetaData[] = {
 		{ "Category", "Mission" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xec\x99\x84\xeb\xa3\x8c \xec\x97\xac\xeb\xb6\x80 \xeb\xb3\x80\xec\x88\x98 \xec\x9d\xb4\xeb\xa6\x84(\xeb\xb8\x94\xeb\xa3\xa8\xed\x94\x84\xeb\xa6\xb0\xed\x8a\xb8 \xeb\xb3\x80\xec\x88\x98\xeb\xaa\x85). \xec\xb6\x94\xec\xb2\x9c: bIsComplete\n" },
-#endif
 		{ "ModuleRelativePath", "Public/W_CheckMission.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xec\x99\x84\xeb\xa3\x8c \xec\x97\xac\xeb\xb6\x80 \xeb\xb3\x80\xec\x88\x98 \xec\x9d\xb4\xeb\xa6\x84(\xeb\xb8\x94\xeb\xa3\xa8\xed\x94\x84\xeb\xa6\xb0\xed\x8a\xb8 \xeb\xb3\x80\xec\x88\x98\xeb\xaa\x85). \xec\xb6\x94\xec\xb2\x9c: bIsComplete" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FNamePropertyParams Z_Construct_UClass_UW_CheckMission_Statics::NewProp_CompleteVarName = { "CompleteVarName", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UW_CheckMission, CompleteVarName), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UW_CheckMission_Statics::NewProp_CompleteVarName_MetaData), Z_Construct_UClass_UW_CheckMission_Statics::NewProp_CompleteVarName_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UW_CheckMission_Statics::NewProp_bCheckedWhenActorInvalid_MetaData[] = {
 		{ "Category", "Mission" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xec\x95\xa1\xed\x84\xb0\xea\xb0\x80 \xec\x97\x86\xec\x9d\x84 \xeb\x95\x8c \xea\xb8\xb0\xeb\xb3\xb8 \xec\xb2\xb4\xed\x81\xac \xec\x83\x81\xed\x83\x9c\n" },
-#endif
 		{ "ModuleRelativePath", "Public/W_CheckMission.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xec\x95\xa1\xed\x84\xb0\xea\xb0\x80 \xec\x97\x86\xec\x9d\x84 \xeb\x95\x8c \xea\xb8\xb0\xeb\xb3\xb8 \xec\xb2\xb4\xed\x81\xac \xec\x83\x81\xed\x83\x9c" },
-#endif
 	};
 #endif
 	void Z_Construct_UClass_UW_CheckMission_Statics::NewProp_bCheckedWhenActorInvalid_SetBit(void* Obj)
@@ -115,14 +97,8 @@ void EmptyLinkFunctionForGeneratedCodeW_CheckMission() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UW_CheckMission_Statics::NewProp_CheckBox_Mission_MetaData[] = {
 		{ "BindWidget", "" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// \xeb\x94\x94\xec\x9e\x90\xec\x9d\xb4\xeb\x84\x88\xec\x97\x90\xec\x84\x9c \xec\x9d\xb4\xeb\xa6\x84\xec\x9d\x84 \xeb\xb0\x98\xeb\x93\x9c\xec\x8b\x9c CheckBox_Mission \xec\x9c\xbc\xeb\xa1\x9c!\n" },
-#endif
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "Public/W_CheckMission.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "\xeb\x94\x94\xec\x9e\x90\xec\x9d\xb4\xeb\x84\x88\xec\x97\x90\xec\x84\x9c \xec\x9d\xb4\xeb\xa6\x84\xec\x9d\x84 \xeb\xb0\x98\xeb\x93\x9c\xec\x8b\x9c CheckBox_Mission \xec\x9c\xbc\xeb\xa1\x9c!" },
-#endif
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UW_CheckMission_Statics::NewProp_CheckBox_Mission = { "CheckBox_Mission", nullptr, (EPropertyFlags)0x0020080000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UW_CheckMission, CheckBox_Mission), Z_Construct_UClass_UCheckBox_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_UW_CheckMission_Statics::NewProp_CheckBox_Mission_MetaData), Z_Construct_UClass_UW_CheckMission_Statics::NewProp_CheckBox_Mission_MetaData) };
@@ -171,9 +147,9 @@ void EmptyLinkFunctionForGeneratedCodeW_CheckMission() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_W_CheckMission_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UW_CheckMission, UW_CheckMission::StaticClass, TEXT("UW_CheckMission"), &Z_Registration_Info_UClass_UW_CheckMission, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UW_CheckMission), 3925561807U) },
+		{ Z_Construct_UClass_UW_CheckMission, UW_CheckMission::StaticClass, TEXT("UW_CheckMission"), &Z_Registration_Info_UClass_UW_CheckMission, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UW_CheckMission), 356706976U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_W_CheckMission_h_3781997955(TEXT("/Script/GameProject_BP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_W_CheckMission_h_4267914712(TEXT("/Script/GameProject_BP"),
 		Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_W_CheckMission_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_user_Desktop_2025Game_Project_Client_GameProject_BP_Source_GameProject_BP_Public_W_CheckMission_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
