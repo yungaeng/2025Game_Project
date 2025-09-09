@@ -72,3 +72,4 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+Server/Server/Binaries/Win64/GameProject_BP.pdb
