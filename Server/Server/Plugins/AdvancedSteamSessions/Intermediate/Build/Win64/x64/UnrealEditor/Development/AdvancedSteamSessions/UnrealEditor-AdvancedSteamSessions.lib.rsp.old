@@ -6,7 +6,7 @@
 /NAME:"UnrealEditor-AdvancedSteamSessions.dll"
 /IGNORE:4221
 /NODEFAULTLIB
-"C:\Users\user\Desktop\2025Game_Project\Client\Server\Intermediate\Build\Win64\x64\GameProject_BPEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
-"C:\Users\user\Desktop\2025Game_Project\Client\Server\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSteamSessions\Module.AdvancedSteamSessions.cpp.obj"
-"C:\Users\user\Desktop\2025Game_Project\Client\Server\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSteamSessions\Default.rc2.res"
-/OUT:"C:\Users\user\Desktop\2025Game_Project\Client\Server\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSteamSessions\UnrealEditor-AdvancedSteamSessions.lib"
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Intermediate\Build\Win64\x64\GameProject_BPEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSteamSessions\Module.AdvancedSteamSessions.cpp.obj"
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSteamSessions\Default.rc2.res"
+/OUT:"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\x64\UnrealEditor\Development\AdvancedSteamSessions\UnrealEditor-AdvancedSteamSessions.lib"
