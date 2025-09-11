@@ -28,14 +28,12 @@ class GAMEPROJECT_BP_API UMyAdvancedFriendsGameInstance : public UAdvancedFriend
     void SendRoom(uint8 request);
     UFUNCTION(BlueprintCallable)
     void SendAttack();
+    UFUNCTION(BlueprintCallable)
+    void SendGameOver();
 
 
     UFUNCTION(BlueprintCallable)
     bool GetLoginOk();
-    UFUNCTION(BlueprintCallable)
-    bool GetCharacter();
-    UFUNCTION(BlueprintCallable)
-    bool GetGameOver();
     UFUNCTION(BlueprintCallable)
     bool GetGameOverState();
 

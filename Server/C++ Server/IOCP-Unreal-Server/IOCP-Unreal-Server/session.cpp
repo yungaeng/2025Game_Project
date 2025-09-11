@@ -34,10 +34,10 @@ void session::send_mission_packet(long long c_id, char miss)
 	do_send(&p);
 }
 
-void session::send_gameover() {
+void session::send_gameover(bool result) {
 	sc_packet_gameover p;
 	p.size = sizeof(p);
 	p.type = S2C_GAMEOVER;
-	p.result = 1;
+	p.IsImposterWin = result;
 	do_send(&p);
 }

@@ -11,12 +11,15 @@ struct ROOM {
 	std::mutex rl;
 
 	int id;
+
 	int control_fix_mission;
 	int armory_fix_mission;
 	bool course_modifi;
 	bool charging_mission;
 	bool radio_mission;
 	bool temperature_mission;
+
+	int hit = 3;
 };
 extern concurrency::concurrent_unordered_map<int, std::shared_ptr<ROOM>> rooms;
 extern std::mutex map_lock;
@@ -89,6 +92,23 @@ void mission_clear(int roomid, char mission) {
 			default:
 				break;
 			}
+		}
+	}
+}
+
+bool IsMissionClear(int roomid) {
+	for (auto& r : rooms) {
+		if (r.second->id == roomid)
+		{
+			if (r.second->control_fix_mission == 3 &&
+				r.second->armory_fix_mission == 3 &&
+				r.second->course_modifi &&
+				r.second->charging_mission &&
+				r.second->radio_mission &&
+				r.second->temperature_mission)
+				return true;
+			else
+				return false;
 		}
 	}
 }

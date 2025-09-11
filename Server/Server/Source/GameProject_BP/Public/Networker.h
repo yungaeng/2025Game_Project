@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "protocol.h"
+#include <mutex>
 
 /**
  * 
@@ -19,12 +20,9 @@ public:
 public:
 	class FSocket* m_Socket;
 	TSharedPtr<class RecvWorker> m_RecvworkerPtr;
+    std::mutex netlock;
 
-
-
-    bool m_islogin;
-    bool m_isimposter;
-	bool m_isgameover = false;
-	char m_result;
+    bool m_IsLogin;
+	bool m_IsImposterWin;
 };
 

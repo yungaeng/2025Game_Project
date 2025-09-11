@@ -183,19 +183,39 @@ void process_packet(long long c_id, char* packet)
         // 이벤트 방식은 잠시 접어두고 직접 rooms 데이터에 접근하자
 
         int roomid = clients[c_id]->_room_id;
-      
-            mission_clear(roomid, p->mis);
-       
-        
-        for (auto& cl : clients) {
-            if (cl.second->_room_id == clients[c_id]->_room_id)
-                cl.second->send_mission_packet(c_id, p->mis);
-        }
+        lock_guard<mutex> ll{ rooms[roomid]->rl };
+        {
 
+            // 우선 미션클리어 작업
+            mission_clear(roomid, p->mis);
+
+            if (IsMissionClear(roomid)) {
+                for (auto& cl : clients) {
+                    if (cl.second->_room_id == clients[c_id]->_room_id)
+                        cl.second->send_gameover(false);
+                }
+            }
+            else {
+                for (auto& cl : clients) {
+                    if (cl.second->_room_id == clients[c_id]->_room_id)
+                        cl.second->send_mission_packet(c_id, p->mis);
+                }
+            }
+        }
         break;
     }
     case C2S_ATTACK: {
-        // TODO : 어택처리 해야함
+        int roomid = clients[c_id]->_room_id;
+        lock_guard<mutex> ll{ rooms[roomid]->rl };
+        {
+            rooms[roomid]->hit-=1;
+            if (rooms[roomid]->hit == 0) {
+                for (auto& cl : clients) {
+                    if (cl.second->_room_id == clients[c_id]->_room_id)
+                        cl.second->send_gameover(true);
+                }
+            }
+        }
     }
     case C2S_CHAT: {
         cs_packet_chat* p = reinterpret_cast<cs_packet_chat*>(packet);

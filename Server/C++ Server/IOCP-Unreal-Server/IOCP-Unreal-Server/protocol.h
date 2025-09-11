@@ -10,13 +10,15 @@ constexpr char MAX_NAME_LENGTH = 20;
 constexpr int MAX_ROOM_PLAYER = 5;
 
 // ÆÐÅ¶ Å¸ÀÔ
-constexpr char C2S_SIGNIN = 01;			// È¸¿ø°¡ÀÔ
-constexpr char C2S_LOGIN = 02;
-constexpr char C2S_ROOM = 03;
-constexpr char C2S_MISSION = 04;
-constexpr char C2S_ATTACK = 05;
-constexpr char C2S_CHAT = 06;
-constexpr char C2S_LOGOUT = 07;
+constexpr char C2S_SIGNIN = 1;			// È¸¿ø°¡ÀÔ
+constexpr char C2S_LOGIN = 2;
+constexpr char C2S_ROOM = 3;
+constexpr char C2S_MOVE = 4;
+constexpr char C2S_MISSION = 5;
+constexpr char C2S_ATTACK = 6;
+constexpr char C2S_CHAT = 7;
+constexpr char C2S_GAMEOVER = 8;
+constexpr char C2S_LOGOUT = 9;
 
 constexpr char S2C_LOGIN_OK = 10;
 constexpr char S2C_LOGIN_FAIL = 11;
@@ -108,8 +110,8 @@ struct sc_packet_chat {
 struct sc_packet_gameover {
 	unsigned char size;
 	char type;
-	char result;	// 0 : ÀÓÆ÷½Â
-					// 1 : Å½Çè°¡ ½Â
+	bool IsImposterWin;	// 1 : ÀÓÆ÷½Â
+						// 0 : Å½Çè°¡ ½Â
 };
 
 #pragma pack (pop)

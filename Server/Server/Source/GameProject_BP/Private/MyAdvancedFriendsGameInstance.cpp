@@ -100,37 +100,26 @@ void UMyAdvancedFriendsGameInstance::SendAttack()
     p.type = C2S_ATTACK;
     m_Socket->Send((uint8*)&p, p.size, bytesSent);
 }
+void UMyAdvancedFriendsGameInstance::SendGameOver()
+{
+    int32 bytesSent;
+    cs_packet_gameover p{};
+    p.size = sizeof(p);
+    p.type = C2S_GAMEOVER;
+    m_Socket->Send((uint8*)&p, p.size, bytesSent);
+}
 
 bool UMyAdvancedFriendsGameInstance::GetLoginOk()
 {
     if (m_NetworkerPtr.IsValid())
-        return m_NetworkerPtr->m_islogin;
-    return false;
-}
-
-bool UMyAdvancedFriendsGameInstance::GetCharacter()
-{
-    if (m_NetworkerPtr.IsValid())
-        return m_NetworkerPtr->m_isimposter;
-    return false;
-}
-
-bool UMyAdvancedFriendsGameInstance::GetGameOver()
-{
-    if (m_NetworkerPtr.IsValid())
-        return m_NetworkerPtr->m_isgameover;
+        return m_NetworkerPtr->m_IsLogin;
     return false;
 }
 
 bool UMyAdvancedFriendsGameInstance::GetGameOverState()
 {
     if (m_NetworkerPtr.IsValid()) {
-
-        if (m_NetworkerPtr->m_result == 0)
-            return true;
-        else
-            return false;
+        if (m_NetworkerPtr.IsValid())
+            return m_NetworkerPtr->m_IsImposterWin;
     }
-    else
-        return false;
 }

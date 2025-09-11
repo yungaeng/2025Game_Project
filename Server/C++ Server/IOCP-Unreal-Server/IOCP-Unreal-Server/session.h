@@ -59,6 +59,6 @@ public:
 	void send_login_fail_packet(char reason);
 	void send_chat_packet(long long c_id, const char* mess);
 	void send_mission_packet(long long c_id, char miss);
-	void send_gameover();
+	void send_gameover(bool result);
 };
 extern concurrency::concurrent_unordered_map<long long, std::shared_ptr<session>> clients;

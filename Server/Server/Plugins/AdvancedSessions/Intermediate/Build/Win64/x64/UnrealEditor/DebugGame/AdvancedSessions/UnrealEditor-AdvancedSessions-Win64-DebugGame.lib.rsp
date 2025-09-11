@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-AdvancedSessions-Win64-DebugGame.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Intermediate\Build\Win64\x64\GameProject_BPEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.Cpp20.h.obj"
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\AdvancedSessions\Module.AdvancedSessions.1.cpp.obj"
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\AdvancedSessions\Module.AdvancedSessions.2.cpp.obj"
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\AdvancedSessions\Module.AdvancedSessions.3.cpp.obj"
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\AdvancedSessions\Default.rc2.res"
+/OUT:"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSessions\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\AdvancedSessions\UnrealEditor-AdvancedSessions-Win64-DebugGame.lib"

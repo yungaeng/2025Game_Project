@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-AdvancedSteamSessions-Win64-DebugGame.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Intermediate\Build\Win64\x64\GameProject_BPEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.Cpp20.h.obj"
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\AdvancedSteamSessions\Module.AdvancedSteamSessions.cpp.obj"
+"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\AdvancedSteamSessions\Default.rc2.res"
+/OUT:"C:\Users\yun\Desktop\2025Game_Project\Server\Server\Plugins\AdvancedSteamSessions\Intermediate\Build\Win64\x64\UnrealEditor\DebugGame\AdvancedSteamSessions\UnrealEditor-AdvancedSteamSessions-Win64-DebugGame.lib"

@@ -16,7 +16,8 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
         const sc_packet_login_ok* p = reinterpret_cast<const sc_packet_login_ok*>(Data.GetData());
         GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_LOGIN_OK received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-            Net->m_islogin = true;
+            std::lock_guard<std::mutex> lock(Net->netlock);
+            Net->m_IsLogin = true;
         }
         });
     RecvPacketHandler::Get().RegisterHandler(S2C_LOGIN_FAIL, [this](const TArray<uint8>& Data) {
@@ -30,28 +31,6 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
             // 3 : 서버에 동접이 너무 많음
         }
         });
-    RecvPacketHandler::Get().RegisterHandler(S2C_AVATAR_INFO, [this](const TArray<uint8>& Data) {
-        const sc_packet_avatar_info* p = reinterpret_cast<const sc_packet_avatar_info*>(Data.GetData());
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_AVATAR_INFO received"));
-        if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-
-        }
-        });
-    RecvPacketHandler::Get().RegisterHandler(S2C_ENTER, [this](const TArray<uint8>& Data) {
-        const sc_packet_enter* p = reinterpret_cast<const sc_packet_enter*>(Data.GetData());
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("S2C_ENTER received"));
-        if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin())
-        {
-
-        }
-        });
-    RecvPacketHandler::Get().RegisterHandler(S2C_MOVE, [this](const TArray<uint8>& Data) {
-        const sc_packet_move* p = reinterpret_cast<const sc_packet_move*>(Data.GetData());
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_MOVE received"));
-        if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-            Net->m_isgameover = true;
-        }
-        });
     RecvPacketHandler::Get().RegisterHandler(S2C_CHAT, [this](const TArray<uint8>& Data) {
         const sc_packet_chat* p = reinterpret_cast<const sc_packet_chat*>(Data.GetData());
         GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_CHAT received"));
@@ -59,16 +38,9 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
 
         }
         });
-    RecvPacketHandler::Get().RegisterHandler(S2C_STAT_CHANGE, [this](const TArray<uint8>& Data) {
-        const sc_packet_stat_change* p = reinterpret_cast<const sc_packet_stat_change*>(Data.GetData());
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_STAT_CHANGE received"));
-        if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-
-        }
-        });
-    RecvPacketHandler::Get().RegisterHandler(S2C_LEAVE, [this](const TArray<uint8>& Data) {
-        const sc_packet_leave* p = reinterpret_cast<const sc_packet_leave*>(Data.GetData());
-        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_LEAVE received"));
+    RecvPacketHandler::Get().RegisterHandler(S2C_ATTACK, [this](const TArray<uint8>& Data) {
+        const sc_packet_chat* p = reinterpret_cast<const sc_packet_chat*>(Data.GetData());
+        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_CHAT received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
 
         }
@@ -77,8 +49,8 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
         const sc_packet_gameover* p = reinterpret_cast<const sc_packet_gameover*>(Data.GetData());
         GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_GAMEOVER received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
-            Net->m_result = p->result;
-            Net->m_isgameover = true;
+            std::lock_guard<std::mutex> lock(Net->netlock);
+            Net->m_IsImposterWin = p->IsImposterWin;
         }
         });
     m_RecvThread = FRunnableThread::Create(this, (TEXT("RecvWorkerThread")));
