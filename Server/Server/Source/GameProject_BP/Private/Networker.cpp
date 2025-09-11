@@ -23,6 +23,5 @@ void Networker::RecvThreadRun()
 
 void Networker::Disconnect()
 {
-	m_isgameover = false;
 	m_RecvworkerPtr->Destroy();
 }

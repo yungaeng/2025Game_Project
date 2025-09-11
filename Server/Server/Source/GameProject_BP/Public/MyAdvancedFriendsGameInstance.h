@@ -29,7 +29,7 @@ class GAMEPROJECT_BP_API UMyAdvancedFriendsGameInstance : public UAdvancedFriend
     UFUNCTION(BlueprintCallable)
     void SendAttack();
     UFUNCTION(BlueprintCallable)
-    void SendGameOver();
+    void SendGameOver(bool result);
 
 
     UFUNCTION(BlueprintCallable)

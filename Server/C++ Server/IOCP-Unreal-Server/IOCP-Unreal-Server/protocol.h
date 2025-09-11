@@ -66,6 +66,10 @@ struct cs_packet_attack {
 	unsigned char  size;
 	char  type;
 };
+struct cs_packet_gameover {
+	unsigned char  size;
+	char  type;
+};
 struct cs_packet_chat {
 	unsigned char  size;
 	char  type;

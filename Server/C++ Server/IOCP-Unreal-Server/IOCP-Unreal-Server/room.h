@@ -18,8 +18,6 @@ struct ROOM {
 	bool charging_mission;
 	bool radio_mission;
 	bool temperature_mission;
-
-	int hit = 3;
 };
 extern concurrency::concurrent_unordered_map<int, std::shared_ptr<ROOM>> rooms;
 extern std::mutex map_lock;

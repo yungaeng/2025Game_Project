@@ -205,17 +205,24 @@ void process_packet(long long c_id, char* packet)
         break;
     }
     case C2S_ATTACK: {
+        //카운트 처리는 클라에서
+        for (auto& cl : clients) {
+            if (cl.second->_room_id == clients[c_id]->_room_id)
+                cl.second->send_gameover(true);
+        }
+
+        break;
+    }
+    case C2S_GAMEOVER: {
         int roomid = clients[c_id]->_room_id;
         lock_guard<mutex> ll{ rooms[roomid]->rl };
         {
-            rooms[roomid]->hit-=1;
-            if (rooms[roomid]->hit == 0) {
-                for (auto& cl : clients) {
-                    if (cl.second->_room_id == clients[c_id]->_room_id)
-                        cl.second->send_gameover(true);
-                }
+            for (auto& cl : clients) {
+                if (cl.second->_room_id == clients[c_id]->_room_id)
+                    cl.second->send_gameover(false);
             }
         }
+        break;
     }
     case C2S_CHAT: {
         cs_packet_chat* p = reinterpret_cast<cs_packet_chat*>(packet);
