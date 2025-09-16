@@ -27,6 +27,8 @@ class GAMEPROJECT_BP_API UMyAdvancedFriendsGameInstance : public UAdvancedFriend
     UFUNCTION(BlueprintCallable)
     void SendRoom(uint8 request);
     UFUNCTION(BlueprintCallable)
+    void SendMission(uint8 mission);
+    UFUNCTION(BlueprintCallable)
     void SendAttack();
     UFUNCTION(BlueprintCallable)
     void SendGameOver(bool result);

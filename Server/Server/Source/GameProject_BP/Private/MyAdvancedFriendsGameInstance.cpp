@@ -92,6 +92,15 @@ void UMyAdvancedFriendsGameInstance::SendRoom(uint8 request)
     p.requst = request;
     m_Socket->Send((uint8*)&p, sizeof(p), bytesSent);
 }
+void UMyAdvancedFriendsGameInstance::SendMission(uint8 mission)
+{
+    int32 bytesSent;
+    cs_packet_mission p{};
+    p.size = sizeof(p);
+    p.type = C2S_MISSION;
+    p.mission = mission;
+    m_Socket->Send((uint8*)&p, p.size, bytesSent);
+}
 void UMyAdvancedFriendsGameInstance::SendAttack()
 {
     int32 bytesSent;
