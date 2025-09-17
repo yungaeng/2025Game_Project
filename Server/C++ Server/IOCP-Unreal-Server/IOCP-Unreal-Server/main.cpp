@@ -11,6 +11,7 @@ HANDLE h_iocp;
 SOCKET g_s_socket, g_c_socket; // g_c_socket은 AcceptEx용 임시 소켓
 ex_over g_a_over;              // AcceptEx 오버랩 구조체
 DB g_db;                       // DB
+bool isdb = false;
 
 concurrency::concurrent_unordered_map<long long, std::shared_ptr<session>> clients;
 std::mutex clients_lock;
@@ -40,9 +41,11 @@ void disconnect(long long c_id) {
         }
     }
 
-    // 임시 : 로그 아웃하면 db에서 삭제
-    g_db.DeleteDB(c_id);
-    g_db.SelectDB();
+    if (isdb) {
+        // 임시 : 로그 아웃하면 db에서 삭제
+        g_db.DeleteDB(c_id);
+        g_db.SelectDB();
+    }
 
     /*DWORD num_bytes;
     ULONG_PTR key;
@@ -64,20 +67,24 @@ void process_packet(long long c_id, char* packet)
         ld.NAME = clients[c_id]->_name;
 
        
-        if (g_db.FindDB(ld.NAME)) {
-            // 회원이 이미 있다면
-            // 1 : 다른 클라이언트에서 사용중
-            clients[c_id]->send_login_fail_packet(1);
+        if (isdb) {
+            if (g_db.FindDB(ld.NAME)) {
+                // 회원이 이미 있다면
+                // 1 : 다른 클라이언트에서 사용중
+                clients[c_id]->send_login_fail_packet(1);
+            }
+            else {
+                // 만들수 있는 계정이라면
+                // 새 회원 등록하고 로그인 시켜줌.
+                g_db.InsertDB(ld);
+                clients[c_id]->send_login_ok_packet();
+            }
+
+            // 현재 DB 보여주기
+            g_db.SelectDB();
         }
-        else {
-            // 만들수 있는 계정이라면
-            // 새 회원 등록하고 로그인 시켜줌.
-            g_db.InsertDB(ld);
+        else 
             clients[c_id]->send_login_ok_packet();
-        }
-            
-        // 현재 DB 보여주기
-        g_db.SelectDB();
 
         break;
     }
@@ -89,17 +96,21 @@ void process_packet(long long c_id, char* packet)
         }
         std::string NAME = clients[c_id]->_name;
 
-        if (g_db.FindDB(NAME)) {
-            clients[c_id]->send_login_ok_packet();
-        }
-        else {
-            // 4 : 해당되는 계정이 없음
-            clients[c_id]->send_login_fail_packet(4);
-        }
+        if (isdb) {
+            if (g_db.FindDB(NAME)) {
+                clients[c_id]->send_login_ok_packet();
+            }
+            else {
+                // 4 : 해당되는 계정이 없음
+                clients[c_id]->send_login_fail_packet(4);
+            }
 
-        // 현재 DB 보여주기
-        g_db.SelectDB();
-        
+            // 현재 DB 보여주기
+            g_db.SelectDB();
+        }
+        else 
+            clients[c_id]->send_login_ok_packet();
+
         break;
     }
     case C2S_ROOM: {
@@ -435,9 +446,11 @@ int main()
     std::cout << "Max user : " << MAX_USER << std::endl;
 
     // DB 초기화
-    if (g_db.InitDB())
+    isdb = g_db.InitDB();
+    if (isdb)
         std::cout << "DB is Working..." << std::endl;
-
+    else
+        std::cout << "Can not Found Any DB, Running Not DB ver..." << std::endl;
 
     // 워커 스레드 생성
     std::vector <std::thread> worker_threads;
@@ -450,7 +463,6 @@ int main()
 
     std::cout << "Worker threads : " << num_threads << std::endl;
     std::cout << "Now server is running" << std::endl;
-    g_db.SelectDB();
 
     //--------------------------- 여기서부터 서버 실행---------------------------------
 

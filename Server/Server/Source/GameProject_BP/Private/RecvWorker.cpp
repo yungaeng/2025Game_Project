@@ -50,6 +50,7 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
         GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_GAMEOVER received"));
         if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
             std::lock_guard<std::mutex> lock(Net->netlock);
+            Net->m_gameover = true;
             Net->m_IsImposterWin = p->IsImposterWin;
         }
         });

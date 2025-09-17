@@ -23,6 +23,7 @@ public:
     std::mutex netlock;
 
     bool m_IsLogin;
+    bool m_gameover;
 	bool m_IsImposterWin;
 };
 

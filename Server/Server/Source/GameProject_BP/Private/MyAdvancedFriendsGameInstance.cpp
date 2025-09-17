@@ -132,3 +132,11 @@ bool UMyAdvancedFriendsGameInstance::GetGameOverState()
     }
     return false;
 }
+
+bool UMyAdvancedFriendsGameInstance::GetGameOver()
+{
+    if (m_NetworkerPtr.IsValid()) {
+        return m_NetworkerPtr->m_gameover;
+    }
+    return false;
+}
