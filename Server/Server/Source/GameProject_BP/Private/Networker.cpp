@@ -9,6 +9,7 @@
 
 Networker::Networker(FSocket* Socket) : m_Socket(Socket)
 {
+    m_gameover = false;
 }
 
 Networker::~Networker()
