@@ -17,7 +17,7 @@ bool DB::InitDB()
 
 	// 데이터베이스와 연결
 	// ConnPtr = mysql_real_connect(&Conn, "데이터베이스서버주소", "root", "비밀번호", "접속할데이터베이스", 3306, (char*)NULL, 0);
-	ConnPtr = mysql_real_connect(&Conn, "127.0.0.1", "rdfsoot", "yungaeng", "mygame_db", 3306, (char*)NULL, 0);
+	ConnPtr = mysql_real_connect(&Conn, "127.0.0.1", "root", "yungaeng", "mygame_db", 3306, (char*)NULL, 0);
 
 	if (ConnPtr == NULL)    // 연결 결과 확인, NULL일 경우 연결 실패한 것
 	{

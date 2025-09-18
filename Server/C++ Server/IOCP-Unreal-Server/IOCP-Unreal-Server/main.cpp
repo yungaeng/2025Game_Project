@@ -131,6 +131,7 @@ void process_packet(long long c_id, char* packet)
                     clients[c_id]->_room_id = room_id;
                 }
             }
+            cout << "Create New Room, " << room_id << endl;
             break;
         } 
         case join: { // 기존 방 입장
@@ -152,6 +153,8 @@ void process_packet(long long c_id, char* packet)
             // 방을 찾았다면 아바타 정보(유저가 조종하는 캐릭터)를 보내줌
             if (clients[c_id]->_room_id != -1) {
             }
+
+            cout << "Client " << c_id << "Join Room, " << room_id << endl;
             break;
         }
         case leave:
