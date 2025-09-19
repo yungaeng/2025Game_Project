@@ -113,77 +113,77 @@ void process_packet(long long c_id, char* packet)
 
         break;
     }
-    case C2S_ROOM: {
-        cs_packet_room* p = reinterpret_cast<cs_packet_room*>(packet);
-        switch (p->req)
-        {
-        case create: { // 새 방 생성
-            int room_id = create_room_num();
-            rooms[room_id] = std::make_shared<ROOM>();
-            {
-                lock_guard<mutex> ll{ rooms[room_id]->rl };
-                rooms[room_id]->id = room_id;
-                rooms[room_id]->state = R_READY;
-                
-                {
-                    // 각각 세션에 정보를 저장만 시키고 개인 클라에게 굳이 룸정보를 전달하지 않음
-                    lock_guard<mutex> ll{ clients[c_id]->_s_lock };
-                    clients[c_id]->_room_id = room_id;
-                }
-            }
-            cout << "Create New Room, " << room_id << endl;
-            break;
-        } 
-        case join: { // 기존 방 입장
-            int room_id = get_room_id();
-            if(-1 != room_id)
-            {
-                lock_guard<mutex> ll{ rooms[room_id]->rl };
-                if (rooms[room_id]->state == R_READY) {
-                    {
-                        lock_guard<mutex> ll{ clients[c_id]->_s_lock };
-                        clients[c_id]->_room_id = room_id;
-                    }
-                    // 이제 방이 가득 찼다면 게임 시작
-                    rooms[room_id]->state = R_INGAME;
-                }
-            }
-            // 방을 찾지 못하였으면 기본값(-1)이 할당됨
+    //case C2S_ROOM: {
+    //    cs_packet_room* p = reinterpret_cast<cs_packet_room*>(packet);
+    //    switch (p->req)
+    //    {
+    //    case create: { // 새 방 생성
+    //        int room_id = create_room_num();
+    //        rooms[room_id] = std::make_shared<ROOM>();
+    //        {
+    //            lock_guard<mutex> ll{ rooms[room_id]->rl };
+    //            rooms[room_id]->id = room_id;
+    //            rooms[room_id]->state = R_READY;
+    //            
+    //            {
+    //                // 각각 세션에 정보를 저장만 시키고 개인 클라에게 굳이 룸정보를 전달하지 않음
+    //                lock_guard<mutex> ll{ clients[c_id]->_s_lock };
+    //                clients[c_id]->_room_id = room_id;
+    //            }
+    //        }
+    //        cout << "Create New Room, " << room_id << endl;
+    //        break;
+    //    } 
+    //    case join: { // 기존 방 입장
+    //        int room_id = get_room_id();
+    //        if(-1 != room_id)
+    //        {
+    //            lock_guard<mutex> ll{ rooms[room_id]->rl };
+    //            if (rooms[room_id]->state == R_READY) {
+    //                {
+    //                    lock_guard<mutex> ll{ clients[c_id]->_s_lock };
+    //                    clients[c_id]->_room_id = room_id;
+    //                }
+    //                // 이제 방이 가득 찼다면 게임 시작
+    //                rooms[room_id]->state = R_INGAME;
+    //            }
+    //        }
+    //        // 방을 찾지 못하였으면 기본값(-1)이 할당됨
 
-            // 방을 찾았다면 아바타 정보(유저가 조종하는 캐릭터)를 보내줌
-            if (clients[c_id]->_room_id != -1) {
-            }
+    //        // 방을 찾았다면 아바타 정보(유저가 조종하는 캐릭터)를 보내줌
+    //        if (clients[c_id]->_room_id != -1) {
+    //        }
 
-            cout << "Client " << c_id << "Join Room, " << room_id << endl;
-            break;
-        }
-        case leave:
-        {
-            int room_id = clients[c_id]->_room_id;
-            // 방을 배정받은 클라만 나감처리 가능
-            if (room_id != -1)
-            {
-                lock_guard<mutex> ll{ rooms[room_id]->rl };
-                {
-                    lock_guard<mutex> ll{ clients[c_id]->_s_lock };
-                    clients[c_id]->_room_id = -1;
-                }
+    //        cout << "Client " << c_id << "Join Room, " << room_id << endl;
+    //        break;
+    //    }
+    //    case leave:
+    //    {
+    //        int room_id = clients[c_id]->_room_id;
+    //        // 방을 배정받은 클라만 나감처리 가능
+    //        if (room_id != -1)
+    //        {
+    //            lock_guard<mutex> ll{ rooms[room_id]->rl };
+    //            {
+    //                lock_guard<mutex> ll{ clients[c_id]->_s_lock };
+    //                clients[c_id]->_room_id = -1;
+    //            }
 
-                // 방을 나가면 기본값(-1)이 할당됨, 여기선 굳이 해당 클라이언트에게 패킷을 보내지 않음
-                // clients[c_id]->send_room_packet(c_id);
+    //            // 방을 나가면 기본값(-1)이 할당됨, 여기선 굳이 해당 클라이언트에게 패킷을 보내지 않음
+    //            // clients[c_id]->send_room_packet(c_id);
 
-                // 방에 남아있는 플레이어들에게는 나갔다는 패킷전달이 필요함 
-                for (auto& cl : clients) {
-                    //if (cl.second->_room_id == room_id)
-                }
-            }
-            break;
-        }
-        default:
-            break;
-        }
-        break;
-    }
+    //            // 방에 남아있는 플레이어들에게는 나갔다는 패킷전달이 필요함 
+    //            for (auto& cl : clients) {
+    //                //if (cl.second->_room_id == room_id)
+    //            }
+    //        }
+    //        break;
+    //    }
+    //    default:
+    //        break;
+    //    }
+    //    break;
+    //}
     case C2S_MISSION: {
         cs_packet_mission* p = reinterpret_cast<cs_packet_mission*>(packet);
         std::cout << "Client [" << c_id << "] mission clear " << static_cast<int>(p->mis) << std::endl;
@@ -253,6 +253,14 @@ void process_packet(long long c_id, char* packet)
         cs_packet_logout* p = reinterpret_cast<cs_packet_logout*>(packet);
         std::cout << "Client [" << c_id << "] is Logout" << std::endl;
         disconnect(c_id);
+        break;
+    }
+    case C2S_HOST: {
+        cs_packet_host* p = reinterpret_cast<cs_packet_host*>(packet);
+        std::cout << "Client [" << c_id << "] create session" << p->ip << endl;
+        for (auto& cl : clients) {
+            cl.second->send_host(p->ip);
+        }
         break;
     }
     default:
@@ -447,6 +455,9 @@ int main()
         }
     }
     std::cout << "Max user : " << MAX_USER << std::endl;
+
+    std::cout << "If you have any DB, input DB server ip : ";
+    std::cin >> g_db.DB_IP;
 
     // DB 초기화
     isdb = g_db.InitDB();

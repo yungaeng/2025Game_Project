@@ -12,6 +12,7 @@ struct logindata {
 class DB
 {
 public:
+	char DB_IP[16] = "127.0.0.1";
 	MYSQL Conn;             // MySQL 정보를 담을 구조체
 	MYSQL* ConnPtr = NULL;  // MySQL 핸들
 	MYSQL_RES* Result;      // 쿼리성공시 결과를 담는 구조체 포인터

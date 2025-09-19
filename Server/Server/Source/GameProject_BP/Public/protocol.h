@@ -12,7 +12,7 @@ constexpr int MAX_ROOM_PLAYER = 5;
 // 패킷 타입
 constexpr char C2S_SIGNIN = 1;			// 회원가입
 constexpr char C2S_LOGIN = 2;
-constexpr char C2S_ROOM = 3;
+constexpr char C2S_HOST = 3;
 constexpr char C2S_MOVE = 4;
 constexpr char C2S_MISSION = 5;
 constexpr char C2S_ATTACK = 6;
@@ -24,8 +24,9 @@ constexpr char S2C_LOGIN_OK = 10;
 constexpr char S2C_LOGIN_FAIL = 11;
 constexpr char S2C_MISSION = 12;
 constexpr char S2C_ATTACK = 13;
-constexpr char S2C_CHAT = 14;
+constexpr char S2C_HOST = 14;
 constexpr char S2C_GAMEOVER = 15;
+constexpr char S2C_CHAT = 16;
 
 enum requst {
     create, join, leave
@@ -85,6 +86,17 @@ struct cs_packet_gameover {
 struct cs_packet_logout {
     unsigned char  size;
     char  type;
+};
+
+struct cs_packet_host {
+    unsigned char  size;
+    char  type;
+    char ip[16];
+};
+struct sc_packet_host {
+    unsigned char  size;
+    char  type;
+    char ip[16];
 };
 
 struct sc_packet_login_ok

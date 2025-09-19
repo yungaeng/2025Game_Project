@@ -60,5 +60,6 @@ public:
 	void send_chat_packet(long long c_id, const char* mess);
 	void send_mission_packet(long long c_id, char miss);
 	void send_gameover(bool result);
+	void send_host(const char* ip);
 };
 extern concurrency::concurrent_unordered_map<long long, std::shared_ptr<session>> clients;

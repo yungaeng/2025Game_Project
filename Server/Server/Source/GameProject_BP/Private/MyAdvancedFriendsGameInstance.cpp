@@ -7,6 +7,7 @@
 #include "SocketSubsystem.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Networker.h"
+//#include <winsock.h>
 
 bool UMyAdvancedFriendsGameInstance::ConnectToServer(FString AddrIP)
 {
@@ -83,15 +84,7 @@ void UMyAdvancedFriendsGameInstance::SendLogin(FString input)
     strcpy_s(p.name, sizeof(p.name), TCHAR_TO_ANSI(*name));
     m_Socket->Send((uint8*)&p, sizeof(p), bytesSent);
 }
-void UMyAdvancedFriendsGameInstance::SendRoom(uint8 request)
-{
-    int32 bytesSent;
-    cs_packet_room p{};
-    p.size = sizeof(p);
-    p.type = C2S_ROOM;
-    p.requst = request;
-    m_Socket->Send((uint8*)&p, sizeof(p), bytesSent);
-}
+
 void UMyAdvancedFriendsGameInstance::SendMission(uint8 mission)
 {
     int32 bytesSent;
@@ -116,6 +109,28 @@ void UMyAdvancedFriendsGameInstance::SendGameOver(bool result)
     p.size = sizeof(p);
     p.type = C2S_GAMEOVER;
     m_Socket->Send((uint8*)&p, p.size, bytesSent);
+}
+
+void UMyAdvancedFriendsGameInstance::SendHost()
+{
+    bool bCanBind = false;
+    TSharedRef<FInternetAddr> LocalAddr = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->GetLocalHostAddr(*GLog, bCanBind);
+
+    if (LocalAddr->IsValid())
+    {
+        FString LocalIP = LocalAddr->ToString(false); // false: exclude port
+        UE_LOG(LogTemp, Log, TEXT("Local IP Address: %s"), *LocalIP);
+        int32 bytesSent;
+        cs_packet_host p{};
+        p.size = sizeof(p);
+        p.type = C2S_HOST;
+        strcpy_s(p.ip, sizeof(p.ip), TCHAR_TO_ANSI(*LocalIP));
+        m_Socket->Send((uint8*)&p, p.size, bytesSent);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("Failed to get local IP address"));
+    }
 }
 
 bool UMyAdvancedFriendsGameInstance::GetLoginOk()

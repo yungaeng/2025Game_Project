@@ -41,3 +41,12 @@ void session::send_gameover(bool result) {
 	p.IsImposterWin = result;
 	do_send(&p);
 }
+
+void session::send_host(const char* ip)
+{
+	sc_packet_host p;
+	p.size = sizeof(p);
+	p.type = S2C_HOST;
+	strcpy_s(p.ip, ip);
+	do_send(&p);
+}
