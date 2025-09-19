@@ -54,6 +54,15 @@ RecvWorker::RecvWorker(FSocket* Socket, TSharedPtr<class Networker> networker) :
             Net->m_IsImposterWin = p->IsImposterWin;
         }
         });
+    RecvPacketHandler::Get().RegisterHandler(S2C_HOST, [this](const TArray<uint8>& Data) {
+        const sc_packet_host* p = reinterpret_cast<const sc_packet_host*>(Data.GetData());
+        GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, TEXT("S2C_HOST received"));
+        if (TSharedPtr<Networker> Net = m_NetworkerPtr.Pin()) {
+            std::lock_guard<std::mutex> lock(Net->netlock);
+            Net->host = p->ip;
+            GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, Net->host);
+        }
+        });
     m_RecvThread = FRunnableThread::Create(this, (TEXT("RecvWorkerThread")));
 }
 

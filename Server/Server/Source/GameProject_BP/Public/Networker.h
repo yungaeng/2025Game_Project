@@ -21,6 +21,7 @@ public:
 	class FSocket* m_Socket;
 	TSharedPtr<class RecvWorker> m_RecvworkerPtr;
     std::mutex netlock;
+    FString host;
 
     bool m_IsLogin;
     bool m_gameover = false;
