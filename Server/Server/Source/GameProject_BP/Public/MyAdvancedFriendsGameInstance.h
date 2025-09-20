@@ -41,6 +41,8 @@ class GAMEPROJECT_BP_API UMyAdvancedFriendsGameInstance : public UAdvancedFriend
     bool GetGameOverState();
     UFUNCTION(BlueprintCallable)
     bool GetGameOver();
+    UFUNCTION(BlueprintCallable)
+    FString GetHost();
 public:
     // 서버와 연결
     class FSocket* m_Socket;

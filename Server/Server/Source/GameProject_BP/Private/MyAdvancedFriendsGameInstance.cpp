@@ -155,3 +155,12 @@ bool UMyAdvancedFriendsGameInstance::GetGameOver()
     }
     return false;
 }
+
+FString UMyAdvancedFriendsGameInstance::GetHost()
+{
+    FString str;
+    if (m_NetworkerPtr.IsValid()) {
+        str = m_NetworkerPtr->host;
+    }
+    return str;
+}

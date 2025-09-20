@@ -257,7 +257,7 @@ void process_packet(long long c_id, char* packet)
     }
     case C2S_HOST: {
         cs_packet_host* p = reinterpret_cast<cs_packet_host*>(packet);
-        std::cout << "Client [" << c_id << "] create session" << p->ip << endl;
+        std::cout << "Client [" << c_id << "] create session " << p->ip << endl;
         for (auto& cl : clients) {
             cl.second->send_host(p->ip);
         }
