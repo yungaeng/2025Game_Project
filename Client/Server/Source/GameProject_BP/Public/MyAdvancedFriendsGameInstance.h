@@ -24,21 +24,25 @@ class GAMEPROJECT_BP_API UMyAdvancedFriendsGameInstance : public UAdvancedFriend
     void SendSignin(FString input);
     UFUNCTION(BlueprintCallable)
     void SendLogin(FString input);
+
     UFUNCTION(BlueprintCallable)
-    void SendRoom(uint8 request);
+    void SendMission(uint8 mission);
     UFUNCTION(BlueprintCallable)
     void SendAttack();
+    UFUNCTION(BlueprintCallable)
+    void SendGameOver(bool result);
+    UFUNCTION(BlueprintCallable)
+    void SendHost();
 
 
     UFUNCTION(BlueprintCallable)
     bool GetLoginOk();
     UFUNCTION(BlueprintCallable)
-    bool GetCharacter();
+    bool GetGameOverState();
     UFUNCTION(BlueprintCallable)
     bool GetGameOver();
     UFUNCTION(BlueprintCallable)
-    bool GetGameOverState();
-
+    FString GetHost();
 public:
     // 서버와 연결
     class FSocket* m_Socket;

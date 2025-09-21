@@ -7,6 +7,7 @@
 #include "SocketSubsystem.h"
 #include "Kismet/KismetSystemLibrary.h"
 #include "Networker.h"
+//#include <winsock.h>
 
 bool UMyAdvancedFriendsGameInstance::ConnectToServer(FString AddrIP)
 {
@@ -83,14 +84,15 @@ void UMyAdvancedFriendsGameInstance::SendLogin(FString input)
     strcpy_s(p.name, sizeof(p.name), TCHAR_TO_ANSI(*name));
     m_Socket->Send((uint8*)&p, sizeof(p), bytesSent);
 }
-void UMyAdvancedFriendsGameInstance::SendRoom(uint8 request)
+
+void UMyAdvancedFriendsGameInstance::SendMission(uint8 mission)
 {
     int32 bytesSent;
-    cs_packet_room p{};
+    cs_packet_mission p{};
     p.size = sizeof(p);
-    p.type = C2S_ROOM;
-    p.requst = request;
-    m_Socket->Send((uint8*)&p, sizeof(p), bytesSent);
+    p.type = C2S_MISSION;
+    p.mission = mission;
+    m_Socket->Send((uint8*)&p, p.size, bytesSent);
 }
 void UMyAdvancedFriendsGameInstance::SendAttack()
 {
@@ -100,37 +102,65 @@ void UMyAdvancedFriendsGameInstance::SendAttack()
     p.type = C2S_ATTACK;
     m_Socket->Send((uint8*)&p, p.size, bytesSent);
 }
+void UMyAdvancedFriendsGameInstance::SendGameOver(bool result)
+{
+    int32 bytesSent;
+    cs_packet_gameover p{};
+    p.size = sizeof(p);
+    p.type = C2S_GAMEOVER;
+    m_Socket->Send((uint8*)&p, p.size, bytesSent);
+}
+
+void UMyAdvancedFriendsGameInstance::SendHost()
+{
+    bool bCanBind = false;
+    TSharedRef<FInternetAddr> LocalAddr = ISocketSubsystem::Get(PLATFORM_SOCKETSUBSYSTEM)->GetLocalHostAddr(*GLog, bCanBind);
+
+    if (LocalAddr->IsValid())
+    {
+        FString LocalIP = LocalAddr->ToString(false); // false: exclude port
+        UE_LOG(LogTemp, Log, TEXT("Local IP Address: %s"), *LocalIP);
+        int32 bytesSent;
+        cs_packet_host p{};
+        p.size = sizeof(p);
+        p.type = C2S_HOST;
+        strcpy_s(p.ip, sizeof(p.ip), TCHAR_TO_ANSI(*LocalIP));
+        m_Socket->Send((uint8*)&p, p.size, bytesSent);
+    }
+    else
+    {
+        UE_LOG(LogTemp, Error, TEXT("Failed to get local IP address"));
+    }
+}
 
 bool UMyAdvancedFriendsGameInstance::GetLoginOk()
 {
     if (m_NetworkerPtr.IsValid())
-        return m_NetworkerPtr->m_islogin;
-    return false;
-}
-
-bool UMyAdvancedFriendsGameInstance::GetCharacter()
-{
-    if (m_NetworkerPtr.IsValid())
-        return m_NetworkerPtr->m_isimposter;
-    return false;
-}
-
-bool UMyAdvancedFriendsGameInstance::GetGameOver()
-{
-    if (m_NetworkerPtr.IsValid())
-        return m_NetworkerPtr->m_isgameover;
+        return m_NetworkerPtr->m_IsLogin;
     return false;
 }
 
 bool UMyAdvancedFriendsGameInstance::GetGameOverState()
 {
     if (m_NetworkerPtr.IsValid()) {
-
-        if (m_NetworkerPtr->m_result == 0)
-            return true;
-        else
-            return false;
+            return m_NetworkerPtr->m_IsImposterWin;
     }
-    else
-        return false;
+    return false;
+}
+
+bool UMyAdvancedFriendsGameInstance::GetGameOver()
+{
+    if (m_NetworkerPtr.IsValid()) {
+        return m_NetworkerPtr->m_gameover;
+    }
+    return false;
+}
+
+FString UMyAdvancedFriendsGameInstance::GetHost()
+{
+    FString str;
+    if (m_NetworkerPtr.IsValid()) {
+        str = m_NetworkerPtr->host;
+    }
+    return str;
 }

@@ -9,6 +9,7 @@
 
 Networker::Networker(FSocket* Socket) : m_Socket(Socket)
 {
+    m_gameover = false;
 }
 
 Networker::~Networker()
@@ -23,6 +24,5 @@ void Networker::RecvThreadRun()
 
 void Networker::Disconnect()
 {
-	m_isgameover = false;
 	m_RecvworkerPtr->Destroy();
 }
