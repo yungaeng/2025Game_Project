@@ -456,15 +456,18 @@ int main()
     }
     std::cout << "Max user : " << MAX_USER << std::endl;
 
-    std::cout << "If you have any DB, input DB server ip : ";
-    std::cin >> g_db.DB_IP;
+    std::cout << "Do you have any DB? y/n : ";
+    char d;
+    std::cin >> d;
 
-    // DB 초기화
-    isdb = g_db.InitDB();
-    if (isdb)
-        std::cout << "DB is Working..." << std::endl;
-    else
-        std::cout << "Can not Found Any DB, Running Not DB ver..." << std::endl;
+    if (d == 'y') {
+        // DB 초기화
+        isdb = g_db.InitDB();
+        if (isdb)
+            std::cout << "DB is Working..." << std::endl;
+        else
+            std::cout << "Can not Found Any DB, Running Not DB ver..." << std::endl;
+    }
 
     // 워커 스레드 생성
     std::vector <std::thread> worker_threads;
