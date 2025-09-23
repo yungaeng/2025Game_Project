@@ -42,6 +42,8 @@ class GAMEPROJECT_BP_API UMyAdvancedFriendsGameInstance : public UAdvancedFriend
     UFUNCTION(BlueprintCallable)
     bool GetGameOver();
     UFUNCTION(BlueprintCallable)
+    void SetGameOver();
+    UFUNCTION(BlueprintCallable)
     FString GetHost();
 public:
     // 서버와 연결

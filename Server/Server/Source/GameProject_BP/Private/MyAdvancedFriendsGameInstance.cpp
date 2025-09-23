@@ -156,6 +156,13 @@ bool UMyAdvancedFriendsGameInstance::GetGameOver()
     return false;
 }
 
+void UMyAdvancedFriendsGameInstance::SetGameOver()
+{
+    if (m_NetworkerPtr.IsValid()) {
+        m_NetworkerPtr->m_gameover = false;
+    }
+}
+
 FString UMyAdvancedFriendsGameInstance::GetHost()
 {
     FString str;
